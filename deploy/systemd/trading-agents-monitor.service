@@ -1,0 +1,16 @@
+[Unit]
+Description=Trading Agents position-risk monitor (paper dry run)
+Wants=network-online.target
+After=network-online.target
+[Service]
+Type=oneshot
+User=ubuntu
+WorkingDirectory=/opt/trading-agents
+EnvironmentFile=/opt/trading-agents/.env
+ExecStart=/usr/bin/flock -w 20 /opt/trading-agents/app/state/reporting.lock /usr/bin/env ALPACA_PAPER=True DRY_RUN=True SCAN_OUTSIDE_MARKET_HOURS=False /opt/trading-agents/.venv/bin/python position_monitor_job.py
+TimeoutStartSec=900
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=trading-agents-monitor
+NoNewPrivileges=true
+PrivateTmp=true
