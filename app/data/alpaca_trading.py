@@ -8,7 +8,6 @@ import os
 from datetime import date, timedelta
 from typing import Any
 
-import httpx
 from alpaca.trading.client import TradingClient
 from alpaca.trading.requests import (
     MarketOrderRequest, ClosePositionRequest, LimitOrderRequest, OptionLegRequest,

@@ -13,7 +13,11 @@ def value(unit, key):
 
 
 def verify():
-    for job in JOBS:
+    jobs = [(job, 'reporting_job.py ' + job + ' --telegram', '') for job in JOBS]
+    if any(value('trading-agents-monitor.' + kind, 'LoadState') == 'loaded'
+           for kind in ('service', 'timer')):
+        jobs.append(('agents-monitor', 'position_monitor_job.py', 'SCAN_OUTSIDE_MARKET_HOURS=False '))
+    for job, entrypoint, extra_environment in jobs:
         for kind in ('service', 'timer'):
             unit = f'trading-{job}.{kind}'
             installed = INSTALLED / unit
@@ -26,7 +30,7 @@ def verify():
         text = (ROOT / 'deploy/systemd' / service).read_text()
         expected = ('ExecStart=/usr/bin/flock -w 20 /opt/trading-agents/app/state/reporting.lock '
                     '/usr/bin/env ALPACA_PAPER=True DRY_RUN=True '
-                    '/opt/trading-agents/.venv/bin/python reporting_job.py ' + job + ' --telegram')
+                    + extra_environment + '/opt/trading-agents/.venv/bin/python ' + entrypoint)
         if expected not in text.splitlines() or value(service, 'User') != 'ubuntu':
             raise RuntimeError(f'{service}: reporting-only execution settings not verified')
     print('Installed reporting units match reviewed paper/dry-run services; no overrides.')

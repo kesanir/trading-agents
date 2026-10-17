@@ -20,7 +20,8 @@ class InstalledUnitsTests(unittest.TestCase):
             def show(command, **kwargs):
                 unit = command[2]
                 key = command[3].split('=', 1)[1]
-                return {'FragmentPath':str(installed/unit), 'DropInPaths':override['value'], 'User':'ubuntu'}[key]
+                return {'FragmentPath':str(installed/unit), 'DropInPaths':override['value'], 'User':'ubuntu',
+                        'LoadState':'loaded' if (installed/unit).exists() else 'not-found'}[key]
             with patch.object(module, 'INSTALLED', installed), patch.object(module, 'ROOT', ROOT), \
                  patch.object(module.subprocess, 'check_output', side_effect=show):
                 module.verify()
