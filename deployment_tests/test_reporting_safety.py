@@ -2,9 +2,11 @@ import ast
 import sys
 import types
 import unittest
+import tempfile
 from pathlib import Path
 from unittest.mock import patch
-from datetime import datetime
+from unittest.mock import Mock
+from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,6 +63,60 @@ class SafetyTests(unittest.TestCase):
     def test_compile_changed_python(self):
         for path in ['daily_runner.py','state_change_runner.py','reporting_job.py','mnq_monitor.py']:
             compile((ROOT/path).read_text(encoding='utf-8'), path, 'exec')
+
+    def test_mnq_requires_consecutive_changes_and_stays_quiet_when_unchanged(self):
+        import mnq_monitor
+        feed = types.ModuleType('app.data.futures_ticks')
+        current = {'price': 101}
+        def context(**kwargs):
+            bar = types.SimpleNamespace(to_pydatetime=lambda: datetime.now(timezone.utc))
+            return dict(price=current['price'], vwap=100, or_high=105, or_low=95,
+                        bars=types.SimpleNamespace(index=[bar]))
+        feed.get_nq_intraday_context = context
+        telegram = types.ModuleType('app.services.telegram_service')
+        telegram.send_telegram_message = Mock()
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.object(mnq_monitor, 'STATE', Path(directory)/'state.json'), \
+             patch('app.services.deployment_safety.check_safety'), \
+             patch('app.services.session_calendar.in_session', return_value=True), \
+             patch.dict(sys.modules, {feed.__name__:feed, telegram.__name__:telegram}):
+            for price in (101, 101, 99, 101, 99):
+                current['price'] = price
+                mnq_monitor.run(True)
+            self.assertEqual(telegram.send_telegram_message.call_count, 1)
+            mnq_monitor.run(True)
+            self.assertEqual(telegram.send_telegram_message.call_count, 2)
+            mnq_monitor.run(True)
+            self.assertEqual(telegram.send_telegram_message.call_count, 2)
+
+    def test_mnq_rejects_stale_future_and_missing_data(self):
+        import mnq_monitor
+        feed = types.ModuleType('app.data.futures_ticks')
+        with tempfile.TemporaryDirectory() as directory, \
+             patch.object(mnq_monitor, 'STATE', Path(directory)/'state.json'), \
+             patch('app.services.deployment_safety.check_safety'), \
+             patch('app.services.session_calendar.in_session', return_value=True), \
+             patch.dict(sys.modules, {feed.__name__:feed}):
+            for offset in (timedelta(minutes=-6), timedelta(minutes=1)):
+                stamp = datetime.now(timezone.utc) + offset
+                bar = types.SimpleNamespace(to_pydatetime=lambda: stamp)
+                feed.get_nq_intraday_context = lambda **kw: {'bars':types.SimpleNamespace(index=[bar])}
+                with self.assertRaises(RuntimeError):
+                    mnq_monitor.run(True)
+            feed.get_nq_intraday_context = lambda **kw: None
+            with self.assertRaisesRegex(RuntimeError, 'no QQQ substitution'):
+                mnq_monitor.run(True)
+            self.assertFalse(mnq_monitor.STATE.exists())
+
+    def test_reporting_wrapper_skips_closed_session_before_running_app(self):
+        import reporting_job
+        for job in ('after-open', 'state', 'mnq'):
+            with patch.object(reporting_job, 'check_safety'), \
+                 patch.object(reporting_job, 'in_session', return_value=False), \
+                 patch.object(reporting_job.subprocess, 'run') as run, \
+                 patch.object(sys, 'argv', ['reporting_job.py', job, '--telegram']):
+                reporting_job.main()
+                run.assert_not_called()
 
 if __name__ == '__main__':
     unittest.main()
