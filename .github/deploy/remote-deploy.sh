@@ -11,16 +11,18 @@ timer=trading-after-open.timer
 enabled=$(systemctl is-enabled "$timer" 2>/dev/null || true)
 active=$(systemctl is-active "$timer" 2>/dev/null || true)
 echo "$timer: enabled=$enabled active=$active"
-[[ "$enabled" = disabled || "$enabled" = masked ]] || {
-  echo 'Deployment blocked: after-open timer must be disabled or masked.' >&2; exit 1;
-}
-[[ "$active" = inactive ]] || {
-  echo 'Deployment blocked: after-open timer must be inactive.' >&2; exit 1;
-}
 service_state=$(systemctl show trading-after-open.service --property=ActiveState --value)
-[[ "$service_state" = inactive || "$service_state" = failed ]] || {
-  echo "Deployment blocked: after-open service state is $service_state." >&2; exit 1;
-}
+if [[ "$enabled" = disabled || "$enabled" = masked ]]; then
+  [[ "$active" = inactive && ( "$service_state" = inactive || "$service_state" = failed ) ]] || {
+    echo 'Deployment blocked: disabled after-open timer/service is not idle.' >&2; exit 1;
+  }
+elif [[ "$enabled" = enabled && "$active" = active ]]; then
+  # Enabled schedules are allowed only after all installed reporting units have
+  # been verified against their reviewed source, with explicit safe execution.
+  python3 /opt/trading-agents/.github/deploy/verify-reporting-units.py
+else
+  echo 'Deployment blocked: unexpected after-open timer state.' >&2; exit 1
+fi
 # Do not add scripts/deploy_ec2.sh to Git: that path already exists untracked on
 # EC2. Validate that existing local script before allowing it to execute.
 python3 - <<'PY'
@@ -62,7 +64,7 @@ cd /opt/trading-agents
 trap 'echo "Preflight/deployment failed at line $LINENO: $BASH_COMMAND" >&2' ERR
 # Reporting units use this lock as ubuntu; never create it as root.
 exec 8>app/state/reporting.lock
-flock -w 20 8 || { echo 'A reporting job holds the shared lock.' >&2; exit 1; }
+flock -w 900 8 || { echo 'A reporting job holds the shared lock.' >&2; exit 1; }
 test "$(git symbolic-ref --short HEAD)" = main
 origin_url=$(git remote get-url origin)
 case "$origin_url" in
