@@ -1,0 +1,75 @@
+
+
+##### AFTER OPEN REPORT | 2026-04-29 06:36:27 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 657.15
+VWAP: 657.62
+OR High: 659.48
+OR Low: 656.82
+Entry Ref: 655.51
+Stop: 635.22
+Target 1: 675.24
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: RECOVERY
+Bias: LONG
+Size Mult: 1.15
+Vol: 0.0868
+Trend: -0.0425
+Accel: -0.2319
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev State: RECOVERY
+Transition: RECOVERY_TO_CALM
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.0868
+Trend: -0.0425
+Accel: -0.2319
+Size Mult: 1.0

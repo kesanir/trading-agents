@@ -1,0 +1,34 @@
+{
+  "run_id": "c42940cdba24",
+  "timestamp": "2026-06-10 16:17:21.871181",
+  "session": "regular_session (222m to close)",
+  "account_equity": 94891.59,
+  "account_buying_power": 349692.76,
+  "total_positions": 12,
+  "structures_found": {
+    "CreditSpread": 5
+  },
+  "assessments_count": 7,
+  "closes_triggered": 1,
+  "errors": [],
+  "actions": [
+    {
+      "underlying": "NFLX",
+      "structure": "bear_call",
+      "reason": "spread_stop_loss",
+      "dry_run": false,
+      "orders": [
+        {
+          "leg": "short_buyback",
+          "order_id": "65a90d25-109e-4edd-92db-90389a789c67",
+          "symbol": "NFLX260717C00080000"
+        },
+        {
+          "leg": "long_sell",
+          "order_id": "4d79bcba-c28f-4a60-9e2c-70a5a4f959f5",
+          "symbol": "NFLX260717C00085000"
+        }
+      ]
+    }
+  ]
+}

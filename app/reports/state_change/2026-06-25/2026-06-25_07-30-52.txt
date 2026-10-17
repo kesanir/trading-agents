@@ -1,0 +1,105 @@
+##### STATE CHANGE | 2026-06-25 07:30:52 #####
+Signal ID: 88889e4a
+
+=== STATE CHANGE ALERT ===
+
+trade_triggered: True → False
+trigger_type: opening_range_breakdown_short → None
+
+=== CURRENT STATE ===
+bias: SHORT
+lean: BEARISH
+confidence: HIGH
+day_type: trend
+trade_triggered: False
+trigger_type: None
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_HOLD
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.9703
+Trend: 0.1591
+Accel: -0.5979
+Size Mult: 0.7
+Gate Note: Applied intraday APMEM size multiplier: 0.7
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.44
+Size: 4 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 33.2 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        735.49
+Regime:      NEGATIVE
+Net GEX:     -1.6734B  (+0.1778B)
+Zero Gamma:  N/A
+Call Wall:   747.00
+Put Wall:    735.00
+Dist Flip:   N/A%
+Contracts:   656
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: SHORT
+Lean: BEARISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: SHORT
+Current Price: 712.58
+VWAP: 713.57
+OR High: 727.58
+OR Low: 710.06
+Entry Ref: 714.36
+Stop: 747.59
+Target 1: 699.62
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Sell failed pops / VWAP rejection / lower-high confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Reclaim resistance / upside breadth expansion / leaders squeeze higher.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.9703
+Trend: 0.1591
+Accel: -0.5979
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=SHORT
+- Lean=BEARISH
+- Confidence=HIGH
+- Day type=trend
+- Price is below VWAP
+
+=== TRIGGER REASONS ===
+- Price is below VWAP

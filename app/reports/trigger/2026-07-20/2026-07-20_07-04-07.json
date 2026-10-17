@@ -1,0 +1,161 @@
+{
+  "trade_triggered": false,
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "scalp_allowed": false,
+  "caution": true,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": "watch_long_confirmation",
+    "reasons": [
+      "Higher timeframe is neutral",
+      "Bullish lean active"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=NEUTRAL",
+    "Lean=BULLISH",
+    "Confidence=LOW",
+    "Day type=mixed",
+    "Caution flag is active",
+    "Higher timeframe is neutral",
+    "Bullish lean active"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "BULLISH",
+    "current_price": 29117.75,
+    "vwap": 29130.52,
+    "or_high": 29192.5,
+    "or_low": 29025.75,
+    "entry_ref": null,
+    "stop": null,
+    "target_1": null,
+    "target_2": null,
+    "setup": "watch_long_confirmation",
+    "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+    "invalidation_note": "Stand aside until structure improves.",
+    "size_mult": 0.7
+  },
+  "higher_timeframe": {
+    "scalp_allowed": false,
+    "bias": "NEUTRAL",
+    "lean": "BULLISH",
+    "confidence": "LOW",
+    "day_type": "mixed",
+    "caution": true,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.2821,
+      "index_strength": 0.5052,
+      "bias": "NEUTRAL",
+      "lean": "BULLISH",
+      "confidence": "LOW",
+      "day_type": "mixed",
+      "trade_allowed": false,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=AMZN",
+        "Mixed tape: bearish index vs bullish leadership",
+        "QQQ walls: call=730.0, put=690.0",
+        "QQQ strength=0.5052 score=0.2821"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AMZN",
+          "NVDA",
+          "AAPL",
+          "MSFT",
+          "META",
+          "GOOGL",
+          "TSLA"
+        ],
+        "laggards": [],
+        "top_pick": "AMZN"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "NEUTRAL",
+        "lean": "BULLISH",
+        "confidence": "LOW",
+        "day_type": "mixed",
+        "playbook": "wait_for_long_confirmation",
+        "qqq_spot": 701.85,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 690.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -3.1372,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": null,
+        "target_2": null,
+        "invalidation": null,
+        "entry_note": "Mixed tape with bullish lean. Wait for VWAP reclaim / opening range strength.",
+        "mag7_top_positive": [
+          "AMZN",
+          "NVDA",
+          "AAPL"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=AMZN",
+          "Mixed tape: bearish index vs bullish leadership",
+          "QQQ walls: call=730.0, put=690.0",
+          "QQQ strength=0.5052 score=0.2821"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "NEUTRAL",
+      "setup": "wait_for_long_confirmation",
+      "day_type": "mixed",
+      "confidence": "LOW",
+      "qqq_spot": 701.85,
+      "qqq_watch_above": 730.0,
+      "qqq_watch_below": 690.0,
+      "nq_watch_above": 30285.61,
+      "nq_watch_below": 28626.13,
+      "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+      "invalidation_note": "Stand aside until structure improves."
+    }
+  },
+  "apmem": {
+    "state": "SLIGHT_EXPANSION",
+    "bias": "WAIT",
+    "size_mult": 0.7,
+    "vol": 0.7544,
+    "trend": 2.0739,
+    "accel": 2.0113,
+    "transition": "SLIGHT_EXPANSION_HOLD",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "nq_native",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "AMZN",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.7768,
+      "size_mult": 0.7,
+      "apmem_state": "CALM",
+      "regime_score": 59,
+      "alignment": "soft"
+    }
+  }
+}

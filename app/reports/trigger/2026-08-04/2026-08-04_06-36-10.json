@@ -1,0 +1,161 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 711.76,
+    "vwap": 710.25,
+    "or_high": 711.76,
+    "or_low": 707.13,
+    "entry_ref": 709.98,
+    "stop": 679.45,
+    "target_1": 709.42,
+    "target_2": 718.99,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.55
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.5699,
+      "index_strength": 0.4096,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=TSLA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=710.0, put=680.0",
+        "QQQ strength=0.4096 score=0.5699"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "TSLA",
+          "MSFT",
+          "AMZN",
+          "GOOGL",
+          "NVDA",
+          "META",
+          "AAPL"
+        ],
+        "laggards": [],
+        "top_pick": "TSLA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 712.34,
+        "qqq_call_wall": 710.0,
+        "qqq_put_wall": 680.0,
+        "qqq_zero_gamma": 719.58,
+        "qqq_net_gex_b": 2.4349,
+        "qqq_dist_to_flip_pct": -1.016,
+        "target_1": 710.0,
+        "target_2": 719.58,
+        "invalidation": 680.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "TSLA",
+          "MSFT",
+          "AMZN"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=TSLA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=710.0, put=680.0",
+          "QQQ strength=0.4096 score=0.5699"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 710.56,
+      "qqq_stop": 680.0,
+      "qqq_target_1": 710.0,
+      "qqq_target_2": 719.58,
+      "nq_entry_ref": 709.98,
+      "nq_stop": 679.45,
+      "nq_target_1": 709.42,
+      "nq_target_2": 718.99,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "VOL_EXPANSION",
+    "bias": "SMALL_SIZE",
+    "size_mult": 0.55,
+    "vol": 0.2821,
+    "trend": 0.0962,
+    "accel": -0.0135,
+    "transition": "CALM_TO_VOL_EXPANSION",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "TSLA",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.6605,
+      "size_mult": 1.5,
+      "apmem_state": "RECOVERY",
+      "regime_score": 82,
+      "alignment": "strong"
+    }
+  }
+}

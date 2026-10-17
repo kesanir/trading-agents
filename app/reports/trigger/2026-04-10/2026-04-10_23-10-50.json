@@ -1,0 +1,151 @@
+{
+  "trade_triggered": true,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": true,
+    "trigger_type": "opening_range_breakout_long",
+    "reasons": [
+      "Price is above VWAP",
+      "Price is above OR high"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP",
+    "Price is above OR high"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 611.65,
+    "vwap": 610.73,
+    "or_high": 610.37,
+    "or_low": 609.64,
+    "entry_ref": 610.12,
+    "stop": 582.0,
+    "target_1": 620.0,
+    "target_2": null,
+    "setup": "opening_range_breakout_long",
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.4847,
+      "index_strength": 0.4285,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=GOOGL",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=620.0, put=582.0",
+        "QQQ strength=0.4285 score=0.4847"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "GOOGL",
+          "META",
+          "AAPL",
+          "NVDA",
+          "AMZN",
+          "MSFT",
+          "TSLA"
+        ],
+        "laggards": [],
+        "top_pick": "GOOGL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 611.65,
+        "qqq_call_wall": 620.0,
+        "qqq_put_wall": 582.0,
+        "qqq_zero_gamma": 614.53,
+        "qqq_net_gex_b": 2.9662,
+        "qqq_dist_to_flip_pct": -0.471,
+        "target_1": 620.0,
+        "target_2": null,
+        "invalidation": 582.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "GOOGL",
+          "META",
+          "AAPL"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=GOOGL",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=620.0, put=582.0",
+          "QQQ strength=0.4285 score=0.4847"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 610.12,
+      "qqq_stop": 582.0,
+      "qqq_target_1": 620.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 610.12,
+      "nq_stop": 582.0,
+      "nq_target_1": 620.0,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "auto_execution": {
+    "timestamp": "2026-04-10T23:10:50.411789-07:00",
+    "ticker": "AAPL",
+    "intent": {
+      "ticker": "AAPL",
+      "direction": "bullish",
+      "score": 0.598,
+      "size_mult": 1.15
+    },
+    "sizing": {
+      "contracts": 3,
+      "risk_capital": 643.54,
+      "confidence_factor": 1.2
+    },
+    "success": true,
+    "order_id": "5e77f6e0-fce4-4dfd-a761-dabc8e615289",
+    "error": null
+  }
+}

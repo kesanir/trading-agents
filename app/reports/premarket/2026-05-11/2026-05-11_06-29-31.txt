@@ -1,0 +1,84 @@
+
+
+##### PREMARKET REPORT | 2026-05-11 06:29:31 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 710.33
+Regime: POSITIVE
+Score: 0.5530
+Strength: 0.6088
+Net GEX (B): 2.0901
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 17.19  (Pct: 0.51)
+VIX Change: 1.05
+APMEM Vol: 0.1411
+APMEM Trend: -0.0137
+Regime Score: 80/100
+Regime: STRONG_LONG
+Bias: LONG
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.5380
+Expected Move: 20.00
+Expected Range: 690.33 - 730.33
+
+=== KEY LEVELS ===
+Call Wall: 710.00
+Put Wall: 650.00
+Zero Gamma: 699.62
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: TSLA, AAPL, NVDA, AMZN, GOOGL, MSFT
+Laggards: META
+Top Pick: TSLA
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+TSLA   | POSITIVE | 424.08  | 0.5009  | 0.5609/-0.0600 | 1.15x | 450.00/380.00 | 11.94    | 412.14-436.02
+AAPL   | POSITIVE | 293.03  | 0.4282  | 0.4882/-0.0600 | 1.15x | 300.00/245.00 | 4.40     | 288.63-297.43
+NVDA   | POSITIVE | 213.44  | 0.4112  | 0.4712/-0.0600 | 1.15x | 220.00/160.00 | 5.62     | 207.82-219.06
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-On → favor LONG continuation setups and allow slightly larger size.
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Above Call Wall Breakout Risk
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 80)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=710.33
+- QQQ regime=positive
+- QQQ net_gex_b=2.0901
+- QQQ walls call=710.0 put=650.0
+- QQQ zero_gamma=699.62
+- VIX=18.24 change=1.05 vol_regime=strong_long
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=TSLA, AAPL, NVDA
+- Laggards=META
+- Expected move=20.0 range=690.33 - 730.33
+- Global regime score=80 bias=LONG regime=STRONG_LONG
+- APMEM vol=0.1411 trend=-0.0137 vix_pct=0.51

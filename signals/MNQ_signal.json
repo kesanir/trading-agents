@@ -1,0 +1,21 @@
+{
+  "instrument": "MNQ",
+  "timestamp": "2026-04-27T17:15:49.089692Z",
+  "date": "2026-04-27",
+  "signal": 0.0,
+  "position": "LONG",
+  "contracts": 7,
+  "confidence": 0.0,
+  "vol_scale": 1.0,
+  "current_vol": 0.0683,
+  "features": {
+    "price": 663.44,
+    "vwap": 662.44,
+    "or_high": 664.87,
+    "or_low": 660.71,
+    "apmem_trend": -0.069,
+    "apmem_accel": 0.2516
+  },
+  "status": "PENDING",
+  "expiry_mins": 30
+}

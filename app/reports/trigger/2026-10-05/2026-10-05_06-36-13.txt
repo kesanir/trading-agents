@@ -1,0 +1,98 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-05 06:36:13 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 751.82
+VWAP: 750.18
+OR High: 751.82
+OR Low: 747.83
+Entry Ref: 749.94
+Stop: 725.07
+Target 1: 760.07
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: CALM
+Bias: TREND_FOLLOW
+Size Mult: 1.00
+Vol: 0.0922
+Trend: -0.0243
+Accel: 0.1053
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev State: CALM
+Transition: CALM_HOLD
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.0922
+Trend: -0.0243
+Accel: 0.1053
+Size Mult: 1.0
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'MSFT', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5631, 'size_mult': 0.83, 'apmem_state': 'NEUTRAL', 'regime_score': 30, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -382.4% >= -25% | credit=85.00 cost=410.00', 'result': [{'symbol': 'FTNT261120P00180000', 'status': 'closed', 'order_id': UUID('2ff765df-4f41-480b-b246-6d8cfb15e700')}, {'symbol': 'FTNT261120P00175000', 'status': 'closed', 'order_id': UUID('da12a50b-4283-481a-bda2-999533dde049')}]}
+{'underlying': 'INTC', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -36.8% >= -25% | credit=680.00 cost=930.00', 'result': [{'symbol': 'INTC261120P00120000', 'status': 'closed', 'order_id': UUID('4b71997d-8fb7-4bba-bd74-26f40e4f85db')}, {'symbol': 'INTC261120P00115000', 'status': 'closed', 'order_id': UUID('b21aca3f-e033-4488-bc30-a9b50f7e6ebf')}]}
+{'underlying': 'MRVL', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -76.5% >= -25% | credit=340.00 cost=600.00', 'result': [{'symbol': 'MRVL261120P00270000', 'status': 'closed', 'order_id': UUID('85c30378-e861-4eee-9800-49cefb9de2e5')}, {'symbol': 'MRVL261120P00260000', 'status': 'closed', 'order_id': UUID('5a4731b3-fc47-4e3a-b1e8-5a294df1c3b8')}]}

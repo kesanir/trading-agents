@@ -1,0 +1,105 @@
+##### STATE CHANGE | 2026-06-09 07:30:49 #####
+Signal ID: 06ad317f
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: PANIC
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_TO_PANIC
+Signal: RISK_OFF
+Bias: WAIT_OR_SHORT
+Vol: 0.5653
+Trend: 0.918
+Accel: 0.5588
+Size Mult: 0.3
+Gate Note: Applied intraday APMEM size multiplier: 0.3
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        740.52
+Regime:      NEGATIVE
+Net GEX:     -1.2077B  (-0.1166B)
+Zero Gamma:  502.50  (shift: +0.00)
+Call Wall:   748.00
+Put Wall:    720.00
+Dist Flip:   32.142%
+Contracts:   684
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 715.82
+VWAP: 720.25
+OR High: 725.13
+OR Low: 720.50
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.5653
+Trend: 0.9180
+Accel: 0.5588
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active

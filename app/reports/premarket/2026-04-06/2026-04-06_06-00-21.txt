@@ -1,0 +1,71 @@
+
+
+##### PREMARKET REPORT | 2026-04-06 06:00:21 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 587.10
+Regime: POSITIVE
+Score: 0.0509
+Strength: 0.0848
+Net GEX (B): 0.3202
+
+=== VOLATILITY CONTEXT ===
+VIX: 24.90
+VIX Change: 1.03
+Vol Regime: HIGH_VOL
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3973
+Expected Move: 12.21
+Expected Range: 574.89 - 599.31
+
+=== KEY LEVELS ===
+Call Wall: 600.00
+Put Wall: 570.00
+Zero Gamma: 624.77
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: AMZN, NVDA, AAPL, GOOGL, MSFT, META
+Laggards: TSLA
+Top Pick: AMZN
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Call/Put | Exp Move | Range
+------------------------------------------------------------------------
+AMZN   | POSITIVE | 209.64  | 0.5996  | 220.00/195.00 | 4.36     | 205.28-214.00
+NVDA   | POSITIVE | 177.31  | 0.5602  | 185.00/170.00 | 3.78     | 173.53-181.09
+AAPL   | POSITIVE | 255.89  | 0.3708  | 265.00/250.00 | 4.09     | 251.80-259.98
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Inside Wall Range
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== NOTES ===
+- QQQ spot=587.1
+- QQQ regime=positive
+- QQQ net_gex_b=0.3202
+- QQQ walls call=600.0 put=570.0
+- QQQ zero_gamma=624.77
+- VIX=24.9 change=1.03 vol_regime=high_vol
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=AMZN, NVDA, AAPL
+- Laggards=TSLA
+- Expected move=12.21 range=574.89 - 599.31

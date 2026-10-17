@@ -1,0 +1,75 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-23 06:36:28 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: SHORT
+Lean: BEARISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: SHORT
+Current Price: 716.85
+VWAP: 715.56
+OR High: 717.24
+OR Low: 713.36
+Entry Ref: 718.64
+Stop: 751.11
+Target 1: 701.04
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Sell failed pops / VWAP rejection / lower-high confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Reclaim resistance / upside breadth expansion / leaders squeeze higher.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.8069
+Trend: 0.9964
+Accel: 1.0434
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=SHORT
+- Lean=BEARISH
+- Confidence=HIGH
+- Day type=trend
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.8069
+Trend: 0.9964
+Accel: 1.0434
+Size Mult: 0.7

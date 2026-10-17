@@ -1,0 +1,14 @@
+[
+  {
+    "timestamp": "2026-04-10T23:10:50.411847-07:00",
+    "ticker": "AAPL",
+    "direction": "bullish",
+    "strategy": null,
+    "score": 0.598,
+    "size_mult": 1.15,
+    "contracts": 3,
+    "risk_capital": 643.54,
+    "order_id": "5e77f6e0-fce4-4dfd-a761-dabc8e615289",
+    "status": "submitted"
+  }
+]

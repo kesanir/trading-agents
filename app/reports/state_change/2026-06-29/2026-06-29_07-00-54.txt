@@ -1,0 +1,110 @@
+##### STATE CHANGE | 2026-06-29 07:00:54 #####
+Signal ID: 67627cc7
+
+=== STATE CHANGE ALERT ===
+
+bias: SHORT → NEUTRAL
+lean: BEARISH → BULLISH
+confidence: HIGH → LOW
+day_type: trend → mixed
+trigger_type: None → watch_long_confirmation
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: PANIC
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_TO_PANIC
+Signal: RISK_OFF
+Bias: WAIT_OR_SHORT
+Vol: 0.9665
+Trend: 2.241
+Accel: 2.0292
+Size Mult: 0.3
+Gate Note: Applied intraday APMEM size multiplier: 0.3
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        735.97
+Regime:      NEGATIVE
+Net GEX:     -2.1913B  (-0.6113B)
+Zero Gamma:  N/A
+Call Wall:   743.00
+Put Wall:    735.00  (was 740.00)
+Dist Flip:   N/A%
+Contracts:   1018
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 713.27
+VWAP: 715.35
+OR High: 718.61
+OR Low: 711.97
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.9665
+Trend: 2.2410
+Accel: 2.0292
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active

@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-09-10 06:18:30 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 706.80
+Regime: NEGATIVE
+Score: 0.3742
+Strength: 0.6354
+Net GEX (B): -7.9115
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 16.46  (Pct: 0.36)
+VIX Change: 1.16
+APMEM Vol: 0.1371
+APMEM Trend: 0.0054
+Regime Score: 40/100
+Regime: LEAN_SHORT
+Bias: LIGHT_SHORT
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3345
+Expected Move: 12.38
+Expected Range: 694.42 - 719.18
+
+=== KEY LEVELS ===
+Call Wall: 730.00
+Put Wall: 700.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: AAPL, META, MSFT, NVDA, AMZN
+Laggards: GOOGL, TSLA
+Top Pick: AAPL
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+AAPL   | POSITIVE | 317.24  | 0.6349  | 0.6549/-0.0200 | 1.00x | 320.00/300.00 | 5.55     | 311.69-322.79
+META   | POSITIVE | 650.50  | 0.4543  | 0.4743/-0.0200 | 1.00x | 650.00/550.00 | 15.68    | 634.82-666.18
+MSFT   | POSITIVE | 491.65  | 0.3195  | 0.3395/-0.0200 | 1.00x | 510.00/485.00 | 8.10     | 483.55-499.75
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== GLOBAL TRADE BIAS ===
+Moderate Risk-Off → lean SHORT, reduce aggressive longs.
+
+=== MARKET READ ===
+Market Condition: Mixed Cross Current
+Opening Scenario: Inside Wall Range
+Playbook: Wait For Reclaim Then Selective Longs
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 40)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=706.8
+- QQQ regime=negative
+- QQQ net_gex_b=-7.9115
+- QQQ walls call=730.0 put=700.0
+- VIX=17.62 change=1.16 vol_regime=lean_short
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=AAPL, META, MSFT
+- Laggards=GOOGL, TSLA
+- Expected move=12.38 range=694.42 - 719.18
+- Global regime score=40 bias=LIGHT_SHORT regime=LEAN_SHORT
+- APMEM vol=0.1371 trend=0.0054 vix_pct=0.36
+
+=== TRADE INTENT ===
+{'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6349, 'size_mult': 0.5, 'apmem_state': 'NEUTRAL', 'regime_score': 40, 'alignment': 'soft'}

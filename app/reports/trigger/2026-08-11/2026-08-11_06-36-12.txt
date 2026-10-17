@@ -1,0 +1,79 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-11 06:36:12 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 720.93
+VWAP: 721.81
+OR High: 723.20
+OR Low: 720.59
+Entry Ref: 719.13
+Stop: 680.92
+Target 1: 730.98
+Target 2: 740.41
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1056
+Trend: 0.1930
+Accel: 0.2510
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1056
+Trend: 0.193
+Accel: 0.251
+Size Mult: 0.8
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'symbol': 'TXN260918C00285000', 'reason': 'stop_loss'}

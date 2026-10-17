@@ -1,0 +1,100 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-13 06:36:14 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 716.12
+VWAP: 717.43
+OR High: 718.25
+OR Low: 716.07
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.3736
+Trend: 0.5709
+Accel: 0.4170
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.3736
+Trend: 0.5709
+Accel: 0.417
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'MSFT', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.696, 'size_mult': 1.06, 'apmem_state': 'RECOVERY', 'regime_score': 92, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'CRWD', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -3100.0% >= -25% | credit=15.00 cost=480.00', 'result': [{'symbol': 'CRWD260821C00185000', 'status': 'closed', 'order_id': UUID('ad1eaf46-1848-48ba-aa57-8b5f165000a4')}, {'symbol': 'CRWD260821C00190000', 'status': 'closed', 'order_id': UUID('bb1ee3f3-1508-4b9e-b49a-2c99d7792ad2')}]}
+{'symbol': 'CRWD260821C00205000', 'reason': 'stop_loss'}

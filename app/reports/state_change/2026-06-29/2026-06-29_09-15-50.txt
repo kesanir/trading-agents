@@ -1,0 +1,109 @@
+##### STATE CHANGE | 2026-06-29 09:15:50 #####
+Signal ID: 1aca2504
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.2139
+Trend: -0.3362
+Accel: 0.1709
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        738.62
+Regime:      NEGATIVE
+Net GEX:     -1.9589B  (+0.0381B)
+Zero Gamma:  N/A
+Call Wall:   743.00
+Put Wall:    740.00
+Dist Flip:   N/A%
+Contracts:   1018
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 719.04
+VWAP: 714.12
+OR High: 718.61
+OR Low: 711.97
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2139
+Trend: -0.3362
+Accel: 0.1709
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+- Price is above OR high

@@ -1,0 +1,149 @@
+{
+  "trade_triggered": false,
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "scalp_allowed": false,
+  "caution": true,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": "watch_long_confirmation",
+    "reasons": [
+      "Higher timeframe is neutral",
+      "Bullish lean active",
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=NEUTRAL",
+    "Lean=BULLISH",
+    "Confidence=LOW",
+    "Day type=mixed",
+    "Caution flag is active",
+    "Higher timeframe is neutral",
+    "Bullish lean active",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "BULLISH",
+    "current_price": 717.05,
+    "vwap": 716.1,
+    "or_high": 717.35,
+    "or_low": 713.68,
+    "entry_ref": null,
+    "stop": null,
+    "target_1": null,
+    "target_2": null,
+    "setup": "watch_long_confirmation",
+    "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+    "invalidation_note": "Stand aside until structure improves.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": false,
+    "bias": "NEUTRAL",
+    "lean": "BULLISH",
+    "confidence": "LOW",
+    "day_type": "mixed",
+    "caution": true,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.1151,
+      "index_strength": 0.1581,
+      "bias": "NEUTRAL",
+      "lean": "BULLISH",
+      "confidence": "LOW",
+      "day_type": "mixed",
+      "trade_allowed": false,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=6, negative=1, top_pick=NVDA",
+        "Mixed tape: bearish index vs bullish leadership",
+        "QQQ walls: call=730.0, put=700.0",
+        "QQQ strength=0.1581 score=0.1151"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "NVDA",
+          "TSLA",
+          "AAPL",
+          "META",
+          "MSFT",
+          "AMZN"
+        ],
+        "laggards": [
+          "GOOGL"
+        ],
+        "top_pick": "NVDA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "NEUTRAL",
+        "lean": "BULLISH",
+        "confidence": "LOW",
+        "day_type": "mixed",
+        "playbook": "wait_for_long_confirmation",
+        "qqq_spot": 717.17,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -1.3601,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": null,
+        "target_2": null,
+        "invalidation": null,
+        "entry_note": "Mixed tape with bullish lean. Wait for VWAP reclaim / opening range strength.",
+        "mag7_top_positive": [
+          "NVDA",
+          "TSLA",
+          "AAPL"
+        ],
+        "mag7_top_negative": [
+          "GOOGL"
+        ],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=6, negative=1, top_pick=NVDA",
+          "Mixed tape: bearish index vs bullish leadership",
+          "QQQ walls: call=730.0, put=700.0",
+          "QQQ strength=0.1581 score=0.1151"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "NEUTRAL",
+      "setup": "wait_for_long_confirmation",
+      "day_type": "mixed",
+      "confidence": "LOW",
+      "qqq_spot": 717.17,
+      "qqq_watch_above": 730.0,
+      "qqq_watch_below": 700.0,
+      "nq_watch_above": 729.88,
+      "nq_watch_below": 699.88,
+      "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+      "invalidation_note": "Stand aside until structure improves."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.1437,
+    "trend": -0.0214,
+    "accel": -0.2858,
+    "transition": "NEUTRAL_HOLD",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy"
+}

@@ -1,0 +1,70 @@
+
+
+##### PREMARKET REPORT | 2026-04-08 06:00:32 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 608.82
+Regime: POSITIVE
+Score: 0.6263
+Strength: 0.6518
+Net GEX (B): 6.4179
+
+=== VOLATILITY CONTEXT ===
+VIX: 20.47
+VIX Change: -5.31
+Vol Regime: HIGH_VOL
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3619
+Expected Move: 11.53
+Expected Range: 597.29 - 620.35
+
+=== KEY LEVELS ===
+Call Wall: 610.00
+Put Wall: 588.00
+Zero Gamma: 605.33
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: AAPL, META, MSFT, TSLA, NVDA, AMZN, GOOGL
+Laggards: None
+Top Pick: AAPL
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Call/Put | Exp Move | Range
+------------------------------------------------------------------------
+AAPL   | POSITIVE | 258.89  | 0.6584  | 260.00/245.00 | 4.90     | 253.99-263.79
+META   | POSITIVE | 605.00  | 0.6441  | 600.00/550.00 | 18.39    | 586.61-623.39
+MSFT   | POSITIVE | 372.05  | 0.6353  | 385.00/350.00 | 7.85     | 364.20-379.90
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Inside Wall Range
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== NOTES ===
+- QQQ spot=608.82
+- QQQ regime=positive
+- QQQ net_gex_b=6.4179
+- QQQ walls call=610.0 put=588.0
+- QQQ zero_gamma=605.33
+- VIX=20.47 change=-5.31 vol_regime=high_vol
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=AAPL, META, MSFT
+- Expected move=11.53 range=597.29 - 620.35

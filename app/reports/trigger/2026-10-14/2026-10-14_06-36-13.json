@@ -1,0 +1,171 @@
+{
+  "trade_triggered": false,
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "scalp_allowed": false,
+  "caution": true,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": "watch_long_confirmation",
+    "reasons": [
+      "Higher timeframe is neutral",
+      "Bullish lean active"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=NEUTRAL",
+    "Lean=BULLISH",
+    "Confidence=LOW",
+    "Day type=mixed",
+    "Caution flag is active",
+    "Higher timeframe is neutral",
+    "Bullish lean active"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "BULLISH",
+    "current_price": 737.99,
+    "vwap": 737.99,
+    "or_high": 743.87,
+    "or_low": 737.0,
+    "entry_ref": null,
+    "stop": null,
+    "target_1": null,
+    "target_2": null,
+    "setup": "watch_long_confirmation",
+    "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+    "invalidation_note": "Stand aside until structure improves.",
+    "size_mult": 0.55
+  },
+  "higher_timeframe": {
+    "scalp_allowed": false,
+    "bias": "NEUTRAL",
+    "lean": "BULLISH",
+    "confidence": "LOW",
+    "day_type": "mixed",
+    "caution": true,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.2273,
+      "index_strength": 0.4477,
+      "bias": "NEUTRAL",
+      "lean": "BULLISH",
+      "confidence": "LOW",
+      "day_type": "mixed",
+      "trade_allowed": false,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=GOOGL",
+        "Mixed tape: bearish index vs bullish leadership",
+        "QQQ walls: call=760.0, put=725.0",
+        "QQQ strength=0.4477 score=0.2273"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "GOOGL",
+          "AMZN",
+          "AAPL",
+          "MSFT",
+          "NVDA",
+          "META",
+          "TSLA"
+        ],
+        "laggards": [],
+        "top_pick": "GOOGL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "NEUTRAL",
+        "lean": "BULLISH",
+        "confidence": "LOW",
+        "day_type": "mixed",
+        "playbook": "wait_for_long_confirmation",
+        "qqq_spot": 737.3,
+        "qqq_call_wall": 760.0,
+        "qqq_put_wall": 725.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -4.486,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": null,
+        "target_2": null,
+        "invalidation": null,
+        "entry_note": "Mixed tape with bullish lean. Wait for VWAP reclaim / opening range strength.",
+        "mag7_top_positive": [
+          "GOOGL",
+          "AMZN",
+          "AAPL"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=GOOGL",
+          "Mixed tape: bearish index vs bullish leadership",
+          "QQQ walls: call=760.0, put=725.0",
+          "QQQ strength=0.4477 score=0.2273"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "NEUTRAL",
+      "setup": "wait_for_long_confirmation",
+      "day_type": "mixed",
+      "confidence": "LOW",
+      "qqq_spot": 737.3,
+      "qqq_watch_above": 760.0,
+      "qqq_watch_below": 725.0,
+      "nq_watch_above": 760.71,
+      "nq_watch_below": 725.68,
+      "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+      "invalidation_note": "Stand aside until structure improves."
+    }
+  },
+  "apmem": {
+    "state": "VOL_EXPANSION",
+    "bias": "SMALL_SIZE",
+    "size_mult": 0.55,
+    "vol": 0.2487,
+    "trend": 0.2634,
+    "accel": 0.7422,
+    "transition": "CALM_TO_VOL_EXPANSION",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "GOOGL",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.73,
+      "size_mult": 1.06,
+      "apmem_state": "RECOVERY",
+      "regime_score": 92,
+      "alignment": "soft"
+    }
+  },
+  "auto_exits": [
+    {
+      "symbol": "ADI261120P00400000",
+      "reason": "stop_loss"
+    },
+    {
+      "symbol": "CMCSA261120C00025000",
+      "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+    }
+  ]
+}

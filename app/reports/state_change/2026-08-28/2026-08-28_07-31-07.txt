@@ -1,0 +1,107 @@
+##### STATE CHANGE | 2026-08-28 07:31:07 #####
+Signal ID: ffa5d81d
+
+=== STATE CHANGE ALERT ===
+
+bias: NEUTRAL → LONG
+confidence: LOW → HIGH
+day_type: mixed → trend
+trigger_type: watch_long_confirmation → None
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: False
+trigger_type: None
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1916
+Trend: 0.2679
+Accel: -0.2644
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.65
+Size: 10 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 18.2 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        771.12
+Regime:      POSITIVE
+Net GEX:     0.0000B  (+0.0000B)
+Zero Gamma:  502.50  (shift: +0.00)
+Call Wall:   N/A
+Put Wall:    N/A
+Dist Flip:   34.835%
+Contracts:   354
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 720.06
+VWAP: 719.64
+OR High: 721.41
+OR Low: 718.26
+Entry Ref: 718.26
+Stop: 700.04
+Target 1: 730.04
+Target 2: 734.17
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1916
+Trend: 0.2679
+Accel: -0.2644
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP

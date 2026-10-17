@@ -1,0 +1,96 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-02 06:36:12 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 750.65
+VWAP: 750.38
+OR High: 752.59
+OR Low: 746.38
+Entry Ref: 748.77
+Stop: 725.08
+Target 1: 760.08
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2390
+Trend: 0.0041
+Accel: 0.2184
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.239
+Trend: 0.0041
+Accel: 0.2184
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'TSLA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6182, 'size_mult': 0.83, 'apmem_state': 'NEUTRAL', 'regime_score': 30, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -355.6% >= -25% | credit=90.00 cost=410.00', 'result': [{'symbol': 'FTNT261120P00180000', 'status': 'closed', 'order_id': UUID('396441ec-f989-447b-af23-3cd43bbc8647')}, {'symbol': 'FTNT261120P00175000', 'status': 'closed', 'order_id': UUID('ac98eba1-caf3-4266-9d2f-9da905769b62')}]}

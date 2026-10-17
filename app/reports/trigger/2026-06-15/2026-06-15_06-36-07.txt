@@ -1,0 +1,100 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-15 06:36:07 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 738.70
+VWAP: 738.69
+OR High: 739.49
+OR Low: 736.04
+Entry Ref: 736.85
+Stop: 699.24
+Target 1: 739.20
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.4232
+Trend: 0.1992
+Accel: -0.0987
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.4232
+Trend: 0.1992
+Accel: -0.0987
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'TSLA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5911, 'size_mult': 0.83, 'apmem_state': 'NEUTRAL', 'regime_score': 20, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'NVDA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -74.1% >= -25% | credit=201.00 cost=350.00', 'result': [{'symbol': 'NVDA260622C00205000', 'status': 'closed', 'order_id': UUID('ed617590-e801-46c6-a43e-86d10d49cd11')}, {'symbol': 'NVDA260622C00210000', 'status': 'closed', 'order_id': UUID('96beeeb5-8dba-48f4-9f14-3b6f0529a7e7')}]}
+{'underlying': 'ROST', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -307.1% >= -25% | credit=140.00 cost=570.00', 'result': [{'symbol': 'ROST260717P00240000', 'status': 'closed', 'order_id': UUID('aac64936-e651-4c50-86ca-e4bab5b46fde')}, {'symbol': 'ROST260717P00230000', 'status': 'closed', 'order_id': UUID('8499afee-f48f-45ef-8092-610d92c571f2')}]}
+{'underlying': 'SBUX', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -54.2% >= -25% | credit=216.00 cost=333.00', 'result': [{'symbol': 'SBUX260717P00105000', 'status': 'closed', 'order_id': UUID('2cfd5c36-c047-42ca-a91f-8d78350a8bd8')}, {'symbol': 'SBUX260717P00100000', 'status': 'closed', 'order_id': UUID('b63fd405-477b-4858-8305-649c04c7b6ae')}]}
+{'underlying': 'TSLA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -109.5% >= -25% | credit=420.00 cost=880.00', 'result': [{'symbol': 'TSLA260622C00400000', 'status': 'closed', 'order_id': UUID('89b38287-6990-4591-836e-805ffc0b0220')}, {'symbol': 'TSLA260622C00410000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}
+{'underlying': 'TSLA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -62.2% >= -25% | credit=185.00 cost=300.00', 'result': [{'symbol': 'TSLA260717C00405000', 'status': 'closed', 'order_id': UUID('b7fad0fd-62a2-4e4c-afe6-6996225daa86')}, {'symbol': 'TSLA260717C00410000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}

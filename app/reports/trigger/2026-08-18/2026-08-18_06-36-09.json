@@ -1,0 +1,184 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "watch",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=watch",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 720.07,
+    "vwap": 720.03,
+    "or_high": 721.75,
+    "or_low": 718.79,
+    "entry_ref": 718.27,
+    "stop": 719.34,
+    "target_1": 734.33,
+    "target_2": 758.64,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.3
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "watch",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.0426,
+      "index_strength": 0.1042,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "watch",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=6, negative=1, top_pick=NVDA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=735.0, put=720.0",
+        "QQQ strength=0.1042 score=0.0426"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "NVDA",
+          "AMZN",
+          "AAPL",
+          "MSFT",
+          "TSLA",
+          "GOOGL"
+        ],
+        "laggards": [
+          "META"
+        ],
+        "top_pick": "NVDA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "watch",
+        "playbook": "buy_dips",
+        "qqq_spot": 720.73,
+        "qqq_call_wall": 735.0,
+        "qqq_put_wall": 720.0,
+        "qqq_zero_gamma": 759.34,
+        "qqq_net_gex_b": 0.6771,
+        "qqq_dist_to_flip_pct": -5.358,
+        "target_1": 735.0,
+        "target_2": 759.34,
+        "invalidation": 720.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "NVDA",
+          "AMZN",
+          "AAPL"
+        ],
+        "mag7_top_negative": [
+          "META"
+        ],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=6, negative=1, top_pick=NVDA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=735.0, put=720.0",
+          "QQQ strength=0.1042 score=0.0426"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "watch",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 718.93,
+      "qqq_stop": 720.0,
+      "qqq_target_1": 735.0,
+      "qqq_target_2": 759.34,
+      "nq_entry_ref": 718.27,
+      "nq_stop": 719.34,
+      "nq_target_1": 734.33,
+      "nq_target_2": 758.64,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "PANIC",
+    "bias": "WAIT_OR_SHORT",
+    "size_mult": 0.3,
+    "vol": 0.3972,
+    "trend": 0.8132,
+    "accel": 0.8313,
+    "transition": "NEUTRAL_TO_PANIC",
+    "blocked": true,
+    "block_reason": "APMEM panic regime"
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "AAPL",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.6873,
+      "size_mult": 0.5,
+      "apmem_state": "NEUTRAL",
+      "regime_score": 65,
+      "alignment": "soft"
+    }
+  },
+  "auto_exits": [
+    {
+      "underlying": "GOOGL",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -345.5% >= -25% | credit=55.00 cost=245.00",
+      "result": [
+        {
+          "symbol": "GOOGL260918C00345000",
+          "status": "closed",
+          "order_id": "b4a285b1-8206-46b5-88c6-55783415d913"
+        },
+        {
+          "symbol": "GOOGL260918C00350000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    }
+  ]
+}

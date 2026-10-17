@@ -1,0 +1,344 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 722.11,
+    "vwap": 721.03,
+    "or_high": 722.5,
+    "or_low": 719.54,
+    "entry_ref": 720.31,
+    "stop": 680.7,
+    "target_1": 730.75,
+    "target_2": 735.21,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.55
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.4286,
+      "index_strength": 0.4137,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=AAPL",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=730.0, put=680.0",
+        "QQQ strength=0.4137 score=0.4286"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AAPL",
+          "NVDA",
+          "MSFT",
+          "AMZN",
+          "GOOGL",
+          "META",
+          "TSLA"
+        ],
+        "laggards": [],
+        "top_pick": "AAPL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 721.37,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 680.0,
+        "qqq_zero_gamma": 734.46,
+        "qqq_net_gex_b": 2.2898,
+        "qqq_dist_to_flip_pct": -1.815,
+        "target_1": 730.0,
+        "target_2": 734.46,
+        "invalidation": 680.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "AAPL",
+          "NVDA",
+          "MSFT"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=AAPL",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=730.0, put=680.0",
+          "QQQ strength=0.4137 score=0.4286"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 719.57,
+      "qqq_stop": 680.0,
+      "qqq_target_1": 730.0,
+      "qqq_target_2": 734.46,
+      "nq_entry_ref": 720.31,
+      "nq_stop": 680.7,
+      "nq_target_1": 730.75,
+      "nq_target_2": 735.21,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "VOL_EXPANSION",
+    "bias": "SMALL_SIZE",
+    "size_mult": 0.55,
+    "vol": 0.2425,
+    "trend": 0.2607,
+    "accel": -0.0034,
+    "transition": "NEUTRAL_TO_VOL_EXPANSION",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_exits": [
+    {
+      "underlying": "ADBE",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -117.6% >= -25% | credit=170.00 cost=370.00",
+      "result": [
+        {
+          "symbol": "ADBE260918P00260000",
+          "status": "closed",
+          "order_id": "8f009a55-830d-4e6b-8353-8c199f77f99d"
+        },
+        {
+          "symbol": "ADBE260918P00255000",
+          "status": "closed",
+          "order_id": "b29ca4f1-7b8f-41ae-81d4-c3dc7d5b4539"
+        }
+      ]
+    },
+    {
+      "underlying": "ADP",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -117.6% >= -25% | credit=340.00 cost=740.00",
+      "result": [
+        {
+          "symbol": "ADP260918P00270000",
+          "status": "closed",
+          "order_id": "14b34a7b-9534-4bb6-89a4-5896875df249"
+        },
+        {
+          "symbol": "ADP260918P00260000",
+          "status": "closed",
+          "order_id": "d224f619-1ea5-43dd-8dc5-a47dda904461"
+        }
+      ]
+    },
+    {
+      "underlying": "CSCO",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -67.6% >= -25% | credit=170.00 cost=285.00",
+      "result": [
+        {
+          "symbol": "CSCO260918P00120000",
+          "status": "closed",
+          "order_id": "f4dfc984-7767-4a8a-b05f-dbd8a3d1804f"
+        },
+        {
+          "symbol": "CSCO260918P00115000",
+          "status": "closed",
+          "order_id": "86a200b2-da37-4966-a9fa-d18d95886090"
+        }
+      ]
+    },
+    {
+      "underlying": "FAST",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -72.2% >= -25% | credit=90.00 cost=155.00",
+      "result": [
+        {
+          "symbol": "FAST260918P00050000",
+          "status": "closed",
+          "order_id": "922a8e3e-d00b-4b45-a560-96943659cb76"
+        },
+        {
+          "symbol": "FAST260918P00045000",
+          "status": "closed",
+          "order_id": "b7803546-28ba-45f8-a39e-7f0acc58c132"
+        }
+      ]
+    },
+    {
+      "underlying": "FTNT",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -239.3% >= -25% | credit=140.00 cost=475.00",
+      "result": [
+        {
+          "symbol": "FTNT260918P00165000",
+          "status": "closed",
+          "order_id": "ffbfe37d-03ac-428a-9f7b-efbfa7fe8936"
+        },
+        {
+          "symbol": "FTNT260918P00160000",
+          "status": "closed",
+          "order_id": "4a41c4ac-1f2e-4833-a541-e20de98a8fa8"
+        }
+      ]
+    },
+    {
+      "underlying": "GEHC",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -60.6% >= -25% | credit=165.00 cost=265.00",
+      "result": [
+        {
+          "symbol": "GEHC260918P00070000",
+          "status": "closed",
+          "order_id": "8aae94ca-7777-4976-8bd6-ef044e5bcb6f"
+        },
+        {
+          "symbol": "GEHC260918P00065000",
+          "status": "closed",
+          "order_id": "ff17698e-a3d3-4aab-85f5-5c3a00998423"
+        }
+      ]
+    },
+    {
+      "underlying": "MDLZ",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -47.7% >= -25% | credit=220.00 cost=325.00",
+      "result": [
+        {
+          "symbol": "MDLZ260918P00065000",
+          "status": "closed",
+          "order_id": "aa864112-259d-4f25-bcc5-aff78a335384"
+        },
+        {
+          "symbol": "MDLZ260918P00060000",
+          "status": "closed",
+          "order_id": "284789c7-243e-473d-b74e-c13b69dcff5e"
+        }
+      ]
+    },
+    {
+      "underlying": "TEAM",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -90.0% >= -25% | credit=150.00 cost=285.00",
+      "result": [
+        {
+          "symbol": "TEAM260918P00115000",
+          "status": "closed",
+          "order_id": "b82b34d2-cab7-4eee-855c-e625e4bf80da"
+        },
+        {
+          "symbol": "TEAM260918P00110000",
+          "status": "closed",
+          "order_id": "20aefb41-fb26-42eb-b178-bc504351443a"
+        }
+      ]
+    },
+    {
+      "underlying": "TXN",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -5200.0% >= -25% | credit=10.00 cost=530.00",
+      "result": [
+        {
+          "symbol": "TXN260918C00280000",
+          "status": "closed",
+          "order_id": "66129cb8-e964-4689-8ca3-c573c687bc6a"
+        },
+        {
+          "symbol": "TXN260918C00285000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    },
+    {
+      "underlying": "WDAY",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -308.3% >= -25% | credit=120.00 cost=490.00",
+      "result": [
+        {
+          "symbol": "WDAY260918P00170000",
+          "status": "closed",
+          "order_id": "802c871e-8e65-4776-9080-4c08ad0c2076"
+        },
+        {
+          "symbol": "WDAY260918P00165000",
+          "status": "closed",
+          "order_id": "dd8a1755-4ee5-4b9d-950f-83f03271f050"
+        }
+      ]
+    },
+    {
+      "underlying": "ZS",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -372.2% >= -25% | credit=90.00 cost=425.00",
+      "result": [
+        {
+          "symbol": "ZS260918P00160000",
+          "status": "closed",
+          "order_id": "2b03949f-606b-4f48-b6d6-0db403d43c49"
+        },
+        {
+          "symbol": "ZS260918P00155000",
+          "status": "closed",
+          "order_id": "f25bb6e8-ccac-46f0-a030-505a94733808"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-15 06:36:25 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 717.94
+VWAP: 718.36
+OR High: 720.17
+OR Low: 717.01
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.5014
+Trend: 1.0063
+Accel: 1.1562
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.5014
+Trend: 1.0063
+Accel: 1.1562
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6571, 'size_mult': 0.8, 'apmem_state': 'CALM', 'regime_score': 74, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'DDOG', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -768.2% >= -25% | credit=110.00 cost=955.00', 'result': [{'symbol': 'DDOG261120P00270000', 'status': 'closed', 'order_id': UUID('a150bc59-428c-4706-b567-89988b81584a')}, {'symbol': 'DDOG261120P00260000', 'status': 'closed', 'order_id': UUID('7858d21f-b3f0-418d-883f-2e12bc8ed6c0')}]}
+{'underlying': 'FAST', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -950.0% >= -25% | credit=10.00 cost=105.00', 'result': [{'symbol': 'FAST261120P00050000', 'status': 'closed', 'order_id': UUID('9adec50d-c21e-43d3-b4f7-c76c71e0162f')}, {'symbol': 'FAST261120P00045000', 'status': 'closed', 'order_id': UUID('e1fb31f8-8ec0-47dc-b09c-8b4093a6d9e6')}]}
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -593.3% >= -25% | credit=75.00 cost=520.00', 'result': [{'symbol': 'FTNT261120P00185000', 'status': 'closed', 'order_id': UUID('21a49202-7e55-43e5-bebe-938c2a420ba5')}, {'symbol': 'FTNT261120P00180000', 'status': 'closed', 'order_id': UUID('a2e6f469-f6a2-4b09-8877-b074671ad150')}]}
+{'underlying': 'KDP', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -164.7% >= -25% | credit=85.00 cost=225.00', 'result': [{'symbol': 'KDP261120P00035000', 'status': 'closed', 'order_id': UUID('8e1758cb-7729-44d0-8541-4035c4f4af84')}, {'symbol': 'KDP261120P00030000', 'status': 'closed', 'order_id': UUID('54144b2f-f363-44fc-b408-e5ce2df13943')}]}
+{'symbol': 'CMCSA261120C00025000', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}
+{'symbol': 'LRCX261120P00320000', 'reason': 'take_profit'}

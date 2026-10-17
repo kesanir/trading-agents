@@ -1,0 +1,17 @@
+{
+  "ticker": "SPY",
+  "spot": 769.76,
+  "contracts": 474,
+  "max_dte_used": 1,
+  "timestamp": "2026-10-16T08:16:04.626752",
+  "zero_gamma": 387.5,
+  "gamma_wall": 300.0,
+  "call_wall": null,
+  "put_wall": null,
+  "hv_strike": 732.0,
+  "net_gex_b": 0.0,
+  "regime": "positive",
+  "regime_strength": 0.0,
+  "gex_skew": 0.0,
+  "dist_to_flip_pct": 49.66
+}

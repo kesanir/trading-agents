@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /c/trading_agents/app/agents/*.py)",
+      "Bash(wc -l /c/trading_agents/app/features/*.py)",
+      "Bash(wc -l /c/trading_agents/app/services/*.py /c/trading_agents/app/db/*.py /c/trading_agents/app/backtest/*.py)",
+      "Bash(wc -l /c/trading_agents/app/backtest/*.py)",
+      "Bash(python -c ':*)",
+      "Bash(grep -rn \"market_data\\\\|Alpaca_Enrichment\\\\|options_chain\\\\|log_trade\\\\b\" --include=\"*.py\" app/ *.py)",
+      "Bash(wc -l c:/trading_agents/app/agents/*.py c:/trading_agents/app/features/*.py)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('tests/momentum_ensemble_backtest.py'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(python tests/momentum_ensemble_backtest.py --top-n 5 --years-data 7)",
+      "Bash(python -m py_compile tests/momentum_ensemble.py)",
+      "Bash(python -m py_compile app/services/signal_file_service.py daily_runner.py state_change_runner.py)",
+      "Bash(cmd /c \"dir /b c:\\\\trading_agents\")",
+      "Bash(cmd /c \"type c:\\\\trading_agents\\\\app\\\\agents\\\\execution_agent.py & echo --- & type c:\\\\trading_agents\\\\app\\\\services\\\\broker_service.py\")"
+    ]
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 606.3,
+    "vwap": 605.54,
+    "or_high": 606.6,
+    "or_low": 604.52,
+    "entry_ref": 604.78,
+    "stop": 588.06,
+    "target_1": 610.06,
+    "target_2": null,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.5731,
+      "index_strength": 0.4703,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=6, negative=1, top_pick=AAPL",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=610.0, put=588.0",
+        "QQQ strength=0.4703 score=0.5731"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AAPL",
+          "NVDA",
+          "GOOGL",
+          "AMZN",
+          "META",
+          "MSFT"
+        ],
+        "laggards": [
+          "TSLA"
+        ],
+        "top_pick": "AAPL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 606.24,
+        "qqq_call_wall": 610.0,
+        "qqq_put_wall": 588.0,
+        "qqq_zero_gamma": 607.75,
+        "qqq_net_gex_b": 2.9322,
+        "qqq_dist_to_flip_pct": -0.25,
+        "target_1": 610.0,
+        "target_2": null,
+        "invalidation": 588.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "AAPL",
+          "NVDA",
+          "GOOGL"
+        ],
+        "mag7_top_negative": [
+          "TSLA"
+        ],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=6, negative=1, top_pick=AAPL",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=610.0, put=588.0",
+          "QQQ strength=0.4703 score=0.5731"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 604.72,
+      "qqq_stop": 588.0,
+      "qqq_target_1": 610.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 604.78,
+      "nq_stop": 588.06,
+      "nq_target_1": 610.06,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  }
+}

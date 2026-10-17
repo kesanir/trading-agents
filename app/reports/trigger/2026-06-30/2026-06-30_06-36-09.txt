@@ -1,0 +1,83 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-30 06:36:09 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 727.33
+VWAP: 725.50
+OR High: 727.47
+OR Low: 723.22
+Entry Ref: 725.51
+Stop: 698.34
+Target 1: 746.23
+Target 2: 772.27
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1462
+Trend: 0.0769
+Accel: 0.0204
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1462
+Trend: 0.0769
+Accel: 0.0204
+Size Mult: 0.8
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'TSLA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -55.9% >= -25% | credit=170.00 cost=265.00', 'result': [{'symbol': 'TSLA260717C00410000', 'status': 'closed', 'order_id': UUID('7b010f4a-8303-496c-bdd2-f818a8e1d830')}, {'symbol': 'TSLA260717C00415000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}

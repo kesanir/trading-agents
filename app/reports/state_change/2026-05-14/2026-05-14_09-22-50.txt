@@ -1,0 +1,108 @@
+##### STATE CHANGE | 2026-05-14 09:22:50 #####
+Signal ID: 8acf6be6
+
+=== STATE CHANGE ALERT ===
+
+day_type: watch → trend
+trade_triggered: False → True
+trigger_type: None → opening_range_breakout_long
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: True
+trigger_type: opening_range_breakout_long
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev: CALM
+Transition: CALM_HOLD
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.0851
+Trend: -0.2251
+Accel: 0.2904
+Size Mult: 1.0
+Gate Note: Applied intraday APMEM size multiplier: 1.0
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.14
+Size: 6 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 36.1 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        749.12
+Regime:      POSITIVE
+Net GEX:     3.0985B  (+0.0812B)
+Zero Gamma:  707.51  (shift: -25.11)
+Call Wall:   750.00
+Put Wall:    725.00
+Dist Flip:   5.555%
+Contracts:   880
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 722.00
+VWAP: 718.96
+OR High: 719.59
+OR Low: 714.24
+Entry Ref: 720.20
+Stop: 684.14
+Target 1: 725.15
+Target 2: N/A
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: CALM
+Bias: TREND_FOLLOW
+Size Mult: 1.00
+Vol: 0.0851
+Trend: -0.2251
+Accel: 0.2904
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high

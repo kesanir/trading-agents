@@ -1,0 +1,92 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-09 06:36:08 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 752.17
+VWAP: 752.45
+OR High: 753.79
+OR Low: 751.63
+Entry Ref: 750.29
+Stop: 700.63
+Target 1: 760.69
+Target 2: 789.89
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1502
+Trend: -0.0818
+Accel: 0.1984
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1502
+Trend: -0.0818
+Accel: 0.1984
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'TSLA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.7283, 'size_mult': 1.5, 'apmem_state': 'RECOVERY', 'regime_score': 100, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'CMCSA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -25.4% >= -25% | credit=142.00 cost=178.00', 'result': [{'symbol': 'CMCSA261120C00020000', 'status': 'closed', 'order_id': UUID('62e60a1b-0a01-4b5a-92b0-161018adab7f')}, {'symbol': 'CMCSA261120C00025000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}

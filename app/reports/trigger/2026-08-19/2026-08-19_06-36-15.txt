@@ -1,0 +1,82 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-19 06:36:15 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 719.84
+VWAP: 720.46
+OR High: 721.76
+OR Low: 717.22
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: CALM
+Bias: TREND_FOLLOW
+Size Mult: 1.00
+Vol: 0.1027
+Trend: -0.0090
+Accel: 0.3559
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev State: CALM
+Transition: CALM_HOLD
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.1027
+Trend: -0.009
+Accel: 0.3559
+Size Mult: 1.0

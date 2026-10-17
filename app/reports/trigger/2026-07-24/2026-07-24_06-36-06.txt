@@ -1,0 +1,88 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-24 06:36:06 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 692.00
+VWAP: 690.66
+OR High: 693.90
+OR Low: 689.51
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1521
+Trend: 0.1935
+Accel: 0.1619
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1521
+Trend: 0.1935
+Accel: 0.1619
+Size Mult: 0.8
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'PYPL', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -44.1% >= -25% | credit=145.00 cost=209.00', 'result': [{'symbol': 'PYPL260821P00055000', 'status': 'closed', 'order_id': UUID('6790c442-95c3-4316-bd30-1f8baf4e024e')}, {'symbol': 'PYPL260821P00050000', 'status': 'closed', 'order_id': UUID('4412ea8d-55f2-4dc9-a38d-0ecbffb75fed')}]}

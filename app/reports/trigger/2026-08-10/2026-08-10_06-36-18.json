@@ -1,0 +1,232 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": []
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 720.77,
+    "vwap": 722.45,
+    "or_high": 723.84,
+    "or_low": 720.77,
+    "entry_ref": 718.97,
+    "stop": 678.94,
+    "target_1": 728.86,
+    "target_2": 733.4,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.4498,
+      "index_strength": 0.4159,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=NVDA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=730.0, put=680.0",
+        "QQQ strength=0.4159 score=0.4498"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "NVDA",
+          "MSFT",
+          "AMZN",
+          "AAPL",
+          "TSLA",
+          "META",
+          "GOOGL"
+        ],
+        "laggards": [],
+        "top_pick": "NVDA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 721.9,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 680.0,
+        "qqq_zero_gamma": 734.55,
+        "qqq_net_gex_b": 2.3384,
+        "qqq_dist_to_flip_pct": -1.752,
+        "target_1": 730.0,
+        "target_2": 734.55,
+        "invalidation": 680.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "NVDA",
+          "MSFT",
+          "AMZN"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=NVDA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=730.0, put=680.0",
+          "QQQ strength=0.4159 score=0.4498"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 720.1,
+      "qqq_stop": 680.0,
+      "qqq_target_1": 730.0,
+      "qqq_target_2": 734.55,
+      "nq_entry_ref": 718.97,
+      "nq_stop": 678.94,
+      "nq_target_1": 728.86,
+      "nq_target_2": 733.4,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.1719,
+    "trend": 0.2027,
+    "accel": 0.0829,
+    "transition": "NEUTRAL_HOLD",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "META",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.6488,
+      "size_mult": 0.42,
+      "apmem_state": "VOL_EXPANSION",
+      "regime_score": 57,
+      "alignment": "strong"
+    }
+  },
+  "auto_exits": [
+    {
+      "underlying": "ABNB",
+      "type": "bull_put",
+      "reason": "spread_take_profit",
+      "details": "Spread profit 60.5% >= 50% | credit=205.00 cost=81.00",
+      "result": [
+        {
+          "symbol": "ABNB260918P00150000",
+          "status": "closed",
+          "order_id": "9cfaa509-d3f2-462c-9800-f542e47533da"
+        },
+        {
+          "symbol": "ABNB260918P00145000",
+          "status": "closed",
+          "order_id": "f848efa4-937f-40bc-b936-35afae069a67"
+        }
+      ]
+    },
+    {
+      "underlying": "META",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -451.4% >= -25% | credit=185.00 cost=1020.00",
+      "result": [
+        {
+          "symbol": "META260918C00590000",
+          "status": "closed",
+          "order_id": "91b444d9-18d2-470c-854c-06764de9acfe"
+        },
+        {
+          "symbol": "META260918C00595000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    },
+    {
+      "underlying": "WDAY",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -123.5% >= -25% | credit=170.00 cost=380.00",
+      "result": [
+        {
+          "symbol": "WDAY260918P00170000",
+          "status": "closed",
+          "order_id": "cb3d1186-bf69-45f3-856b-59525130dad4"
+        },
+        {
+          "symbol": "WDAY260918P00165000",
+          "status": "closed",
+          "order_id": "efaf064d-7c34-42e5-9071-84a5b45a1351"
+        }
+      ]
+    },
+    {
+      "underlying": "ZS",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -226.5% >= -25% | credit=122.50 cost=400.00",
+      "result": [
+        {
+          "symbol": "ZS260918P00165000",
+          "status": "closed",
+          "order_id": "9789a5b0-b886-49c5-b639-4d5e0a3e27b5"
+        },
+        {
+          "symbol": "ZS260918P00160000",
+          "status": "closed",
+          "order_id": "51e5f095-8ab9-4a0e-a0c4-1c1ee28c1923"
+        }
+      ]
+    }
+  ]
+}

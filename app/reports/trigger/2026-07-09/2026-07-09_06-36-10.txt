@@ -1,0 +1,97 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-09 06:36:10 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 718.82
+VWAP: 717.53
+OR High: 718.89
+OR Low: 716.60
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2247
+Trend: 0.0083
+Accel: 0.2579
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.2247
+Trend: 0.0083
+Accel: 0.2579
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'NVDA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5638, 'size_mult': 1.06, 'apmem_state': 'RECOVERY', 'regime_score': 82, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: True
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Duplicate blocked: symbol already has open position

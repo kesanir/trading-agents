@@ -1,0 +1,82 @@
+##### STATE CHANGE | 2026-04-19 18:01:23 #####
+Signal ID: df48d860
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: False
+trigger_type: None
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev: CALM
+Transition: CALM_HOLD
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.0873
+Trend: -0.0079
+Accel: 0.007
+Size Mult: 1.0
+Gate Note: Applied intraday APMEM size multiplier: 1.0
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.06
+Size: 5 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 47.2 pts
+Today's P&L: +0.00
+
+=== SPX 0DTE GEX ===
+Status: UNAVAILABLE ([SPX] 0DTE snapshot unavailable)
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 648.80
+VWAP: 648.80
+OR High: 648.80
+OR Low: 648.80
+Entry Ref: 647.18
+Stop: 600.00
+Target 1: 650.00
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend

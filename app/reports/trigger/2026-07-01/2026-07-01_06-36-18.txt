@@ -1,0 +1,86 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-01 06:36:18 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 726.22
+VWAP: 728.49
+OR High: 730.95
+OR Low: 726.02
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.3938
+Trend: 0.6759
+Accel: 0.5451
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.3938
+Trend: 0.6759
+Accel: 0.5451
+Size Mult: 0.7
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'PEP', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -187.1% >= -25% | credit=155.00 cost=445.00', 'result': [{'symbol': 'PEP260821C00135000', 'status': 'closed', 'order_id': UUID('a2d80f21-bb6c-4951-b9a1-a819673e8405')}, {'symbol': 'PEP260821C00140000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}

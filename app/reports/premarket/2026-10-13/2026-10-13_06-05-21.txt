@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-10-13 06:05:21 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 740.19
+Regime: NEGATIVE
+Score: 0.1986
+Strength: 0.4965
+Net GEX (B): -5.6793
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 15.21  (Pct: 0.16)
+VIX Change: 0.10
+APMEM Vol: 0.1126
+APMEM Trend: -0.0470
+Regime Score: 100/100
+Regime: STRONG_LONG
+Bias: LONG
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3595
+Expected Move: 13.93
+Expected Range: 726.26 - 754.12
+
+=== KEY LEVELS ===
+Call Wall: 760.00
+Put Wall: 740.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: AMZN, GOOGL, META, AAPL, MSFT, NVDA
+Laggards: TSLA
+Top Pick: AMZN
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+AMZN   | POSITIVE | 259.30  | 0.7947  | 0.6947/0.1000 | 1.15x | 260.00/250.00 | 4.88     | 254.42-264.18
+GOOGL  | POSITIVE | 352.77  | 0.7905  | 0.6905/0.1000 | 1.15x | 370.00/330.00 | 6.92     | 345.85-359.69
+META   | POSITIVE | 743.02  | 0.7693  | 0.6693/0.1000 | 1.15x | 750.00/680.00 | 18.47    | 724.55-761.49
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-On → favor LONG continuation setups and allow slightly larger size.
+
+=== MARKET READ ===
+Market Condition: Mixed Cross Current
+Opening Scenario: Inside Wall Range
+Playbook: Wait For Reclaim Then Selective Longs
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 100)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=740.19
+- QQQ regime=negative
+- QQQ net_gex_b=-5.6793
+- QQQ walls call=760.0 put=740.0
+- VIX=15.31 change=0.1 vol_regime=strong_long
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=AMZN, GOOGL, META
+- Laggards=TSLA
+- Expected move=13.93 range=726.26 - 754.12
+- Global regime score=100 bias=LONG regime=STRONG_LONG
+- APMEM vol=0.1126 trend=-0.047 vix_pct=0.16
+
+=== TRADE INTENT ===
+{'ticker': 'AMZN', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.7947, 'size_mult': 1.06, 'apmem_state': 'RECOVERY', 'regime_score': 100, 'alignment': 'soft'}

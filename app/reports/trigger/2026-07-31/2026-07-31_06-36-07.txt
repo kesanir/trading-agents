@@ -1,0 +1,92 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-31 06:36:07 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 694.86
+VWAP: 693.70
+OR High: 695.20
+OR Low: 689.76
+Entry Ref: 693.12
+Stop: 679.60
+Target 1: 729.57
+Target 2: 749.27
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: VOL_EXPANSION
+Bias: SMALL_SIZE
+Size Mult: 0.55
+Vol: 0.2966
+Trend: 0.3923
+Accel: 0.3130
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: VOL_EXPANSION
+Transition: VOL_EXPANSION_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.2966
+Trend: 0.3923
+Accel: 0.313
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AMZN', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5979, 'size_mult': 0.72, 'apmem_state': 'NEUTRAL', 'regime_score': 60, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger

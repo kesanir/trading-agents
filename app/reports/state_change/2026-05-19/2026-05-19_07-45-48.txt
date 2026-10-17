@@ -1,0 +1,110 @@
+##### STATE CHANGE | 2026-05-19 07:45:48 #####
+Signal ID: 40fe1d16
+
+=== STATE CHANGE ALERT ===
+
+bias: LONG → NEUTRAL
+confidence: HIGH → LOW
+day_type: watch → mixed
+trade_triggered: True → False
+trigger_type: opening_range_breakout_long → watch_long_confirmation
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_HOLD
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.3689
+Trend: 0.0591
+Accel: -0.2837
+Size Mult: 0.7
+Gate Note: Applied intraday APMEM size multiplier: 0.7
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        732.31
+Regime:      NEGATIVE
+Net GEX:     -0.6905B  (+0.0117B)
+Zero Gamma:  N/A
+Call Wall:   742.00  (was 744.00)
+Put Wall:    718.00
+Dist Flip:   N/A%
+Contracts:   676
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 697.16
+VWAP: 699.50
+OR High: 705.03
+OR Low: 699.57
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.3689
+Trend: 0.0591
+Accel: -0.2837
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active

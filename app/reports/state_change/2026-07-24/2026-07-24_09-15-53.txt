@@ -1,0 +1,107 @@
+##### STATE CHANGE | 2026-07-24 09:15:53 #####
+Signal ID: 40c185cd
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: STABILIZING
+Transition: STABILIZING_TO_NEUTRAL
+Signal: WAIT
+Bias: WAIT
+Vol: 0.2468
+Trend: -0.1297
+Accel: -0.1694
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        743.00
+Regime:      POSITIVE
+Net GEX:     0.0000B  (+0.0000B)
+Zero Gamma:  502.50  (shift: +0.00)
+Call Wall:   N/A
+Put Wall:    N/A
+Dist Flip:   32.369%
+Contracts:   402
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 691.31
+VWAP: 688.14
+OR High: 693.90
+OR Low: 686.82
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2468
+Trend: -0.1297
+Accel: -0.1694
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP

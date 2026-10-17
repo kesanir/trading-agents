@@ -1,0 +1,96 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-18 06:36:09 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 720.07
+VWAP: 720.03
+OR High: 721.75
+OR Low: 718.79
+Entry Ref: 718.27
+Stop: 719.34
+Target 1: 734.33
+Target 2: 758.64
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.3972
+Trend: 0.8132
+Accel: 0.8313
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.3972
+Trend: 0.8132
+Accel: 0.8313
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6873, 'size_mult': 0.5, 'apmem_state': 'NEUTRAL', 'regime_score': 65, 'alignment': 'soft'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'GOOGL', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -345.5% >= -25% | credit=55.00 cost=245.00', 'result': [{'symbol': 'GOOGL260918C00345000', 'status': 'closed', 'order_id': UUID('b4a285b1-8206-46b5-88c6-55783415d913')}, {'symbol': 'GOOGL260918C00350000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}

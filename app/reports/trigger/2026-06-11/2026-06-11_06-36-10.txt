@@ -1,0 +1,79 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-11 06:36:10 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: SHORT
+Lean: BEARISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: SHORT
+Current Price: 697.70
+VWAP: 698.89
+OR High: 702.79
+OR Low: 697.35
+Entry Ref: 699.45
+Stop: 749.55
+Target 1: 699.58
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Sell failed pops / VWAP rejection / lower-high confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Reclaim resistance / upside breadth expansion / leaders squeeze higher.
+
+=== APMEM FILTER ===
+State: VOL_EXPANSION
+Bias: SMALL_SIZE
+Size Mult: 0.55
+Vol: 0.2492
+Trend: 0.1965
+Accel: 0.9305
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=SHORT
+- Lean=BEARISH
+- Confidence=HIGH
+- Day type=trend
+- Price is below VWAP
+
+=== TRIGGER REASONS ===
+- Price is below VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: VOL_EXPANSION
+Transition: VOL_EXPANSION_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.2492
+Trend: 0.1965
+Accel: 0.9305
+Size Mult: 0.7

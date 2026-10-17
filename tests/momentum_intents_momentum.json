@@ -1,0 +1,112 @@
+[
+  {
+    "ticker": "AMZN",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 1.0,
+    "size_mult": 1.1,
+    "source": "momentum"
+  },
+  {
+    "ticker": "MRVL",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "NFLX",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "INTC",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "AEP",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "ABNB",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "ILMN",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "LRCX",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "KLAC",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  },
+  {
+    "ticker": "AMAT",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.8,
+    "size_mult": 0.88,
+    "source": "momentum"
+  }
+]

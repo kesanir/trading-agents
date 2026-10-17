@@ -1,0 +1,100 @@
+
+
+##### AFTER OPEN REPORT | 2026-07-27 06:36:20 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 690.38
+VWAP: 691.01
+OR High: 694.08
+OR Low: 689.28
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2081
+Trend: 0.0186
+Accel: -0.0639
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.2081
+Trend: 0.0186
+Accel: -0.0639
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'NVDA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5951, 'size_mult': 0.58, 'apmem_state': 'NEUTRAL', 'regime_score': 15, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: True
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Duplicate blocked: symbol already has open position
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'PEP', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -55.4% >= -25% | credit=386.00 cost=600.00', 'result': [{'symbol': 'PEP260821C00135000', 'status': 'closed', 'order_id': UUID('95b22648-d934-4547-b4fb-09c08fdb7ef9')}, {'symbol': 'PEP260821C00140000', 'status': 'closed', 'order_id': UUID('bc1e7bb8-19e1-4744-ab12-346c8c36e6e1')}]}
+{'symbol': 'ISRG260821C00335000', 'reason': 'take_profit'}

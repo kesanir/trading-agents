@@ -1,0 +1,105 @@
+##### STATE CHANGE | 2026-07-29 07:30:53 #####
+Signal ID: 04fae538
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: NEUTRAL
+lean: BULLISH
+confidence: LOW
+day_type: mixed
+trade_triggered: False
+trigger_type: watch_long_confirmation
+
+=== INTRADAY APMEM ===
+State: VOL_EXPANSION
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_TO_VOL_EXPANSION
+Signal: DEFENSIVE
+Bias: SMALL_SIZE
+Vol: 0.3556
+Trend: 0.338
+Accel: 0.0106
+Size Mult: 0.55
+Gate Note: Vol expansion: reduced size to 70%
+
+=== RISK CONTEXT ===
+Grade: C  |  R:R: N/A
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        735.32
+Regime:      NEGATIVE
+Net GEX:     -0.3449B  (-0.0155B)
+Zero Gamma:  N/A
+Call Wall:   750.00
+Put Wall:    735.00
+Dist Flip:   N/A%
+Contracts:   668
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 667.19
+VWAP: 672.48
+OR High: 677.46
+OR Low: 671.05
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.3556
+Trend: 0.3380
+Accel: 0.0106
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active

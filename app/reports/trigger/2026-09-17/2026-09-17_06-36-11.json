@@ -1,0 +1,181 @@
+{
+  "trade_triggered": false,
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "scalp_allowed": false,
+  "caution": true,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": "watch_long_confirmation",
+    "reasons": [
+      "Higher timeframe is neutral",
+      "Bullish lean active"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=NEUTRAL",
+    "Lean=BULLISH",
+    "Confidence=LOW",
+    "Day type=mixed",
+    "Caution flag is active",
+    "Higher timeframe is neutral",
+    "Bullish lean active"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "BULLISH",
+    "current_price": 714.12,
+    "vwap": 715.33,
+    "or_high": 716.72,
+    "or_low": 713.97,
+    "entry_ref": null,
+    "stop": null,
+    "target_1": null,
+    "target_2": null,
+    "setup": "watch_long_confirmation",
+    "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+    "invalidation_note": "Stand aside until structure improves.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": false,
+    "bias": "NEUTRAL",
+    "lean": "BULLISH",
+    "confidence": "LOW",
+    "day_type": "mixed",
+    "caution": true,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.138,
+      "index_strength": 0.1628,
+      "bias": "NEUTRAL",
+      "lean": "BULLISH",
+      "confidence": "LOW",
+      "day_type": "mixed",
+      "trade_allowed": false,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=AAPL",
+        "Mixed tape: bearish index vs bullish leadership",
+        "QQQ walls: call=720.0, put=700.0",
+        "QQQ strength=0.1628 score=0.138"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AAPL",
+          "NVDA",
+          "GOOGL",
+          "TSLA",
+          "META",
+          "MSFT",
+          "AMZN"
+        ],
+        "laggards": [],
+        "top_pick": "AAPL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "NEUTRAL",
+        "lean": "BULLISH",
+        "confidence": "LOW",
+        "day_type": "mixed",
+        "playbook": "wait_for_long_confirmation",
+        "qqq_spot": 714.3,
+        "qqq_call_wall": 720.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -1.463,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": null,
+        "target_2": null,
+        "invalidation": null,
+        "entry_note": "Mixed tape with bullish lean. Wait for VWAP reclaim / opening range strength.",
+        "mag7_top_positive": [
+          "AAPL",
+          "NVDA",
+          "GOOGL"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=AAPL",
+          "Mixed tape: bearish index vs bullish leadership",
+          "QQQ walls: call=720.0, put=700.0",
+          "QQQ strength=0.1628 score=0.138"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "NEUTRAL",
+      "setup": "wait_for_long_confirmation",
+      "day_type": "mixed",
+      "confidence": "LOW",
+      "qqq_spot": 714.3,
+      "qqq_watch_above": 720.0,
+      "qqq_watch_below": 700.0,
+      "nq_watch_above": 719.82,
+      "nq_watch_below": 699.82,
+      "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+      "invalidation_note": "Stand aside until structure improves."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.314,
+    "trend": -0.0285,
+    "accel": -0.2677,
+    "transition": "CALM_TO_NEUTRAL",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Duplicate blocked: symbol already has open position",
+    "intent": {
+      "ticker": "NVDA",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.5873,
+      "size_mult": 0.83,
+      "apmem_state": "NEUTRAL",
+      "regime_score": 20,
+      "alignment": "strong"
+    }
+  },
+  "auto_exits": [
+    {
+      "underlying": "SNPS",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -421.4% >= -25% | credit=140.00 cost=730.00",
+      "result": [
+        {
+          "symbol": "SNPS261016C00380000",
+          "status": "closed",
+          "order_id": "c7826f0f-63a7-49f4-8269-8a4a149873dd"
+        },
+        {
+          "symbol": "SNPS261016C00390000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    }
+  ]
+}

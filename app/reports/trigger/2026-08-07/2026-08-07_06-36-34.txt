@@ -1,0 +1,93 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-07 06:36:34 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 722.11
+VWAP: 721.03
+OR High: 722.50
+OR Low: 719.54
+Entry Ref: 720.31
+Stop: 680.70
+Target 1: 730.75
+Target 2: 735.21
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: VOL_EXPANSION
+Bias: SMALL_SIZE
+Size Mult: 0.55
+Vol: 0.2425
+Trend: 0.2607
+Accel: -0.0034
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: VOL_EXPANSION
+Transition: VOL_EXPANSION_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.2425
+Trend: 0.2607
+Accel: -0.0034
+Size Mult: 0.7
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'ADBE', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -117.6% >= -25% | credit=170.00 cost=370.00', 'result': [{'symbol': 'ADBE260918P00260000', 'status': 'closed', 'order_id': UUID('8f009a55-830d-4e6b-8353-8c199f77f99d')}, {'symbol': 'ADBE260918P00255000', 'status': 'closed', 'order_id': UUID('b29ca4f1-7b8f-41ae-81d4-c3dc7d5b4539')}]}
+{'underlying': 'ADP', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -117.6% >= -25% | credit=340.00 cost=740.00', 'result': [{'symbol': 'ADP260918P00270000', 'status': 'closed', 'order_id': UUID('14b34a7b-9534-4bb6-89a4-5896875df249')}, {'symbol': 'ADP260918P00260000', 'status': 'closed', 'order_id': UUID('d224f619-1ea5-43dd-8dc5-a47dda904461')}]}
+{'underlying': 'CSCO', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -67.6% >= -25% | credit=170.00 cost=285.00', 'result': [{'symbol': 'CSCO260918P00120000', 'status': 'closed', 'order_id': UUID('f4dfc984-7767-4a8a-b05f-dbd8a3d1804f')}, {'symbol': 'CSCO260918P00115000', 'status': 'closed', 'order_id': UUID('86a200b2-da37-4966-a9fa-d18d95886090')}]}
+{'underlying': 'FAST', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -72.2% >= -25% | credit=90.00 cost=155.00', 'result': [{'symbol': 'FAST260918P00050000', 'status': 'closed', 'order_id': UUID('922a8e3e-d00b-4b45-a560-96943659cb76')}, {'symbol': 'FAST260918P00045000', 'status': 'closed', 'order_id': UUID('b7803546-28ba-45f8-a39e-7f0acc58c132')}]}
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -239.3% >= -25% | credit=140.00 cost=475.00', 'result': [{'symbol': 'FTNT260918P00165000', 'status': 'closed', 'order_id': UUID('ffbfe37d-03ac-428a-9f7b-efbfa7fe8936')}, {'symbol': 'FTNT260918P00160000', 'status': 'closed', 'order_id': UUID('4a41c4ac-1f2e-4833-a541-e20de98a8fa8')}]}
+{'underlying': 'GEHC', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -60.6% >= -25% | credit=165.00 cost=265.00', 'result': [{'symbol': 'GEHC260918P00070000', 'status': 'closed', 'order_id': UUID('8aae94ca-7777-4976-8bd6-ef044e5bcb6f')}, {'symbol': 'GEHC260918P00065000', 'status': 'closed', 'order_id': UUID('ff17698e-a3d3-4aab-85f5-5c3a00998423')}]}
+{'underlying': 'MDLZ', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -47.7% >= -25% | credit=220.00 cost=325.00', 'result': [{'symbol': 'MDLZ260918P00065000', 'status': 'closed', 'order_id': UUID('aa864112-259d-4f25-bcc5-aff78a335384')}, {'symbol': 'MDLZ260918P00060000', 'status': 'closed', 'order_id': UUID('284789c7-243e-473d-b74e-c13b69dcff5e')}]}
+{'underlying': 'TEAM', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -90.0% >= -25% | credit=150.00 cost=285.00', 'result': [{'symbol': 'TEAM260918P00115000', 'status': 'closed', 'order_id': UUID('b82b34d2-cab7-4eee-855c-e625e4bf80da')}, {'symbol': 'TEAM260918P00110000', 'status': 'closed', 'order_id': UUID('20aefb41-fb26-42eb-b178-bc504351443a')}]}
+{'underlying': 'TXN', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -5200.0% >= -25% | credit=10.00 cost=530.00', 'result': [{'symbol': 'TXN260918C00280000', 'status': 'closed', 'order_id': UUID('66129cb8-e964-4689-8ca3-c573c687bc6a')}, {'symbol': 'TXN260918C00285000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}
+{'underlying': 'WDAY', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -308.3% >= -25% | credit=120.00 cost=490.00', 'result': [{'symbol': 'WDAY260918P00170000', 'status': 'closed', 'order_id': UUID('802c871e-8e65-4776-9080-4c08ad0c2076')}, {'symbol': 'WDAY260918P00165000', 'status': 'closed', 'order_id': UUID('dd8a1755-4ee5-4b9d-950f-83f03271f050')}]}
+{'underlying': 'ZS', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -372.2% >= -25% | credit=90.00 cost=425.00', 'result': [{'symbol': 'ZS260918P00160000', 'status': 'closed', 'order_id': UUID('2b03949f-606b-4f48-b6d6-0db403d43c49')}, {'symbol': 'ZS260918P00155000', 'status': 'closed', 'order_id': UUID('f25bb6e8-ccac-46f0-a030-505a94733808')}]}

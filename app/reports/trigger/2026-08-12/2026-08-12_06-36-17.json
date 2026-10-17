@@ -1,0 +1,161 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": []
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 724.36,
+    "vwap": 725.52,
+    "or_high": 727.16,
+    "or_low": 723.04,
+    "entry_ref": 722.55,
+    "stop": 714.78,
+    "target_1": 734.78,
+    "target_2": null,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.5307,
+      "index_strength": 0.4868,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=6, negative=1, top_pick=NVDA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=735.0, put=715.0",
+        "QQQ strength=0.4868 score=0.5307"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "NVDA",
+          "TSLA",
+          "MSFT",
+          "AMZN",
+          "META",
+          "AAPL"
+        ],
+        "laggards": [
+          "GOOGL"
+        ],
+        "top_pick": "NVDA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 724.58,
+        "qqq_call_wall": 735.0,
+        "qqq_put_wall": 715.0,
+        "qqq_zero_gamma": 734.0,
+        "qqq_net_gex_b": 3.2997,
+        "qqq_dist_to_flip_pct": -1.3,
+        "target_1": 735.0,
+        "target_2": null,
+        "invalidation": 715.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "NVDA",
+          "TSLA",
+          "MSFT"
+        ],
+        "mag7_top_negative": [
+          "GOOGL"
+        ],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=6, negative=1, top_pick=NVDA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=735.0, put=715.0",
+          "QQQ strength=0.4868 score=0.5307"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 722.77,
+      "qqq_stop": 715.0,
+      "qqq_target_1": 735.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 722.55,
+      "nq_stop": 714.78,
+      "nq_target_1": 734.78,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.182,
+    "trend": -0.0224,
+    "accel": -0.0277,
+    "transition": "CALM_TO_NEUTRAL",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Duplicate blocked: symbol already has open position",
+    "intent": {
+      "ticker": "NVDA",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.6336,
+      "size_mult": 0.42,
+      "apmem_state": "VOL_EXPANSION",
+      "regime_score": 42,
+      "alignment": "strong"
+    }
+  }
+}

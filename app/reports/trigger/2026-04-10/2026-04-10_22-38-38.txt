@@ -1,0 +1,67 @@
+
+
+##### AFTER OPEN REPORT | 2026-04-10 22:38:38 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 611.65
+VWAP: 610.66
+OR High: 610.68
+OR Low: 609.59
+Entry Ref: 610.12
+Stop: 582.00
+Target 1: 620.00
+Target 2: N/A
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'score': 0.598, 'size_mult': 1.15}
+Trigger Bias: LONG
+Trade Triggered: True
+Confirmed: True
+
+=== AUTO EXECUTION ===
+Sizing: {'contracts': 3, 'risk_capital': 643.54, 'confidence_factor': 1.2}
+Success: True
+Order ID: 0b80b046-60fc-490f-9e7c-50fc2f689a9d

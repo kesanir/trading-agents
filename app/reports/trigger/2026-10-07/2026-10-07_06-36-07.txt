@@ -1,0 +1,97 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-07 06:36:07 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 754.44
+VWAP: 754.14
+OR High: 754.77
+OR Low: 753.41
+Entry Ref: 752.56
+Stop: 725.63
+Target 1: 760.67
+Target 2: 769.04
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.2281
+Trend: 0.4609
+Accel: 0.4631
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.2281
+Trend: 0.4609
+Accel: 0.4631
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.787, 'size_mult': 1.5, 'apmem_state': 'RECOVERY', 'regime_score': 100, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'CMCSA', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -25.1% >= -25% | credit=662.00 cost=828.00', 'result': [{'symbol': 'CMCSA261120C00020000', 'status': 'closed', 'order_id': UUID('551869ee-6747-400c-885e-7d132e8f9c29')}, {'symbol': 'CMCSA261120C00025000', 'status': 'closed', 'order_id': UUID('ecf710de-8ded-491a-8660-e2bfa2bbd694')}]}
+{'underlying': 'INTC', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -49.1% >= -25% | credit=175.00 cost=261.00', 'result': [{'symbol': 'INTC261016P00115000', 'status': 'closed', 'order_id': UUID('252ae63e-50a2-4af9-a317-623ec2823f41')}, {'symbol': 'INTC261016P00110000', 'status': 'closed', 'order_id': UUID('13b00017-8b5e-4054-b3df-e569de33ae42')}]}

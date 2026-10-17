@@ -1,0 +1,222 @@
+{
+  "trade_triggered": true,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": true,
+    "trigger_type": "opening_range_breakout_long",
+    "reasons": [
+      "Price is above VWAP",
+      "Price is above OR high"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP",
+    "Price is above OR high"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 729.94,
+    "vwap": 727.49,
+    "or_high": 727.93,
+    "or_low": 724.33,
+    "entry_ref": 728.11,
+    "stop": 679.88,
+    "target_1": 729.87,
+    "target_2": null,
+    "setup": "opening_range_breakout_long",
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.7
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.6054,
+      "index_strength": 0.4836,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=NVDA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=730.0, put=680.0",
+        "QQQ strength=0.4836 score=0.6054"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "NVDA",
+          "TSLA",
+          "MSFT",
+          "AAPL",
+          "AMZN",
+          "GOOGL",
+          "META"
+        ],
+        "laggards": [],
+        "top_pick": "NVDA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 730.07,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 680.0,
+        "qqq_zero_gamma": 729.09,
+        "qqq_net_gex_b": 2.0351,
+        "qqq_dist_to_flip_pct": 0.134,
+        "target_1": 730.0,
+        "target_2": null,
+        "invalidation": 680.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "NVDA",
+          "TSLA",
+          "MSFT"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=NVDA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=730.0, put=680.0",
+          "QQQ strength=0.4836 score=0.6054"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 728.24,
+      "qqq_stop": 680.0,
+      "qqq_target_1": 730.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 728.11,
+      "nq_stop": 679.88,
+      "nq_target_1": 729.87,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "SLIGHT_EXPANSION",
+    "bias": "WAIT",
+    "size_mult": 0.7,
+    "vol": 0.3317,
+    "trend": 0.2207,
+    "accel": -0.4483,
+    "transition": "SLIGHT_EXPANSION_HOLD",
+    "blocked": false,
+    "block_reason": null
+  },
+  "spx_0dte": {
+    "current": {
+      "ticker": "SPY",
+      "spot": 751.63,
+      "contracts": 636,
+      "max_dte_used": 1,
+      "timestamp": "2026-05-26T07:31:11.725881",
+      "zero_gamma": 500.0,
+      "gamma_wall": 752.0,
+      "call_wall": 752.0,
+      "put_wall": 714.0,
+      "hv_strike": 752.0,
+      "net_gex_b": 0.7377,
+      "regime": "positive",
+      "regime_strength": 0.8457,
+      "gex_skew": 11.963,
+      "dist_to_flip_pct": 33.478
+    },
+    "previous": {
+      "ticker": "SPY",
+      "spot": 751.29,
+      "contracts": 636,
+      "max_dte_used": 1,
+      "timestamp": "2026-05-26T07:16:17.594117",
+      "zero_gamma": 500.0,
+      "gamma_wall": 752.0,
+      "call_wall": 752.0,
+      "put_wall": 714.0,
+      "hv_strike": 752.0,
+      "net_gex_b": 0.7292,
+      "regime": "positive",
+      "regime_strength": 0.8315,
+      "gex_skew": 10.866,
+      "dist_to_flip_pct": 33.448
+    },
+    "delta": {
+      "net_gex_b_delta": 0.0085,
+      "zero_gamma_prev": 500.0,
+      "zero_gamma_curr": 500.0,
+      "zero_gamma_shift": 0.0,
+      "call_wall_prev": 752.0,
+      "call_wall_curr": 752.0,
+      "put_wall_prev": 714.0,
+      "put_wall_curr": 714.0,
+      "regime_prev": "positive",
+      "regime_curr": "positive"
+    },
+    "regime_flipped": false,
+    "zero_gamma_crossed": false
+  },
+  "intraday_apmem": {
+    "as_of": "2026-05-26 14:30:00+00:00",
+    "symbol": "QQQ",
+    "interval": "5m",
+    "apmem_vol": 0.3317,
+    "apmem_trend": 0.2207,
+    "apmem_accel": -0.4483,
+    "apmem_state": "SLIGHT_EXPANSION",
+    "prev_apmem_state": "SLIGHT_EXPANSION",
+    "apmem_transition": "SLIGHT_EXPANSION_HOLD",
+    "apmem_signal": "CAUTION",
+    "apmem_bias": "WAIT",
+    "apmem_size_mult": 0.7
+  },
+  "risk_ctx": {
+    "position_size_contracts": 3,
+    "stop_distance_pts": 48.23,
+    "risk_per_trade_usd": 500.0,
+    "risk_reward_ratio": 0.04,
+    "daily_pnl": 0.0,
+    "daily_loss_ok": true,
+    "max_daily_loss": -500.0,
+    "risk_grade": "F",
+    "account_size": 25000.0,
+    "risk_pct": 0.02
+  },
+  "signal_id": "8f55e1d0"
+}

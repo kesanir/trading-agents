@@ -1,0 +1,186 @@
+{
+  "trade_triggered": false,
+  "bias": "SHORT",
+  "lean": "BEARISH",
+  "confidence": "MEDIUM",
+  "day_type": "watch",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is below VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=SHORT",
+    "Lean=BEARISH",
+    "Confidence=MEDIUM",
+    "Day type=watch",
+    "Price is below VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "SHORT",
+    "current_price": 734.6,
+    "vwap": 736.31,
+    "or_high": 737.6,
+    "or_low": 732.57,
+    "entry_ref": 736.44,
+    "stop": 750.37,
+    "target_1": 720.35,
+    "target_2": null,
+    "setup": null,
+    "entry_note": "Sell failed pops / VWAP rejection / lower-high confirmation preferred.",
+    "invalidation_note": "Reclaim resistance / upside breadth expansion / leaders squeeze higher.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "SHORT",
+    "lean": "BEARISH",
+    "confidence": "MEDIUM",
+    "day_type": "watch",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.1109,
+      "index_strength": 0.1014,
+      "bias": "SHORT",
+      "lean": "BEARISH",
+      "confidence": "MEDIUM",
+      "day_type": "watch",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is negative",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=3, negative=4, top_pick=AAPL",
+        "Index and Mag7 are aligned bearish",
+        "QQQ walls: call=750.0, put=720.0",
+        "QQQ strength=0.1014 score=0.1109"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "negative",
+        "broad_confirmation": true,
+        "leaders": [
+          "AAPL",
+          "TSLA",
+          "NVDA"
+        ],
+        "laggards": [
+          "META",
+          "MSFT",
+          "AMZN",
+          "GOOGL"
+        ],
+        "top_pick": "AAPL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "SHORT",
+        "lean": "BEARISH",
+        "confidence": "MEDIUM",
+        "day_type": "watch",
+        "playbook": "sell_rips",
+        "qqq_spot": 734.24,
+        "qqq_call_wall": 750.0,
+        "qqq_put_wall": 720.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -0.4286,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": 720.0,
+        "target_2": null,
+        "invalidation": 750.0,
+        "entry_note": "Prefer failed pops into resistance / VWAP rejection. Avoid pressing late breakdowns.",
+        "mag7_top_positive": [
+          "AAPL",
+          "TSLA",
+          "NVDA"
+        ],
+        "mag7_top_negative": [
+          "META",
+          "MSFT",
+          "AMZN"
+        ],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is negative",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=3, negative=4, top_pick=AAPL",
+          "Index and Mag7 are aligned bearish",
+          "QQQ walls: call=750.0, put=720.0",
+          "QQQ strength=0.1014 score=0.1109"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "SHORT",
+      "setup": "sell_rips",
+      "day_type": "watch",
+      "confidence": "MEDIUM",
+      "qqq_entry_ref": 736.08,
+      "qqq_stop": 750.0,
+      "qqq_target_1": 720.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 736.44,
+      "nq_stop": 750.37,
+      "nq_target_1": 720.35,
+      "nq_target_2": null,
+      "entry_note": "Sell failed pops / VWAP rejection / lower-high confirmation preferred.",
+      "invalidation_note": "Reclaim resistance / upside breadth expansion / leaders squeeze higher."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.4609,
+    "trend": -0.1643,
+    "accel": -0.0607,
+    "transition": "NEUTRAL_HOLD",
+    "blocked": false,
+    "block_reason": null
+  },
+  "auto_exits": [
+    {
+      "underlying": "ABNB",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -170.0% >= -25% | credit=110.00 cost=297.00",
+      "result": [
+        {
+          "symbol": "ABNB260717P00140000",
+          "status": "closed",
+          "order_id": "de345730-e878-4a94-8226-b6a312382ba8"
+        },
+        {
+          "symbol": "ABNB260717P00135000",
+          "status": "closed",
+          "order_id": "e450e119-279b-4a4e-8baf-4b49e60fbae2"
+        }
+      ]
+    },
+    {
+      "underlying": "MNST",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -172.7% >= -25% | credit=55.00 cost=150.00",
+      "result": [
+        {
+          "symbol": "MNST260717P00090000",
+          "status": "closed",
+          "order_id": "d8bf9491-3b19-4b22-8e40-f61727835dac"
+        },
+        {
+          "symbol": "MNST260717P00085000",
+          "status": "closed",
+          "order_id": "b79122fe-bc86-4041-b757-d93248b41f5a"
+        }
+      ]
+    }
+  ]
+}

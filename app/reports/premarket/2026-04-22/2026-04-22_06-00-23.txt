@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-04-22 06:00:23 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 648.81
+Regime: POSITIVE
+Score: 0.4900
+Strength: 0.4421
+Net GEX (B): 2.3842
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 19.50  (Pct: 0.73)
+VIX Change: -0.40
+APMEM Vol: 0.1612
+APMEM Trend: -0.0548
+Regime Score: 87/100
+Regime: STRONG_LONG
+Bias: LONG
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3261
+Expected Move: 11.07
+Expected Range: 637.74 - 659.88
+
+=== KEY LEVELS ===
+Call Wall: 650.00
+Put Wall: 600.00
+Zero Gamma: 649.66
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: AAPL, GOOGL, META, MSFT, NVDA, AMZN, TSLA
+Laggards: None
+Top Pick: AAPL
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+AAPL   | POSITIVE | 266.16  | 0.5765  | 0.6505/-0.0740 | 1.15x | 280.00/250.00 | 4.54     | 261.62-270.70
+GOOGL  | POSITIVE | 337.84  | 0.5524  | 0.6264/-0.0740 | 1.15x | 355.00/327.50 | 7.43     | 330.41-345.27
+META   | POSITIVE | 668.69  | 0.4874  | 0.5614/-0.0740 | 1.15x | 700.00/655.00 | 16.40    | 652.29-685.09
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-On → favor LONG continuation setups and allow slightly larger size.
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Inside Wall Range
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 87)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=648.81
+- QQQ regime=positive
+- QQQ net_gex_b=2.3842
+- QQQ walls call=650.0 put=600.0
+- QQQ zero_gamma=649.66
+- VIX=19.1 change=-0.4 vol_regime=strong_long
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=AAPL, GOOGL, META
+- Expected move=11.07 range=637.74 - 659.88
+- Global regime score=87 bias=LONG regime=STRONG_LONG
+- APMEM vol=0.1612 trend=-0.0548 vix_pct=0.73
+
+=== TRADE INTENT ===
+{'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5765, 'size_mult': 1.5, 'apmem_state': 'RECOVERY', 'regime_score': 87}

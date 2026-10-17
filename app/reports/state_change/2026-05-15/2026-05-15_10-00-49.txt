@@ -1,0 +1,107 @@
+##### STATE CHANGE | 2026-05-15 10:00:49 #####
+Signal ID: 3e3a18ac
+
+=== STATE CHANGE ALERT ===
+
+trade_triggered: False → True
+trigger_type: None → opening_range_breakout_long
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: watch
+trade_triggered: True
+trigger_type: opening_range_breakout_long
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1449
+Trend: 0.0107
+Accel: 0.2383
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.26
+Size: 3 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 59.4 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        740.87
+Regime:      POSITIVE
+Net GEX:     0.0000B  (+0.0000B)
+Zero Gamma:  372.50  (shift: +0.00)
+Call Wall:   N/A
+Put Wall:    N/A
+Dist Flip:   49.721%
+Contracts:   538
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 711.01
+VWAP: 710.00
+OR High: 710.33
+OR Low: 705.58
+Entry Ref: 709.23
+Stop: 649.83
+Target 1: 724.81
+Target 2: 739.47
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1449
+Trend: 0.0107
+Accel: 0.2383
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high

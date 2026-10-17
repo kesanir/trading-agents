@@ -1,0 +1,110 @@
+##### STATE CHANGE | 2026-06-30 09:45:48 #####
+Signal ID: f81e9f44
+
+=== STATE CHANGE ALERT ===
+
+bias: NEUTRAL → LONG
+confidence: LOW → HIGH
+day_type: mixed → trend
+trade_triggered: False → True
+trigger_type: watch_long_confirmation → opening_range_breakout_long
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: True
+trigger_type: opening_range_breakout_long
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev: CALM
+Transition: CALM_HOLD
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.0892
+Trend: -0.1791
+Accel: 0.2365
+Size Mult: 1.0
+Gate Note: Applied intraday APMEM size multiplier: 1.0
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.42
+Size: 7 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 33.7 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        746.57
+Regime:      POSITIVE
+Net GEX:     0.1401B  (-0.0046B)
+Zero Gamma:  415.00  (shift: +0.00)
+Call Wall:   750.00
+Put Wall:    747.00
+Dist Flip:   44.412%
+Contracts:   984
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 735.41
+VWAP: 731.70
+OR High: 730.08
+OR Low: 723.22
+Entry Ref: 733.57
+Stop: 699.89
+Target 1: 747.88
+Target 2: 751.03
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: CALM
+Bias: TREND_FOLLOW
+Size Mult: 1.00
+Vol: 0.0892
+Trend: -0.1791
+Accel: 0.2365
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high

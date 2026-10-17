@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-10-01 06:01:32 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 743.68
+Regime: POSITIVE
+Score: 0.2554
+Strength: 0.1990
+Net GEX (B): 1.7923
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 16.34  (Pct: 0.33)
+VIX Change: -0.03
+APMEM Vol: 0.1791
+APMEM Trend: 0.0312
+Regime Score: 30/100
+Regime: STRONG_SHORT
+Bias: SHORT
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.4531
+Expected Move: 17.64
+Expected Range: 726.04 - 761.32
+
+=== KEY LEVELS ===
+Call Wall: 760.00
+Put Wall: 730.00
+Zero Gamma: 759.12
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: META, GOOGL, AMZN, MSFT, NVDA, AAPL, TSLA
+Laggards: None
+Top Pick: META
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+META   | POSITIVE | 726.82  | 0.6512  | 0.6912/-0.0400 | 1.15x | 750.00/680.00 | 17.24    | 709.58-744.06
+GOOGL  | POSITIVE | 348.74  | 0.6384  | 0.6784/-0.0400 | 1.15x | 350.00/330.00 | 7.25     | 341.49-355.99
+AMZN   | POSITIVE | 251.50  | 0.6048  | 0.6448/-0.0400 | 1.15x | 260.00/240.00 | 4.64     | 246.86-256.14
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-Off → favor SHORT / breakdown setups and defensive posture.
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Inside Wall Range
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 30)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=743.68
+- QQQ regime=positive
+- QQQ net_gex_b=1.7923
+- QQQ walls call=760.0 put=730.0
+- QQQ zero_gamma=759.12
+- VIX=16.31 change=-0.03 vol_regime=strong_short
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=META, GOOGL, AMZN
+- Expected move=17.64 range=726.04 - 761.32
+- Global regime score=30 bias=SHORT regime=STRONG_SHORT
+- APMEM vol=0.1791 trend=0.0312 vix_pct=0.33
+
+=== TRADE INTENT ===
+{'ticker': 'META', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6512, 'size_mult': 0.83, 'apmem_state': 'NEUTRAL', 'regime_score': 30, 'alignment': 'strong'}

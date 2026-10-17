@@ -1,0 +1,85 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-22 07:24:37 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: MEDIUM
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 30949.75
+VWAP: 30867.09
+OR High: 30937.25
+OR Low: 30756.75
+Entry Ref: 30872.56
+Stop: 30042.22
+Target 1: 31293.98
+Target 2: 32036.69
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.4329
+Trend: 1.0044
+Accel: 0.5491
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=MEDIUM
+- Day type=watch
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_HOLD
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.4329
+Trend: 1.0044
+Accel: 0.5491
+Size Mult: 0.7
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'META', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -103.8% >= -25% | credit=130.00 cost=265.00', 'result': [{'symbol': 'META260717C00575000', 'status': 'closed', 'order_id': UUID('6d5c0fec-f5b1-4549-ae3b-b1da33becf79')}, {'symbol': 'META260717C00580000', 'status': 'closed', 'order_id': UUID('a127cdc5-a75c-496e-acbe-6eb7e39b77e2')}]}

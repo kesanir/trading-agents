@@ -1,0 +1,102 @@
+
+
+##### AFTER OPEN REPORT | 2026-09-14 06:36:09 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 703.34
+VWAP: 703.25
+OR High: 703.97
+OR Low: 701.57
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.4524
+Trend: 0.8753
+Accel: 0.9510
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.4524
+Trend: 0.8753
+Accel: 0.951
+Size Mult: 0.7
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'MSFT', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6661, 'size_mult': 0.58, 'apmem_state': 'NEUTRAL', 'regime_score': 30, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'AAPL', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -56.0% >= -25% | credit=125.00 cost=195.00', 'result': [{'symbol': 'AAPL261016P00325000', 'status': 'closed', 'order_id': UUID('30944f81-2ab2-4b38-8037-06a6ceb153d8')}, {'symbol': 'AAPL261016P00320000', 'status': 'closed', 'order_id': UUID('fccdc2ab-fc3e-4eaa-a752-580bc30c6602')}]}
+{'underlying': 'META', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -182.6% >= -25% | credit=115.00 cost=325.00', 'result': [{'symbol': 'META261016P00650000', 'status': 'closed', 'order_id': UUID('7421705d-d502-4350-9791-2b48509341d9')}, {'symbol': 'META261016P00645000', 'status': 'error', 'error': '{"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 65000, available: 36081.84)","options_buying_power":"36081.84","required_options_buying_power":"65000"}'}]}

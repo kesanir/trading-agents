@@ -1,0 +1,105 @@
+##### STATE CHANGE | 2026-05-14 10:07:51 #####
+Signal ID: 8fb4e21a
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: True
+trigger_type: opening_range_breakout_long
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.0921
+Trend: 0.0878
+Accel: 0.296
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.1
+Size: 2 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 68.4 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        747.70
+Regime:      POSITIVE
+Net GEX:     2.9529B  (+0.0386B)
+Zero Gamma:  736.75  (shift: +4.07)
+Call Wall:   750.00
+Put Wall:    725.00
+Dist Flip:   1.464%
+Contracts:   880
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 720.52
+VWAP: 719.21
+OR High: 719.59
+OR Low: 714.24
+Entry Ref: 718.72
+Stop: 650.32
+Target 1: 725.35
+Target 2: N/A
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.0921
+Trend: 0.0878
+Accel: 0.2960
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high

@@ -1,0 +1,112 @@
+[
+  {
+    "ticker": "NVDA",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.701,
+    "size_mult": 0.54,
+    "source": "ml"
+  },
+  {
+    "ticker": "CRWD",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.6534,
+    "size_mult": 0.52,
+    "source": "ml"
+  },
+  {
+    "ticker": "META",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.6091,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "GFS",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.585,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "FAST",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.5037,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "ADSK",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4915,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "BKR",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4792,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "REGN",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4761,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "VRTX",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4657,
+    "size_mult": 0.5,
+    "source": "ml"
+  },
+  {
+    "ticker": "FTNT",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4655,
+    "size_mult": 0.5,
+    "source": "ml"
+  }
+]

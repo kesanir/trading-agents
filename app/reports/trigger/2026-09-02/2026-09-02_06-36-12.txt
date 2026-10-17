@@ -1,0 +1,102 @@
+
+
+##### AFTER OPEN REPORT | 2026-09-02 06:36:12 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 706.71
+VWAP: 706.33
+OR High: 708.06
+OR Low: 705.58
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1246
+Trend: -0.0195
+Accel: -0.0615
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1246
+Trend: -0.0195
+Accel: -0.0615
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6494, 'size_mult': 0.8, 'apmem_state': 'CALM', 'regime_score': 84, 'alignment': 'soft'}
+Trigger Bias: NEUTRAL
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -410.0% >= -25% | credit=100.00 cost=510.00', 'result': [{'symbol': 'FTNT261016P00160000', 'status': 'closed', 'order_id': UUID('808577ce-af1d-4fba-8c5f-80277c0ccb82')}, {'symbol': 'FTNT261016P00155000', 'status': 'closed', 'order_id': UUID('8302b6be-d796-4c80-aa17-7e973fca2775')}]}
+{'underlying': 'NFLX', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -36.4% >= -25% | credit=132.00 cost=180.00', 'result': [{'symbol': 'NFLX261016P00080000', 'status': 'closed', 'order_id': UUID('510c560b-884e-47b1-bf08-1f3b505b378a')}, {'symbol': 'NFLX261016P00075000', 'status': 'closed', 'order_id': UUID('dbbf3cd3-fa1e-454a-a0ce-c9b6a99d27d5')}]}

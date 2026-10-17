@@ -1,0 +1,84 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-13 06:36:13 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 725.81
+VWAP: 725.12
+OR High: 725.81
+OR Low: 723.87
+Entry Ref: 723.99
+Stop: 699.17
+Target 1: 729.14
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1074
+Trend: 0.1734
+Accel: 0.0652
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1074
+Trend: 0.1734
+Accel: 0.0652
+Size Mult: 0.8
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'META', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -204.8% >= -25% | credit=105.00 cost=320.00', 'result': [{'symbol': 'META260918C00580000', 'status': 'closed', 'order_id': UUID('173101a5-2f91-420d-8a23-533c9b922070')}, {'symbol': 'META260918C00585000', 'status': 'closed', 'order_id': UUID('8a6957e4-0e76-4cea-8de4-f0e42c9e2e2b')}]}
+{'symbol': 'META260918C00595000', 'reason': 'stop_loss'}

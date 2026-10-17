@@ -1,0 +1,220 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "watch",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=watch",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 730.26,
+    "vwap": 728.98,
+    "or_high": 730.95,
+    "or_low": 725.64,
+    "entry_ref": 728.43,
+    "stop": 700.0,
+    "target_1": 748.0,
+    "target_2": 764.35,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.7
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "watch",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.0839,
+      "index_strength": 0.0733,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "watch",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=AMZN",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=748.0, put=700.0",
+        "QQQ strength=0.0733 score=0.0839"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AMZN",
+          "GOOGL",
+          "MSFT",
+          "META",
+          "AAPL",
+          "TSLA",
+          "NVDA"
+        ],
+        "laggards": [],
+        "top_pick": "AMZN"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "watch",
+        "playbook": "buy_dips",
+        "qqq_spot": 730.26,
+        "qqq_call_wall": 748.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": 764.35,
+        "qqq_net_gex_b": 0.3261,
+        "qqq_dist_to_flip_pct": -4.668,
+        "target_1": 748.0,
+        "target_2": 764.35,
+        "invalidation": 700.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "AMZN",
+          "GOOGL",
+          "MSFT"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=AMZN",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=748.0, put=700.0",
+          "QQQ strength=0.0733 score=0.0839"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "watch",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 728.43,
+      "qqq_stop": 700.0,
+      "qqq_target_1": 748.0,
+      "qqq_target_2": 764.35,
+      "nq_entry_ref": 728.43,
+      "nq_stop": 700.0,
+      "nq_target_1": 748.0,
+      "nq_target_2": 764.35,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "SLIGHT_EXPANSION",
+    "bias": "WAIT",
+    "size_mult": 0.7,
+    "vol": 0.7173,
+    "trend": 0.4922,
+    "accel": -0.2742,
+    "transition": "PANIC_TO_SLIGHT_EXPANSION",
+    "blocked": false,
+    "block_reason": null
+  },
+  "spx_0dte": {
+    "current": {
+      "ticker": "SPY",
+      "spot": 746.34,
+      "contracts": 722,
+      "max_dte_used": 1,
+      "timestamp": "2026-07-01T07:30:54.092501",
+      "zero_gamma": 744.89,
+      "gamma_wall": 750.0,
+      "call_wall": 750.0,
+      "put_wall": 735.0,
+      "hv_strike": 750.0,
+      "net_gex_b": 2.1072,
+      "regime": "positive",
+      "regime_strength": 0.703,
+      "gex_skew": 5.733,
+      "dist_to_flip_pct": 0.194
+    },
+    "previous": {
+      "ticker": "SPY",
+      "spot": 745.57,
+      "contracts": 722,
+      "max_dte_used": 1,
+      "timestamp": "2026-07-01T07:01:00.372715",
+      "zero_gamma": 746.19,
+      "gamma_wall": 750.0,
+      "call_wall": 750.0,
+      "put_wall": 735.0,
+      "hv_strike": 750.0,
+      "net_gex_b": 1.7507,
+      "regime": "positive",
+      "regime_strength": 0.6063,
+      "gex_skew": 4.08,
+      "dist_to_flip_pct": -0.083
+    },
+    "delta": {
+      "net_gex_b_delta": 0.3565,
+      "zero_gamma_prev": 746.19,
+      "zero_gamma_curr": 744.89,
+      "zero_gamma_shift": -1.3,
+      "call_wall_prev": 750.0,
+      "call_wall_curr": 750.0,
+      "put_wall_prev": 735.0,
+      "put_wall_curr": 735.0,
+      "regime_prev": "positive",
+      "regime_curr": "positive"
+    },
+    "regime_flipped": false,
+    "zero_gamma_crossed": false
+  },
+  "intraday_apmem": {
+    "as_of": "2026-07-01 14:30:00+00:00",
+    "symbol": "QQQ",
+    "interval": "5m",
+    "apmem_vol": 0.7173,
+    "apmem_trend": 0.4922,
+    "apmem_accel": -0.2742,
+    "apmem_state": "PANIC",
+    "prev_apmem_state": "SLIGHT_EXPANSION",
+    "apmem_transition": "SLIGHT_EXPANSION_TO_PANIC",
+    "apmem_signal": "RISK_OFF",
+    "apmem_bias": "WAIT_OR_SHORT",
+    "apmem_size_mult": 0.3
+  },
+  "risk_ctx": {
+    "position_size_contracts": 2,
+    "stop_distance_pts": 28.43,
+    "risk_per_trade_usd": 500.0,
+    "risk_reward_ratio": 0.69,
+    "daily_pnl": 0.0,
+    "daily_loss_ok": true,
+    "max_daily_loss": -500.0,
+    "risk_grade": "F",
+    "account_size": 25000.0,
+    "risk_pct": 0.02
+  },
+  "signal_id": "d0ab0f1c"
+}

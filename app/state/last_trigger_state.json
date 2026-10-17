@@ -1,0 +1,11 @@
+{
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "trade_triggered": false,
+  "trigger_type": "watch_long_confirmation",
+  "spx_0dte_regime": "negative",
+  "apmem_state": "RECOVERY",
+  "apmem_transition": "NEUTRAL_TO_RECOVERY"
+}

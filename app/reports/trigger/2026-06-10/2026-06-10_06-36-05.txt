@@ -1,0 +1,89 @@
+
+
+##### AFTER OPEN REPORT | 2026-06-10 06:36:05 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+Scalp Allowed: NO
+Caution: YES
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: watch_long_confirmation
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: BULLISH
+Current Price: 699.87
+VWAP: 701.83
+OR High: 704.25
+OR Low: 697.10
+Entry Ref: N/A
+Stop: N/A
+Target 1: N/A
+Target 2: N/A
+Setup: watch_long_confirmation
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Bullish lean: watch for reclaim / hold / higher-low confirmation.
+
+=== INVALIDATION NOTES ===
+Stand aside until structure improves.
+
+=== APMEM FILTER ===
+State: PANIC
+Bias: WAIT_OR_SHORT
+Size Mult: 0.30
+Vol: 0.5474
+Trend: 0.1637
+Accel: -0.0766
+Blocked: YES
+Block Reason: APMEM panic regime
+
+=== REASONS ===
+- Higher timeframe bias=NEUTRAL
+- Lean=BULLISH
+- Confidence=LOW
+- Day type=mixed
+- Caution flag is active
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== TRIGGER REASONS ===
+- Higher timeframe is neutral
+- Bullish lean active
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: SLIGHT_EXPANSION
+Prev State: PANIC
+Transition: PANIC_TO_SLIGHT_EXPANSION
+Signal: CAUTION
+Bias: WAIT
+Vol: 0.5474
+Trend: 0.1637
+Accel: -0.0766
+Size Mult: 0.7
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'CSX', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -37.8% >= -25% | credit=225.00 cost=310.00', 'result': [{'symbol': 'CSX260717C00045000', 'status': 'closed', 'order_id': UUID('5530e38d-e943-43fe-8b6f-afe53f57d2bf')}, {'symbol': 'CSX260717C00050000', 'status': 'closed', 'order_id': UUID('1fc3cd23-36c4-4d7c-87f4-ae913e1e67e9')}]}
+{'underlying': 'PEP', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -63.6% >= -25% | credit=162.00 cost=265.00', 'result': [{'symbol': 'PEP260717C00145000', 'status': 'closed', 'order_id': UUID('d83756b5-2797-4835-b2d9-580cf5e288a6')}, {'symbol': 'PEP260717C00150000', 'status': 'closed', 'order_id': UUID('3c135314-964a-4d7e-b4e1-f8828c12dbb3')}]}
+{'underlying': 'SIRI', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -67.7% >= -25% | credit=217.00 cost=364.00', 'result': [{'symbol': 'SIRI260717P00030000', 'status': 'closed', 'order_id': UUID('246b93b8-c75b-4ac8-9cb0-41243324d129')}, {'symbol': 'SIRI260717P00025000', 'status': 'closed', 'order_id': UUID('ca71da82-a7d8-4546-8cbb-5457b71f8bb9')}]}
+{'symbol': 'FTNT', 'reason': 'take_profit'}

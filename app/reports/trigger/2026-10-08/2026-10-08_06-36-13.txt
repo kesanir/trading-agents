@@ -1,0 +1,97 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-08 06:36:13 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 754.81
+VWAP: 753.80
+OR High: 754.81
+OR Low: 752.52
+Entry Ref: 752.93
+Stop: 700.84
+Target 1: 760.92
+Target 2: 775.20
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1637
+Trend: 0.3749
+Accel: 0.5292
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1637
+Trend: 0.3749
+Accel: 0.5292
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.8136, 'size_mult': 1.06, 'apmem_state': 'RECOVERY', 'regime_score': 100, 'alignment': 'soft'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'ADI', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -172.4% >= -25% | credit=290.00 cost=790.00', 'result': [{'symbol': 'ADI261120P00410000', 'status': 'closed', 'order_id': UUID('249c2fae-c4ac-4ab8-81e4-7e0da8c37637')}, {'symbol': 'ADI261120P00400000', 'status': 'error', 'error': '{"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 41000, available: 30232.46)","options_buying_power":"30232.46","required_options_buying_power":"41000"}'}]}
+{'underlying': 'LRCX', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -135.9% >= -25% | credit=320.00 cost=755.00', 'result': [{'symbol': 'LRCX261120P00330000', 'status': 'closed', 'order_id': UUID('b446789a-97f5-4884-ba69-e5f0b79a41b8')}, {'symbol': 'LRCX261120P00320000', 'status': 'error', 'error': '{"code":40310000,"message":"insufficient options buying power for cash-secured put (required: 33000, available: 29262.83)","options_buying_power":"29262.83","required_options_buying_power":"33000"}'}]}

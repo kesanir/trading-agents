@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-06-04 06:00:43 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 736.64
+Regime: NEGATIVE
+Score: 0.1379
+Strength: 0.3639
+Net GEX (B): -2.2838
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 16.06  (Pct: 0.27)
+VIX Change: 0.40
+APMEM Vol: 0.0911
+APMEM Trend: -0.0383
+Regime Score: 92/100
+Regime: STRONG_LONG
+Bias: LONG
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3959
+Expected Move: 15.26
+Expected Range: 721.38 - 751.90
+
+=== KEY LEVELS ===
+Call Wall: 750.00
+Put Wall: 730.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: MSFT, NVDA, AAPL, TSLA, AMZN, META
+Laggards: GOOGL
+Top Pick: MSFT
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+MSFT   | POSITIVE | 433.69  | 0.7343  | 0.6503/0.0840 | 1.15x | 435.00/400.00 | 8.99     | 424.70-442.68
+NVDA   | POSITIVE | 213.04  | 0.5630  | 0.4790/0.0840 | 1.15x | 230.00/205.00 | 5.05     | 207.99-218.09
+AAPL   | POSITIVE | 312.99  | 0.5599  | 0.4759/0.0840 | 1.15x | 315.00/302.50 | 5.20     | 307.79-318.19
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-On → favor LONG continuation setups and allow slightly larger size.
+
+=== MARKET READ ===
+Market Condition: Mixed Cross Current
+Opening Scenario: Inside Wall Range
+Playbook: Wait For Reclaim Then Selective Longs
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 92)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=736.64
+- QQQ regime=negative
+- QQQ net_gex_b=-2.2838
+- QQQ walls call=750.0 put=730.0
+- VIX=16.46 change=0.4 vol_regime=strong_long
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=MSFT, NVDA, AAPL
+- Laggards=GOOGL
+- Expected move=15.26 range=721.38 - 751.9
+- Global regime score=92 bias=LONG regime=STRONG_LONG
+- APMEM vol=0.0911 trend=-0.0383 vix_pct=0.27
+
+=== TRADE INTENT ===
+{'ticker': 'MSFT', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.7343, 'size_mult': 1.06, 'apmem_state': 'RECOVERY', 'regime_score': 92, 'alignment': 'soft'}

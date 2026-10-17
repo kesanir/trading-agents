@@ -1,0 +1,17 @@
+{
+  "apmem_state": "RECOVERY",
+  "payload": {
+    "as_of": "2026-10-16 19:00:00+00:00",
+    "symbol": "QQQ",
+    "interval": "5m",
+    "apmem_vol": 0.1416,
+    "apmem_trend": -0.2284,
+    "apmem_accel": -0.2488,
+    "apmem_state": "RECOVERY",
+    "prev_apmem_state": "RECOVERY",
+    "apmem_transition": "RECOVERY_HOLD",
+    "apmem_signal": "LONG_RISK_ON",
+    "apmem_bias": "LONG",
+    "apmem_size_mult": 1.15
+  }
+}

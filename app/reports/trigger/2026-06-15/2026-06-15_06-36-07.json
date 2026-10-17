@@ -1,0 +1,255 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 738.7,
+    "vwap": 738.69,
+    "or_high": 739.49,
+    "or_low": 736.04,
+    "entry_ref": 736.85,
+    "stop": 699.24,
+    "target_1": 739.2,
+    "target_2": null,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.3
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.4859,
+      "index_strength": 0.4069,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=6, negative=1, top_pick=TSLA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=740.0, put=700.0",
+        "QQQ strength=0.4069 score=0.4859"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "TSLA",
+          "NVDA",
+          "AMZN",
+          "GOOGL",
+          "AAPL",
+          "MSFT"
+        ],
+        "laggards": [
+          "META"
+        ],
+        "top_pick": "TSLA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 739.5,
+        "qqq_call_wall": 740.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": 739.9,
+        "qqq_net_gex_b": 2.311,
+        "qqq_dist_to_flip_pct": -0.054,
+        "target_1": 740.0,
+        "target_2": null,
+        "invalidation": 700.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "TSLA",
+          "NVDA",
+          "AMZN"
+        ],
+        "mag7_top_negative": [
+          "META"
+        ],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=6, negative=1, top_pick=TSLA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=740.0, put=700.0",
+          "QQQ strength=0.4069 score=0.4859"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 737.65,
+      "qqq_stop": 700.0,
+      "qqq_target_1": 740.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 736.85,
+      "nq_stop": 699.24,
+      "nq_target_1": 739.2,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "PANIC",
+    "bias": "WAIT_OR_SHORT",
+    "size_mult": 0.3,
+    "vol": 0.4232,
+    "trend": 0.1992,
+    "accel": -0.0987,
+    "transition": "NEUTRAL_TO_PANIC",
+    "blocked": true,
+    "block_reason": "APMEM panic regime"
+  },
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "TSLA",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.5911,
+      "size_mult": 0.83,
+      "apmem_state": "NEUTRAL",
+      "regime_score": 20,
+      "alignment": "strong"
+    }
+  },
+  "auto_exits": [
+    {
+      "underlying": "NVDA",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -74.1% >= -25% | credit=201.00 cost=350.00",
+      "result": [
+        {
+          "symbol": "NVDA260622C00205000",
+          "status": "closed",
+          "order_id": "ed617590-e801-46c6-a43e-86d10d49cd11"
+        },
+        {
+          "symbol": "NVDA260622C00210000",
+          "status": "closed",
+          "order_id": "96beeeb5-8dba-48f4-9f14-3b6f0529a7e7"
+        }
+      ]
+    },
+    {
+      "underlying": "ROST",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -307.1% >= -25% | credit=140.00 cost=570.00",
+      "result": [
+        {
+          "symbol": "ROST260717P00240000",
+          "status": "closed",
+          "order_id": "aac64936-e651-4c50-86ca-e4bab5b46fde"
+        },
+        {
+          "symbol": "ROST260717P00230000",
+          "status": "closed",
+          "order_id": "8499afee-f48f-45ef-8092-610d92c571f2"
+        }
+      ]
+    },
+    {
+      "underlying": "SBUX",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -54.2% >= -25% | credit=216.00 cost=333.00",
+      "result": [
+        {
+          "symbol": "SBUX260717P00105000",
+          "status": "closed",
+          "order_id": "2cfd5c36-c047-42ca-a91f-8d78350a8bd8"
+        },
+        {
+          "symbol": "SBUX260717P00100000",
+          "status": "closed",
+          "order_id": "b63fd405-477b-4858-8305-649c04c7b6ae"
+        }
+      ]
+    },
+    {
+      "underlying": "TSLA",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -109.5% >= -25% | credit=420.00 cost=880.00",
+      "result": [
+        {
+          "symbol": "TSLA260622C00400000",
+          "status": "closed",
+          "order_id": "89b38287-6990-4591-836e-805ffc0b0220"
+        },
+        {
+          "symbol": "TSLA260622C00410000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    },
+    {
+      "underlying": "TSLA",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -62.2% >= -25% | credit=185.00 cost=300.00",
+      "result": [
+        {
+          "symbol": "TSLA260717C00405000",
+          "status": "closed",
+          "order_id": "b7fad0fd-62a2-4e4c-afe6-6996225daa86"
+        },
+        {
+          "symbol": "TSLA260717C00410000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"account not eligible to trade uncovered option contracts\"}"
+        }
+      ]
+    }
+  ]
+}

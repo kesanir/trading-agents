@@ -1,0 +1,103 @@
+##### STATE CHANGE | 2026-06-17 09:00:56 #####
+Signal ID: c318a5f0
+
+=== STATE CHANGE ALERT ===
+
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: watch
+trade_triggered: False
+trigger_type: None
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1664
+Trend: -0.2269
+Accel: 0.1842
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.25
+Size: 5 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 31.9 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        750.85
+Regime:      POSITIVE
+Net GEX:     0.7278B  (-0.2494B)
+Zero Gamma:  760.32  (shift: +1.18)
+Call Wall:   755.00
+Put Wall:    730.00
+Dist Flip:   -1.262%
+Contracts:   920
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 733.42
+VWAP: 732.93
+OR High: 735.51
+OR Low: 732.17
+Entry Ref: 731.59
+Stop: 699.65
+Target 1: 739.63
+Target 2: 779.19
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1664
+Trend: -0.2269
+Accel: 0.1842
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP

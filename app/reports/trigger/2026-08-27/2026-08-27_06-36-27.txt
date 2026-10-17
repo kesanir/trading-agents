@@ -1,0 +1,93 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-27 06:36:27 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 715.42
+VWAP: 717.22
+OR High: 718.34
+OR Low: 715.42
+Entry Ref: 713.63
+Stop: 699.67
+Target 1: 729.65
+Target 2: 739.01
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1678
+Trend: 0.1701
+Accel: -0.1096
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1678
+Trend: 0.1701
+Accel: -0.1096
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'NVDA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.667, 'size_mult': 1.5, 'apmem_state': 'RECOVERY', 'regime_score': 82, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: True
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Duplicate blocked: symbol already has open position
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'ON', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -81.6% >= -25% | credit=125.00 cost=227.00', 'result': [{'symbol': 'ON260918C00075000', 'status': 'closed', 'order_id': UUID('86cc4dba-2097-4edf-a11b-4bcd4d603c58')}, {'symbol': 'ON260918C00080000', 'status': 'closed', 'order_id': UUID('ffe5278a-df36-442b-8cbc-e2de45353b4e')}]}
+{'symbol': 'GOOGL260918C00350000', 'reason': 'stop_loss'}

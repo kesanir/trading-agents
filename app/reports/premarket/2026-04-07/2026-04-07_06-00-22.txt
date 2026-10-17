@@ -1,0 +1,70 @@
+
+
+##### PREMARKET REPORT | 2026-04-07 06:00:22 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 584.85
+Regime: NEGATIVE
+Score: 0.1832
+Strength: 0.3020
+Net GEX (B): -1.2347
+
+=== VOLATILITY CONTEXT ===
+VIX: 25.46
+VIX Change: 1.29
+Vol Regime: HIGH_VOL
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.3704
+Expected Move: 11.34
+Expected Range: 573.51 - 596.19
+
+=== KEY LEVELS ===
+Call Wall: 610.00
+Put Wall: 570.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: GOOGL, AMZN, NVDA, AAPL, MSFT
+Laggards: TSLA, META
+Top Pick: GOOGL
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Call/Put | Exp Move | Range
+------------------------------------------------------------------------
+GOOGL  | POSITIVE | 299.99  | 0.6451  | 300.00/280.00 | 5.82     | 294.17-305.81
+AMZN   | POSITIVE | 212.76  | 0.5575  | 220.00/200.00 | 4.47     | 208.29-217.23
+TSLA   | NEGATIVE | 348.77  | 0.3297  | 400.00/350.00 | 10.18    | 338.59-358.95
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== MARKET READ ===
+Market Condition: Trend Down Risk
+Opening Scenario: Inside Wall Range
+Playbook: Bullish Lean Wait For Confirmation
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== NOTES ===
+- QQQ spot=584.85
+- QQQ regime=negative
+- QQQ net_gex_b=-1.2347
+- QQQ walls call=610.0 put=570.0
+- VIX=25.46 change=1.29 vol_regime=high_vol
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=GOOGL, AMZN, NVDA
+- Laggards=TSLA, META
+- Expected move=11.34 range=573.51 - 596.19

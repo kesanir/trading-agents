@@ -1,0 +1,90 @@
+##### STATE CHANGE | 2026-04-13 09:00:19 #####
+Signal ID: 967479d6
+
+=== STATE CHANGE ALERT ===
+
+trade_triggered: False → True
+trigger_type: None → opening_range_breakout_long
+
+=== CURRENT STATE ===
+bias: LONG
+lean: BULLISH
+confidence: HIGH
+day_type: trend
+trade_triggered: True
+trigger_type: opening_range_breakout_long
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1334
+Trend: 0.0034
+Accel: 0.0321
+Size Mult: 0.8
+Gate Note: Applied intraday APMEM size multiplier: 0.8
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.17
+Size: 6 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 28.2 pts
+Today's P&L: +0.00
+
+=== SPX 0DTE GEX ===
+Status: UNAVAILABLE ([SPX] 0DTE snapshot unavailable)
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: YES
+Trigger Type: opening_range_breakout_long
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 611.68
+VWAP: 611.14
+OR High: 609.89
+OR Low: 607.10
+Entry Ref: 610.15
+Stop: 581.91
+Target 1: 614.91
+Target 2: N/A
+Setup: opening_range_breakout_long
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+- Price is above VWAP
+- Price is above OR high
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+- Price is above OR high

@@ -1,0 +1,220 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "watch",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=watch",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 710.03,
+    "vwap": 709.16,
+    "or_high": 710.33,
+    "or_low": 705.58,
+    "entry_ref": 708.25,
+    "stop": 649.07,
+    "target_1": 723.96,
+    "target_2": 743.63,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.7
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "watch",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.0164,
+      "index_strength": 0.097,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "watch",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=MSFT",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=725.0, put=650.0",
+        "QQQ strength=0.097 score=0.0164"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "MSFT",
+          "NVDA",
+          "AAPL",
+          "TSLA",
+          "GOOGL",
+          "AMZN",
+          "META"
+        ],
+        "laggards": [],
+        "top_pick": "MSFT"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "watch",
+        "playbook": "buy_dips",
+        "qqq_spot": 711.05,
+        "qqq_call_wall": 725.0,
+        "qqq_put_wall": 650.0,
+        "qqq_zero_gamma": 744.7,
+        "qqq_net_gex_b": 0.3389,
+        "qqq_dist_to_flip_pct": -4.732,
+        "target_1": 725.0,
+        "target_2": 744.7,
+        "invalidation": 650.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "MSFT",
+          "NVDA",
+          "AAPL"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=MSFT",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=725.0, put=650.0",
+          "QQQ strength=0.097 score=0.0164"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "watch",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 709.27,
+      "qqq_stop": 650.0,
+      "qqq_target_1": 725.0,
+      "qqq_target_2": 744.7,
+      "nq_entry_ref": 708.25,
+      "nq_stop": 649.07,
+      "nq_target_1": 723.96,
+      "nq_target_2": 743.63,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "SLIGHT_EXPANSION",
+    "bias": "WAIT",
+    "size_mult": 0.7,
+    "vol": 0.7848,
+    "trend": 0.1388,
+    "accel": -0.7025,
+    "transition": "PANIC_TO_SLIGHT_EXPANSION",
+    "blocked": false,
+    "block_reason": null
+  },
+  "spx_0dte": {
+    "current": {
+      "ticker": "SPY",
+      "spot": 741.44,
+      "contracts": 538,
+      "max_dte_used": 1,
+      "timestamp": "2026-05-15T07:30:53.559856",
+      "zero_gamma": 372.5,
+      "gamma_wall": 360.0,
+      "call_wall": null,
+      "put_wall": null,
+      "hv_strike": 705.0,
+      "net_gex_b": 0.0,
+      "regime": "positive",
+      "regime_strength": 0.0,
+      "gex_skew": 0.0,
+      "dist_to_flip_pct": 49.76
+    },
+    "previous": {
+      "ticker": "SPY",
+      "spot": 738.31,
+      "contracts": 538,
+      "max_dte_used": 1,
+      "timestamp": "2026-05-15T06:45:48.114722",
+      "zero_gamma": 372.5,
+      "gamma_wall": 360.0,
+      "call_wall": null,
+      "put_wall": null,
+      "hv_strike": 702.0,
+      "net_gex_b": 0.0,
+      "regime": "positive",
+      "regime_strength": 0.0,
+      "gex_skew": 0.0,
+      "dist_to_flip_pct": 49.547
+    },
+    "delta": {
+      "net_gex_b_delta": 0.0,
+      "zero_gamma_prev": 372.5,
+      "zero_gamma_curr": 372.5,
+      "zero_gamma_shift": 0.0,
+      "call_wall_prev": null,
+      "call_wall_curr": null,
+      "put_wall_prev": null,
+      "put_wall_curr": null,
+      "regime_prev": "positive",
+      "regime_curr": "positive"
+    },
+    "regime_flipped": false,
+    "zero_gamma_crossed": false
+  },
+  "intraday_apmem": {
+    "as_of": "2026-05-15 14:30:00+00:00",
+    "symbol": "QQQ",
+    "interval": "5m",
+    "apmem_vol": 0.7848,
+    "apmem_trend": 0.1388,
+    "apmem_accel": -0.7025,
+    "apmem_state": "PANIC",
+    "prev_apmem_state": "SLIGHT_EXPANSION",
+    "apmem_transition": "SLIGHT_EXPANSION_TO_PANIC",
+    "apmem_signal": "RISK_OFF",
+    "apmem_bias": "WAIT_OR_SHORT",
+    "apmem_size_mult": 0.3
+  },
+  "risk_ctx": {
+    "position_size_contracts": 1,
+    "stop_distance_pts": 59.18,
+    "risk_per_trade_usd": 500.0,
+    "risk_reward_ratio": 0.27,
+    "daily_pnl": 0.0,
+    "daily_loss_ok": true,
+    "max_daily_loss": -500.0,
+    "risk_grade": "F",
+    "account_size": 25000.0,
+    "risk_pct": 0.02
+  },
+  "signal_id": "4335c076"
+}

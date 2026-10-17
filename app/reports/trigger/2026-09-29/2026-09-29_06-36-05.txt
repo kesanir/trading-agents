@@ -1,0 +1,94 @@
+
+
+##### AFTER OPEN REPORT | 2026-09-29 06:36:05 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 737.72
+VWAP: 738.91
+OR High: 740.37
+OR Low: 737.72
+Entry Ref: 735.88
+Stop: 730.35
+Target 1: 760.36
+Target 2: 780.23
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: RECOVERY
+Bias: LONG
+Size Mult: 1.15
+Vol: 0.1162
+Trend: -0.0076
+Accel: -0.2093
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: CALM
+Prev State: RECOVERY
+Transition: RECOVERY_TO_CALM
+Signal: NORMAL
+Bias: TREND_FOLLOW
+Vol: 0.1162
+Trend: -0.0076
+Accel: -0.2093
+Size Mult: 1.0
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'AAPL', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6099, 'size_mult': 0.72, 'apmem_state': 'NEUTRAL', 'regime_score': 40, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'INTC', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -26.3% >= -25% | credit=190.00 cost=240.00', 'result': [{'symbol': 'INTC261016P00115000', 'status': 'closed', 'order_id': UUID('75c727d8-3286-458d-b74e-8e5dc4e3d7e9')}, {'symbol': 'INTC261016P00110000', 'status': 'closed', 'order_id': UUID('11d16eca-c1bc-483e-b71d-aacb88022a51')}]}
+{'symbol': 'CSCO261016C00110000', 'reason': 'stop_loss'}
+{'symbol': 'PCAR261016C00115000', 'reason': 'stop_loss'}

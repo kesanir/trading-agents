@@ -1,0 +1,15 @@
+{
+  "run_id": "b61b870f206a",
+  "timestamp": "2026-06-10 05:21:30.393139",
+  "session": "closed",
+  "account_equity": 94219.21,
+  "account_buying_power": 314832.04,
+  "total_positions": 19,
+  "structures_found": {
+    "CreditSpread": 8
+  },
+  "assessments_count": 11,
+  "closes_triggered": 3,
+  "errors": [],
+  "actions": []
+}

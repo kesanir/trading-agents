@@ -1,0 +1,112 @@
+[
+  {
+    "ticker": "NVDA",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.701,
+    "size_mult": 0.63,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "META",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.6091,
+    "size_mult": 0.55,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "GFS",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.585,
+    "size_mult": 0.53,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "INTC",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.436,
+    "size_mult": 0.52,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "EA",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.3927,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "PYPL",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.3728,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "CSCO",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.3635,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "BKR",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4792,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "GEHC",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.4162,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  },
+  {
+    "ticker": "HON",
+    "direction": "bullish",
+    "strategy": "debit_call",
+    "dte": 7,
+    "delta": 0.35,
+    "width": 5.0,
+    "score": 0.3796,
+    "size_mult": 0.5,
+    "source": "ensemble"
+  }
+]

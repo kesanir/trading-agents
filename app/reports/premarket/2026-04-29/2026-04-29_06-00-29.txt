@@ -1,0 +1,83 @@
+
+
+##### PREMARKET REPORT | 2026-04-29 06:00:29 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 659.28
+Regime: POSITIVE
+Score: 0.3769
+Strength: 0.2899
+Net GEX (B): 1.4568
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 17.83  (Pct: 0.59)
+VIX Change: 0.22
+APMEM Vol: 0.1279
+APMEM Trend: 0.0020
+Regime Score: 52/100
+Regime: NEUTRAL
+Bias: WAIT
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.6819
+Expected Move: 23.53
+Expected Range: 635.75 - 682.81
+
+=== KEY LEVELS ===
+Call Wall: 675.00
+Put Wall: 635.00
+Zero Gamma: 669.69
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: MSFT, META, GOOGL, AAPL, AMZN, NVDA, TSLA
+Laggards: None
+Top Pick: MSFT
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+MSFT   | POSITIVE | 427.04  | 0.7005  | 0.7045/-0.0040 | 0.80x | 445.00/390.00 | 15.24    | 411.80-442.28
+META   | POSITIVE | 671.36  | 0.6668  | 0.6708/-0.0040 | 0.80x | 700.00/570.00 | 24.55    | 646.81-695.91
+GOOGL  | POSITIVE | 349.76  | 0.5283  | 0.5323/-0.0040 | 0.80x | 355.00/327.50 | 9.94     | 339.82-359.70
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== GLOBAL TRADE BIAS ===
+Neutral / Chop → reduce size, quick trades, let levels and opening flow lead.
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Inside Wall Range
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 52)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=659.28
+- QQQ regime=positive
+- QQQ net_gex_b=1.4568
+- QQQ walls call=675.0 put=635.0
+- QQQ zero_gamma=669.69
+- VIX=18.05 change=0.22 vol_regime=neutral
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=MSFT, META, GOOGL
+- Expected move=23.53 range=635.75 - 682.81
+- Global regime score=52 bias=WAIT regime=NEUTRAL
+- APMEM vol=0.1279 trend=0.002 vix_pct=0.59

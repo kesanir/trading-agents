@@ -1,0 +1,86 @@
+
+
+##### PREMARKET REPORT | 2026-05-27 06:00:39 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 734.67
+Regime: POSITIVE
+Score: 0.5213
+Strength: 0.3329
+Net GEX (B): 2.0241
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 17.01  (Pct: 0.49)
+VIX Change: -0.23
+APMEM Vol: 0.1242
+APMEM Trend: 0.0248
+Regime Score: 40/100
+Regime: LEAN_SHORT
+Bias: LIGHT_SHORT
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.4200
+Expected Move: 16.15
+Expected Range: 718.52 - 750.82
+
+=== KEY LEVELS ===
+Call Wall: 730.00
+Put Wall: 705.00
+Zero Gamma: 734.80
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: NVDA, TSLA, AAPL, AMZN, GOOGL, MSFT, META
+Laggards: None
+Top Pick: NVDA
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+NVDA   | POSITIVE | 215.60  | 0.5881  | 0.5681/0.0200 | 1.00x | 220.00/195.00 | 4.74     | 210.86-220.34
+TSLA   | POSITIVE | 442.43  | 0.5382  | 0.5182/0.0200 | 1.00x | 450.00/380.00 | 12.25    | 430.18-454.68
+AAPL   | POSITIVE | 308.70  | 0.4855  | 0.4655/0.0200 | 1.00x | 310.00/287.50 | 4.00     | 304.70-312.70
+
+=== FUTURES FRAMEWORK ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+
+=== GLOBAL TRADE BIAS ===
+Moderate Risk-Off → lean SHORT, reduce aggressive longs.
+
+=== MARKET READ ===
+Market Condition: Aligned Bullish
+Opening Scenario: Above Call Wall Breakout Risk
+Playbook: Buy Dips And Breakout Continuations
+
+=== OPENING PLAN ===
+Prefer buy-the-dip setups above VWAP / support.
+
+=== RISK NOTE ===
+Structure is aligned enough to matter. Use intraday confirmation.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 40)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=734.67
+- QQQ regime=positive
+- QQQ net_gex_b=2.0241
+- QQQ walls call=730.0 put=705.0
+- QQQ zero_gamma=734.8
+- VIX=16.78 change=-0.23 vol_regime=lean_short
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=NVDA, TSLA, AAPL
+- Expected move=16.15 range=718.52 - 750.82
+- Global regime score=40 bias=LIGHT_SHORT regime=LEAN_SHORT
+- APMEM vol=0.1242 trend=0.0248 vix_pct=0.49
+
+=== TRADE INTENT ===
+{'ticker': 'NVDA', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.5881, 'size_mult': 0.72, 'apmem_state': 'NEUTRAL', 'regime_score': 40, 'alignment': 'strong'}

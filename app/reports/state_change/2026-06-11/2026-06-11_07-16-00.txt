@@ -1,0 +1,108 @@
+##### STATE CHANGE | 2026-06-11 07:16:00 #####
+Signal ID: ff9d51ca
+
+=== STATE CHANGE ALERT ===
+
+bias: NEUTRAL → SHORT
+lean: BULLISH → BEARISH
+confidence: LOW → HIGH
+day_type: mixed → trend
+trigger_type: watch_long_confirmation → None
+
+=== CURRENT STATE ===
+bias: SHORT
+lean: BEARISH
+confidence: HIGH
+day_type: trend
+trade_triggered: False
+trigger_type: None
+
+=== INTRADAY APMEM ===
+State: PANIC
+Prev: SLIGHT_EXPANSION
+Transition: SLIGHT_EXPANSION_TO_PANIC
+Signal: RISK_OFF
+Bias: WAIT_OR_SHORT
+Vol: 0.5646
+Trend: 0.6374
+Accel: 0.3604
+Size Mult: 0.3
+Gate Note: Applied intraday APMEM size multiplier: 0.3
+
+=== RISK CONTEXT ===
+Grade: F  |  R:R: 0.1
+Size: 1 MNQ contract(s)  (risk ~$500/trade)
+Stop distance: 36.3 pts
+Today's P&L: +0.00
+
+=== SPY 0DTE GEX ===
+Spot:        728.11
+Regime:      NEGATIVE
+Net GEX:     -2.0578B  (-0.0196B)
+Zero Gamma:  N/A
+Call Wall:   760.00
+Put Wall:    730.00
+Dist Flip:   N/A%
+Contracts:   744
+
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: SHORT
+Lean: BEARISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: SHORT
+Current Price: 701.24
+VWAP: 701.71
+OR High: 702.79
+OR Low: 696.88
+Entry Ref: 702.99
+Stop: 739.29
+Target 1: 699.33
+Target 2: N/A
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Sell failed pops / VWAP rejection / lower-high confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Reclaim resistance / upside breadth expansion / leaders squeeze higher.
+
+=== APMEM FILTER ===
+State: SLIGHT_EXPANSION
+Bias: WAIT
+Size Mult: 0.70
+Vol: 0.5646
+Trend: 0.6374
+Accel: 0.3604
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=SHORT
+- Lean=BEARISH
+- Confidence=HIGH
+- Day type=trend
+- Price is below VWAP
+
+=== TRIGGER REASONS ===
+- Price is below VWAP

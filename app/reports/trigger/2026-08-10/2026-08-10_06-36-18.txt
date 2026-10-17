@@ -1,0 +1,95 @@
+
+
+##### AFTER OPEN REPORT | 2026-08-10 06:36:18 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 720.77
+VWAP: 722.45
+OR High: 723.84
+OR Low: 720.77
+Entry Ref: 718.97
+Stop: 678.94
+Target 1: 728.86
+Target 2: 733.40
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1719
+Trend: 0.2027
+Accel: 0.0829
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1719
+Trend: 0.2027
+Accel: 0.0829
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'META', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6488, 'size_mult': 0.42, 'apmem_state': 'VOL_EXPANSION', 'regime_score': 57, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'ABNB', 'type': 'bull_put', 'reason': 'spread_take_profit', 'details': 'Spread profit 60.5% >= 50% | credit=205.00 cost=81.00', 'result': [{'symbol': 'ABNB260918P00150000', 'status': 'closed', 'order_id': UUID('9cfaa509-d3f2-462c-9800-f542e47533da')}, {'symbol': 'ABNB260918P00145000', 'status': 'closed', 'order_id': UUID('f848efa4-937f-40bc-b936-35afae069a67')}]}
+{'underlying': 'META', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -451.4% >= -25% | credit=185.00 cost=1020.00', 'result': [{'symbol': 'META260918C00590000', 'status': 'closed', 'order_id': UUID('91b444d9-18d2-470c-854c-06764de9acfe')}, {'symbol': 'META260918C00595000', 'status': 'error', 'error': '{"code":40310000,"message":"account not eligible to trade uncovered option contracts"}'}]}
+{'underlying': 'WDAY', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -123.5% >= -25% | credit=170.00 cost=380.00', 'result': [{'symbol': 'WDAY260918P00170000', 'status': 'closed', 'order_id': UUID('cb3d1186-bf69-45f3-856b-59525130dad4')}, {'symbol': 'WDAY260918P00165000', 'status': 'closed', 'order_id': UUID('efaf064d-7c34-42e5-9071-84a5b45a1351')}]}
+{'underlying': 'ZS', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -226.5% >= -25% | credit=122.50 cost=400.00', 'result': [{'symbol': 'ZS260918P00165000', 'status': 'closed', 'order_id': UUID('9789a5b0-b886-49c5-b639-4d5e0a3e27b5')}, {'symbol': 'ZS260918P00160000', 'status': 'closed', 'order_id': UUID('51e5f095-8ab9-4a0e-a0c4-1c1ee28c1923')}]}

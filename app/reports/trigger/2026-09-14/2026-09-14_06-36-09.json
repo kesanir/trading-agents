@@ -1,0 +1,201 @@
+{
+  "trade_triggered": false,
+  "bias": "NEUTRAL",
+  "lean": "BULLISH",
+  "confidence": "LOW",
+  "day_type": "mixed",
+  "scalp_allowed": false,
+  "caution": true,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": "watch_long_confirmation",
+    "reasons": [
+      "Higher timeframe is neutral",
+      "Bullish lean active",
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=NEUTRAL",
+    "Lean=BULLISH",
+    "Confidence=LOW",
+    "Day type=mixed",
+    "Caution flag is active",
+    "Higher timeframe is neutral",
+    "Bullish lean active",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "BULLISH",
+    "current_price": 703.34,
+    "vwap": 703.25,
+    "or_high": 703.97,
+    "or_low": 701.57,
+    "entry_ref": null,
+    "stop": null,
+    "target_1": null,
+    "target_2": null,
+    "setup": "watch_long_confirmation",
+    "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+    "invalidation_note": "Stand aside until structure improves.",
+    "size_mult": 0.3
+  },
+  "higher_timeframe": {
+    "scalp_allowed": false,
+    "bias": "NEUTRAL",
+    "lean": "BULLISH",
+    "confidence": "LOW",
+    "day_type": "mixed",
+    "caution": true,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "negative",
+      "index_score": 0.4008,
+      "index_strength": 0.602,
+      "bias": "NEUTRAL",
+      "lean": "BULLISH",
+      "confidence": "LOW",
+      "day_type": "mixed",
+      "trade_allowed": false,
+      "reasons": [
+        "QQQ regime is negative",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=AAPL",
+        "Mixed tape: bearish index vs bullish leadership",
+        "QQQ walls: call=720.0, put=700.0",
+        "QQQ strength=0.602 score=0.4008"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "AAPL",
+          "GOOGL",
+          "META",
+          "MSFT",
+          "AMZN",
+          "TSLA",
+          "NVDA"
+        ],
+        "laggards": [],
+        "top_pick": "AAPL"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "NEUTRAL",
+        "lean": "BULLISH",
+        "confidence": "LOW",
+        "day_type": "mixed",
+        "playbook": "wait_for_long_confirmation",
+        "qqq_spot": 703.13,
+        "qqq_call_wall": 720.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": null,
+        "qqq_net_gex_b": -5.3998,
+        "qqq_dist_to_flip_pct": null,
+        "target_1": null,
+        "target_2": null,
+        "invalidation": null,
+        "entry_note": "Mixed tape with bullish lean. Wait for VWAP reclaim / opening range strength.",
+        "mag7_top_positive": [
+          "AAPL",
+          "GOOGL",
+          "META"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is negative",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=AAPL",
+          "Mixed tape: bearish index vs bullish leadership",
+          "QQQ walls: call=720.0, put=700.0",
+          "QQQ strength=0.602 score=0.4008"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "NEUTRAL",
+      "setup": "wait_for_long_confirmation",
+      "day_type": "mixed",
+      "confidence": "LOW",
+      "qqq_spot": 703.13,
+      "qqq_watch_above": 720.0,
+      "qqq_watch_below": 700.0,
+      "nq_watch_above": 720.22,
+      "nq_watch_below": 700.21,
+      "entry_note": "Bullish lean: watch for reclaim / hold / higher-low confirmation.",
+      "invalidation_note": "Stand aside until structure improves."
+    }
+  },
+  "apmem": {
+    "state": "PANIC",
+    "bias": "WAIT_OR_SHORT",
+    "size_mult": 0.3,
+    "vol": 0.4524,
+    "trend": 0.8753,
+    "accel": 0.951,
+    "transition": "CALM_TO_PANIC",
+    "blocked": true,
+    "block_reason": "APMEM panic regime"
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_execution": {
+    "success": false,
+    "reason": "Intent not confirmed by after-open trigger",
+    "intent": {
+      "ticker": "MSFT",
+      "direction": "bullish",
+      "strategy": "credit_put",
+      "dte": 7,
+      "delta": 0.35,
+      "width": 5,
+      "score": 0.6661,
+      "size_mult": 0.58,
+      "apmem_state": "NEUTRAL",
+      "regime_score": 30,
+      "alignment": "soft"
+    }
+  },
+  "auto_exits": [
+    {
+      "underlying": "AAPL",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -56.0% >= -25% | credit=125.00 cost=195.00",
+      "result": [
+        {
+          "symbol": "AAPL261016P00325000",
+          "status": "closed",
+          "order_id": "30944f81-2ab2-4b38-8037-06a6ceb153d8"
+        },
+        {
+          "symbol": "AAPL261016P00320000",
+          "status": "closed",
+          "order_id": "fccdc2ab-fc3e-4eaa-a752-580bc30c6602"
+        }
+      ]
+    },
+    {
+      "underlying": "META",
+      "type": "bull_put",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -182.6% >= -25% | credit=115.00 cost=325.00",
+      "result": [
+        {
+          "symbol": "META261016P00650000",
+          "status": "closed",
+          "order_id": "7421705d-d502-4350-9791-2b48509341d9"
+        },
+        {
+          "symbol": "META261016P00645000",
+          "status": "error",
+          "error": "{\"code\":40310000,\"message\":\"insufficient options buying power for cash-secured put (required: 65000, available: 36081.84)\",\"options_buying_power\":\"36081.84\",\"required_options_buying_power\":\"65000\"}"
+        }
+      ]
+    }
+  ]
+}

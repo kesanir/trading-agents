@@ -1,0 +1,97 @@
+
+
+##### AFTER OPEN REPORT | 2026-10-01 06:36:17 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 742.75
+VWAP: 742.37
+OR High: 743.86
+OR Low: 741.25
+Entry Ref: 740.90
+Stop: 730.90
+Target 1: 760.93
+Target 2: 760.94
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1918
+Trend: 0.1408
+Accel: 0.1440
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1918
+Trend: 0.1408
+Accel: 0.144
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'META', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6512, 'size_mult': 0.83, 'apmem_state': 'NEUTRAL', 'regime_score': 30, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'AMZN', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -52.8% >= -25% | credit=180.00 cost=275.00', 'result': [{'symbol': 'AMZN261120C00250000', 'status': 'closed', 'order_id': UUID('fd59753c-69dd-4504-b291-a0bab0445c60')}, {'symbol': 'AMZN261120C00255000', 'status': 'closed', 'order_id': UUID('66c861c6-ce7e-43a9-ab01-eacd70372d15')}]}
+{'underlying': 'FTNT', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -927.3% >= -25% | credit=55.00 cost=565.00', 'result': [{'symbol': 'FTNT261120P00180000', 'status': 'closed', 'order_id': UUID('206e2cac-fd14-4d1c-9e36-826f22ed1cc2')}, {'symbol': 'FTNT261120P00175000', 'status': 'closed', 'order_id': UUID('3a0c5e91-c6d5-465e-aea5-90a7bb8cf377')}]}

@@ -1,0 +1,82 @@
+
+
+##### PREMARKET REPORT | 2026-07-01 06:08:11 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 730.26
+Regime: NEGATIVE
+Score: 0.1915
+Strength: 0.1915
+Net GEX (B): -0.8336
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 16.45  (Pct: 0.37)
+VIX Change: 0.37
+APMEM Vol: 0.2122
+APMEM Trend: 0.0193
+Regime Score: 12/100
+Regime: STRONG_SHORT
+Bias: SHORT
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.6678
+Expected Move: 25.53
+Expected Range: 704.73 - 755.79
+
+=== KEY LEVELS ===
+Call Wall: 748.00
+Put Wall: 700.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: META, AMZN, AAPL, GOOGL, MSFT, TSLA, NVDA
+Laggards: None
+Top Pick: META
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+META   | POSITIVE | 597.55  | 0.5965  | 0.6725/-0.0760 | 1.15x | 600.00/550.00 | 20.89    | 576.66-618.44
+AMZN   | POSITIVE | 238.08  | 0.5932  | 0.6692/-0.0760 | 1.15x | 250.00/220.00 | 4.71     | 233.37-242.79
+GOOGL  | POSITIVE | 360.01  | 0.5589  | 0.6349/-0.0760 | 1.15x | 360.00/340.00 | 6.51     | 353.50-366.52
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== GLOBAL TRADE BIAS ===
+Strong Risk-Off → favor SHORT / breakdown setups and defensive posture.
+
+=== MARKET READ ===
+Market Condition: Mixed Cross Current
+Opening Scenario: Inside Wall Range
+Playbook: Wait For Reclaim Then Selective Longs
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 12)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=730.26
+- QQQ regime=negative
+- QQQ net_gex_b=-0.8336
+- QQQ walls call=748.0 put=700.0
+- VIX=16.82 change=0.37 vol_regime=strong_short
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=META, AMZN, AAPL
+- Expected move=25.53 range=704.73 - 755.79
+- Global regime score=12 bias=SHORT regime=STRONG_SHORT
+- APMEM vol=0.2122 trend=0.0193 vix_pct=0.37

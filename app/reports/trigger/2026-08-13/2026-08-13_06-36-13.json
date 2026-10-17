@@ -1,0 +1,168 @@
+{
+  "trade_triggered": false,
+  "bias": "LONG",
+  "lean": "BULLISH",
+  "confidence": "HIGH",
+  "day_type": "trend",
+  "scalp_allowed": true,
+  "caution": false,
+  "trigger": {
+    "triggered": false,
+    "trigger_type": null,
+    "reasons": [
+      "Price is above VWAP"
+    ]
+  },
+  "reasons": [
+    "Higher timeframe bias=LONG",
+    "Lean=BULLISH",
+    "Confidence=HIGH",
+    "Day type=trend",
+    "Price is above VWAP"
+  ],
+  "execution_plan": {
+    "instrument": "MNQ",
+    "direction": "LONG",
+    "current_price": 725.81,
+    "vwap": 725.12,
+    "or_high": 725.81,
+    "or_low": 723.87,
+    "entry_ref": 723.99,
+    "stop": 699.17,
+    "target_1": 729.14,
+    "target_2": null,
+    "setup": null,
+    "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+    "invalidation_note": "Lose support / fail to hold bid / leaders roll over.",
+    "size_mult": 0.8
+  },
+  "higher_timeframe": {
+    "scalp_allowed": true,
+    "bias": "LONG",
+    "lean": "BULLISH",
+    "confidence": "HIGH",
+    "day_type": "trend",
+    "caution": false,
+    "higher_timeframe": {
+      "index_symbol": "QQQ",
+      "index_regime": "positive",
+      "index_score": 0.632,
+      "index_strength": 0.5654,
+      "bias": "LONG",
+      "lean": "BULLISH",
+      "confidence": "HIGH",
+      "day_type": "trend",
+      "trade_allowed": true,
+      "reasons": [
+        "QQQ regime is positive",
+        "Mag7 dominant regime is positive",
+        "Mag7 broad confirmation is True",
+        "Mag7 positive=7, negative=0, top_pick=TSLA",
+        "Index and Mag7 are aligned bullish",
+        "QQQ walls: call=730.0, put=700.0",
+        "QQQ strength=0.5654 score=0.632"
+      ],
+      "mag7_summary": {
+        "dominant_regime": "positive",
+        "broad_confirmation": true,
+        "leaders": [
+          "TSLA",
+          "NVDA",
+          "MSFT",
+          "AAPL",
+          "AMZN",
+          "META",
+          "GOOGL"
+        ],
+        "laggards": [],
+        "top_pick": "TSLA"
+      },
+      "trade_plan": {
+        "instrument": "MNQ",
+        "bias": "LONG",
+        "lean": "BULLISH",
+        "confidence": "HIGH",
+        "day_type": "trend",
+        "playbook": "buy_dips",
+        "qqq_spot": 726.67,
+        "qqq_call_wall": 730.0,
+        "qqq_put_wall": 700.0,
+        "qqq_zero_gamma": 729.59,
+        "qqq_net_gex_b": 4.4897,
+        "qqq_dist_to_flip_pct": -0.402,
+        "target_1": 730.0,
+        "target_2": null,
+        "invalidation": 700.0,
+        "entry_note": "Prefer pullbacks that hold above support / VWAP. Avoid chasing extended candles.",
+        "mag7_top_positive": [
+          "TSLA",
+          "NVDA",
+          "MSFT"
+        ],
+        "mag7_top_negative": [],
+        "reasons": [
+          "QQQ regime is positive",
+          "Mag7 dominant regime is positive",
+          "Mag7 broad confirmation is True",
+          "Mag7 positive=7, negative=0, top_pick=TSLA",
+          "Index and Mag7 are aligned bullish",
+          "QQQ walls: call=730.0, put=700.0",
+          "QQQ strength=0.5654 score=0.632"
+        ]
+      }
+    },
+    "scalp_plan": {
+      "instrument": "MNQ",
+      "direction": "LONG",
+      "setup": "buy_dips",
+      "day_type": "trend",
+      "confidence": "HIGH",
+      "qqq_entry_ref": 724.85,
+      "qqq_stop": 700.0,
+      "qqq_target_1": 730.0,
+      "qqq_target_2": null,
+      "nq_entry_ref": 723.99,
+      "nq_stop": 699.17,
+      "nq_target_1": 729.14,
+      "nq_target_2": null,
+      "entry_note": "Buy pullbacks / hold above VWAP / higher-low confirmation preferred.",
+      "invalidation_note": "Lose support / fail to hold bid / leaders roll over."
+    }
+  },
+  "apmem": {
+    "state": "NEUTRAL",
+    "bias": "WAIT",
+    "size_mult": 0.8,
+    "vol": 0.1074,
+    "trend": 0.1734,
+    "accel": 0.0652,
+    "transition": "CALM_TO_NEUTRAL",
+    "blocked": false,
+    "block_reason": null
+  },
+  "trigger_source": "qqq_proxy",
+  "auto_exits": [
+    {
+      "underlying": "META",
+      "type": "bear_call",
+      "reason": "spread_stop_loss",
+      "details": "Spread loss -204.8% >= -25% | credit=105.00 cost=320.00",
+      "result": [
+        {
+          "symbol": "META260918C00580000",
+          "status": "closed",
+          "order_id": "173101a5-2f91-420d-8a23-533c9b922070"
+        },
+        {
+          "symbol": "META260918C00585000",
+          "status": "closed",
+          "order_id": "8a6957e4-0e76-4cea-8de4-f0e42c9e2e2b"
+        }
+      ]
+    },
+    {
+      "symbol": "META260918C00595000",
+      "reason": "stop_loss"
+    }
+  ]
+}

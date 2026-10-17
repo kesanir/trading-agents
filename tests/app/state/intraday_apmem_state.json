@@ -1,0 +1,17 @@
+{
+  "apmem_state": "VOL_EXPANSION",
+  "payload": {
+    "as_of": "2026-04-21 19:55:00+00:00",
+    "symbol": "QQQ",
+    "interval": "5m",
+    "apmem_vol": 0.2966,
+    "apmem_trend": 0.0611,
+    "apmem_accel": 0.0658,
+    "apmem_state": "VOL_EXPANSION",
+    "prev_apmem_state": "CALM",
+    "apmem_transition": "CALM_TO_VOL_EXPANSION",
+    "apmem_signal": "DEFENSIVE",
+    "apmem_bias": "SMALL_SIZE",
+    "apmem_size_mult": 0.55
+  }
+}

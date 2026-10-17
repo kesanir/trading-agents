@@ -1,0 +1,97 @@
+
+
+##### AFTER OPEN REPORT | 2026-09-30 06:36:13 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: WATCH
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 741.86
+VWAP: 741.11
+OR High: 742.67
+OR Low: 737.59
+Entry Ref: 740.01
+Stop: 731.03
+Target 1: 761.08
+Target 2: 766.85
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== APMEM FILTER ===
+State: NEUTRAL
+Bias: WAIT
+Size Mult: 0.80
+Vol: 0.1338
+Trend: -0.1365
+Accel: 0.1185
+Blocked: NO
+Block Reason: None
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=watch
+- Price is above VWAP
+
+=== TRIGGER REASONS ===
+- Price is above VWAP
+
+=== NT SIGNAL FILE ===
+Written: C:/NinjaTrader8/signals\MNQ_signal.json
+
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: NEUTRAL
+Transition: NEUTRAL_HOLD
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1338
+Trend: -0.1365
+Accel: 0.1185
+Size Mult: 0.8
+
+
+=== PREMARKET INTENT CHECK ===
+Intent: {'ticker': 'MSFT', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6167, 'size_mult': 0.72, 'apmem_state': 'NEUTRAL', 'regime_score': 40, 'alignment': 'strong'}
+Trigger Bias: LONG
+Trade Triggered: False
+Confirmed: False
+Already Executed (Time-based): False
+Already Open Position: False
+
+=== AUTO EXECUTION ===
+Success: False
+Reason: Intent not confirmed by after-open trigger
+
+
+=== AUTO EXITS (STRUCTURE-AWARE) ===
+{'underlying': 'BKNG', 'type': 'bear_call', 'reason': 'spread_stop_loss', 'details': 'Spread loss -400.0% >= -25% | credit=80.00 cost=400.00', 'result': [{'symbol': 'BKNG261016C00160000', 'status': 'closed', 'order_id': UUID('1b5b6cd6-f811-4415-a4e7-f4007e893053')}, {'symbol': 'BKNG261016C00165000', 'status': 'closed', 'order_id': UUID('8c3b9a24-c392-4b32-8c32-b37160404700')}]}
+{'underlying': 'QCOM', 'type': 'bull_put', 'reason': 'spread_stop_loss', 'details': 'Spread loss -137.5% >= -25% | credit=120.00 cost=285.00', 'result': [{'symbol': 'QCOM261016P00185000', 'status': 'closed', 'order_id': UUID('a60aa37e-285b-4305-8922-db442a67f7ac')}, {'symbol': 'QCOM261016P00180000', 'status': 'closed', 'order_id': UUID('970c2b75-0bb9-41e9-9e29-88884acb4279')}]}

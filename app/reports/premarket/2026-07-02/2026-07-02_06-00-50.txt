@@ -1,0 +1,85 @@
+
+
+##### PREMARKET REPORT | 2026-07-02 06:00:50 PDT #####
+=== PREMARKET PLAN ===
+
+=== INDEX STRUCTURE ===
+Symbol: QQQ
+Spot: 727.57
+Regime: NEGATIVE
+Score: 0.0156
+Strength: 0.0594
+Net GEX (B): -0.2525
+
+=== VOLATILITY REGIME (VIX + APMEM) ===
+VIX: 16.59  (Pct: 0.40)
+VIX Change: -0.58
+APMEM Vol: 0.1786
+APMEM Trend: -0.0179
+Regime Score: 60/100
+Regime: LEAN_LONG
+Bias: LIGHT_LONG
+
+=== QQQ EXPECTED MOVE ===
+Proxy ATM IV: 0.4241
+Expected Move: 16.15
+Expected Range: 711.42 - 743.72
+
+=== KEY LEVELS ===
+Call Wall: 740.00
+Put Wall: 700.00
+Zero Gamma: N/A
+
+=== MAG7 STRUCTURE ===
+Dominant Regime: POSITIVE
+Broad Confirmation: True
+Leaders: META, AAPL, AMZN, TSLA, MSFT, GOOGL, NVDA
+Laggards: None
+Top Pick: META
+
+=== TOP 3 MAG7 SETUPS ===
+Ticker | Regime | Spot | Score | Base/Macro | Size | Call/Put | Exp Move | Range
+------------------------------------------------------------------------------------------
+META   | POSITIVE | 604.51  | 0.6473  | 0.6273/0.0200 | 1.00x | 625.00/550.00 | 13.42    | 591.09-617.93
+AAPL   | POSITIVE | 294.26  | 0.5968  | 0.5768/0.0200 | 1.00x | 300.00/270.00 | 4.06     | 290.20-298.32
+AMZN   | POSITIVE | 241.74  | 0.5428  | 0.5228/0.0200 | 1.00x | 250.00/230.00 | 4.42     | 237.32-246.16
+
+=== FUTURES FRAMEWORK ===
+Bias: NEUTRAL
+Lean: BULLISH
+Confidence: LOW
+Day Type: MIXED
+
+=== GLOBAL TRADE BIAS ===
+Moderate Risk-On → lean LONG, but still respect walls and opening structure.
+
+=== MARKET READ ===
+Market Condition: Mixed Cross Current
+Opening Scenario: Inside Wall Range
+Playbook: Wait For Reclaim Then Selective Longs
+
+=== OPENING PLAN ===
+Mixed tape with bullish lean. Wait for reclaim / opening strength before longs.
+
+=== RISK NOTE ===
+Index and leadership disagree. Avoid forcing directional trades.
+
+=== REGIME IMPACT ===
+Macro Score Adjustment Active (Score: 60)
+Ranking adjusted using shared VIX + APMEM overlay
+
+=== NOTES ===
+- QQQ spot=727.57
+- QQQ regime=negative
+- QQQ net_gex_b=-0.2525
+- QQQ walls call=740.0 put=700.0
+- VIX=16.01 change=-0.58 vol_regime=lean_long
+- Mag7 dominant regime=positive
+- Broad confirmation=True
+- Leaders=META, AAPL, AMZN
+- Expected move=16.15 range=711.42 - 743.72
+- Global regime score=60 bias=LIGHT_LONG regime=LEAN_LONG
+- APMEM vol=0.1786 trend=-0.0179 vix_pct=0.4
+
+=== TRADE INTENT ===
+{'ticker': 'META', 'direction': 'bullish', 'strategy': 'credit_put', 'dte': 7, 'delta': 0.35, 'width': 5, 'score': 0.6473, 'size_mult': 0.54, 'apmem_state': 'STABILIZING', 'regime_score': 60, 'alignment': 'soft'}

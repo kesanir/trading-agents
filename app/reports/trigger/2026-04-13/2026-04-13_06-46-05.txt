@@ -1,0 +1,61 @@
+
+
+##### AFTER OPEN REPORT | 2026-04-13 06:46:05 PDT #####
+=== FUTURES TRIGGER REPORT ===
+
+=== HIGHER TIMEFRAME ===
+Bias: LONG
+Lean: BULLISH
+Confidence: HIGH
+Day Type: TREND
+Scalp Allowed: YES
+Caution: NO
+
+=== TRIGGER STATUS ===
+Trade Triggered: NO
+Trigger Type: None
+
+=== EXECUTION PLAN ===
+Instrument: MNQ
+Direction: LONG
+Current Price: 608.58
+VWAP: 609.28
+OR High: 609.89
+OR Low: 607.10
+Entry Ref: 607.06
+Stop: 582.17
+Target 1: 615.18
+Target 2: 619.39
+Setup: None
+
+=== QQQ STRUCTURE ===
+QQQ Call Wall: N/A
+QQQ Put Wall: N/A
+QQQ Zero Gamma: N/A
+
+=== MAG7 CONFIRMATION ===
+Top Positive: None
+Top Negative: None
+
+=== ENTRY NOTES ===
+Buy pullbacks / hold above VWAP / higher-low confirmation preferred.
+
+=== INVALIDATION NOTES ===
+Lose support / fail to hold bid / leaders roll over.
+
+=== REASONS ===
+- Higher timeframe bias=LONG
+- Lean=BULLISH
+- Confidence=HIGH
+- Day type=trend
+
+=== INTRADAY APMEM ===
+State: NEUTRAL
+Prev State: UNKNOWN
+Transition: UNKNOWN_TO_NEUTRAL
+Signal: WAIT
+Bias: WAIT
+Vol: 0.1566
+Trend: 0.0373
+Accel: 0.0435
+Size Mult: 0.8
