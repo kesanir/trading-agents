@@ -8,7 +8,7 @@ User=ubuntu
 WorkingDirectory=/opt/trading-agents
 EnvironmentFile=/opt/trading-agents/.env
 Environment=ALPACA_PAPER=True DRY_RUN=True TZ=America/New_York PYTHONIOENCODING=utf-8 PYTHONUNBUFFERED=1
-ExecStart=/usr/bin/flock -w 20 /opt/trading-agents/app/state/reporting.lock /opt/trading-agents/.venv/bin/python reporting_job.py mnq --telegram
+ExecStart=/usr/bin/flock -w 20 /opt/trading-agents/app/state/reporting.lock /usr/bin/env ALPACA_PAPER=True DRY_RUN=True /opt/trading-agents/.venv/bin/python reporting_job.py mnq --telegram
 TimeoutStartSec=900
 StandardOutput=journal
 StandardError=journal
