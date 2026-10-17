@@ -22,6 +22,8 @@ from app.services.auto_trade_service import pick_trade_candidate
 import asyncio
 
 def run_premarket(send_telegram: bool = False) -> str:
+    from app.services.deployment_safety import check_safety
+    check_safety()
     plan = build_premarket_plan("QQQ")
     report = format_premarket_plan(plan)
 
@@ -65,14 +67,27 @@ def run_premarket(send_telegram: bool = False) -> str:
     return full_report
 
 
-def run_after_open(send_telegram: bool = False, nq_price: float | None = None, auto_trade: bool = False) -> str:
-    market = get_intraday_context("QQQ", opening_range_minutes=30)
+def run_after_open(send_telegram: bool = False, nq_price: float | None = None, auto_trade: bool = False, *, auto_exit: bool = False, write_signals: bool = False, dry_run: bool = True) -> str:
+    from app.services.deployment_safety import check_safety
+    check_safety()
+    from core.config import settings
+    dry_run = dry_run or settings.DRY_RUN
+    auto_trade = auto_trade and not dry_run
+    auto_exit = auto_exit and not dry_run
+    write_signals = write_signals and not dry_run
+    market = get_intraday_context("QQQ", opening_range_minutes=15)
 
     nq_ctx = None
     if nq_price is None:
         try:
             from app.data.futures_ticks import get_nq_intraday_context
-            nq_ctx = get_nq_intraday_context(opening_range_minutes=30)
+            nq_ctx = get_nq_intraday_context(opening_range_minutes=15)
+            if nq_ctx is not None:
+                from datetime import datetime, timezone, timedelta
+                last_bar = nq_ctx["bars"].index[-1].to_pydatetime()
+                if last_bar.tzinfo is None or not timedelta(seconds=-30) <= datetime.now(timezone.utc) - last_bar <= timedelta(minutes=5):
+                    print("Discarding stale NQ context; report will identify QQQ proxy")
+                    nq_ctx = None
         except Exception as exc:
             print(f"[futures_ticks] get_nq_intraday_context failed: {exc}")
             nq_ctx = None
@@ -114,18 +129,19 @@ def run_after_open(send_telegram: bool = False, nq_price: float | None = None, a
     report = format_futures_trigger(trigger)
     intraday_apmem = build_intraday_apmem_signal(symbol="QQQ", period="5d", interval="5m")
 
-    # Write NinjaTrader signal file (today's session)
-    try:
-        sig_data = build_signal_data(trigger, intraday_apmem, market)
-        base_contracts = max(1, int(round(float(intraday_apmem.apmem_size_mult or 1))))
-        sig_path = write_signal_file(
-            instrument="MNQ",
-            signal_data=sig_data,
-            contracts=base_contracts,
-        )
-        report += f"\n\n=== NT SIGNAL FILE ===\nWritten: {sig_path}\n"
-    except Exception as e:
-        report += f"\n\n=== NT SIGNAL FILE ===\nFailed: {e}\n"
+    if write_signals:
+        # Write NinjaTrader signal file (today's session)
+        try:
+            sig_data = build_signal_data(trigger, intraday_apmem, market)
+            base_contracts = max(1, int(round(float(intraday_apmem.apmem_size_mult or 1))))
+            sig_path = write_signal_file(
+                instrument="MNQ",
+                signal_data=sig_data,
+                contracts=base_contracts,
+            )
+            report += f"\n\n=== NT SIGNAL FILE ===\nWritten: {sig_path}\n"
+        except Exception as e:
+            report += f"\n\n=== NT SIGNAL FILE ===\nFailed: {e}\n"
 
     report += "\n\n=== INTRADAY APMEM ===\n"
     report += f"State: {intraday_apmem.apmem_state}\n"
@@ -148,7 +164,7 @@ def run_after_open(send_telegram: bool = False, nq_price: float | None = None, a
         from app.services.auto_trade_executor import execute_trade
         from app.services.execution_log_service import (
                 already_executed,
-                append_log,
+                append_log as append_execution_log,
             )
         from app.services.open_position_guard import has_open_position
         from alpaca.trading.client import TradingClient
@@ -277,6 +293,7 @@ def run_after_open(send_telegram: bool = False, nq_price: float | None = None, a
                 report += f"Success: False\n"
                 report += f"Reason: {reason}\n"
 
+    if auto_exit:
         from app.features.position_parser import parse_all_positions, detect_structures
         from app.features.risk_evaluator import evaluate_structure, evaluate_single_position
         from app.services.exit_executor import close_all_legs
@@ -372,6 +389,9 @@ def main() -> None:
     run_pre = "--premarket" in args
     run_open = "--open" in args
     auto_trade = "--auto-trade" in args
+    auto_exit = "--auto-exit" in args
+    write_signals = "--write-signals" in args
+    dry_run = "--dry-run" in args or "--execute" not in args
 
     if not run_pre and not run_open:
         run_pre = True
@@ -385,7 +405,7 @@ def main() -> None:
 
     if run_open:
         if force or is_market_open_window():
-            run_after_open(send_telegram=send_telegram, nq_price=None, auto_trade=auto_trade)
+            run_after_open(send_telegram=send_telegram, nq_price=None, auto_trade=auto_trade, auto_exit=auto_exit, write_signals=write_signals, dry_run=dry_run)
         else:
             print("Skipped after-open run: outside market window.")
 

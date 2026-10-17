@@ -156,20 +156,18 @@ def get_intraday_context(symbol: str = "QQQ", opening_range_minutes: int = 30) -
     """
     df = fetch_intraday_bars(symbol=symbol, lookback_minutes=390)
 
+    from app.services.session_calendar import bounds, ET
+    now = datetime.now(timezone.utc)
+    session = bounds(now.astimezone(ET).date())
+    if session is None:
+        raise ValueError("No US equity session today")
+    stamps = pd.to_datetime(df["timestamp"], utc=True)
+    df = df[(stamps >= session[0]) & (stamps < session[1])].copy()
     if df.empty:
-        latest = fetch_latest_bar(symbol)
-        if latest is None:
-            raise ValueError(f"No Alpaca intraday data returned for {symbol}")
-
-        price = latest["close"]
-        return {
-            "symbol": symbol,
-            "price": price,
-            "vwap": price,
-            "or_high": price,
-            "or_low": price,
-            "bars": df,
-        }
+        raise ValueError("No current-session intraday bars")
+    latest_time = pd.to_datetime(df["timestamp"].iloc[-1], utc=True).to_pydatetime()
+    if not timedelta(seconds=-30) <= now - latest_time <= timedelta(minutes=5):
+        raise ValueError("Intraday bars are stale or timestamp is in future")
 
     price = round(float(df["close"].iloc[-1]), 2)
     vwap = compute_vwap(df)

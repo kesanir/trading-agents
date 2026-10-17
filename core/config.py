@@ -127,7 +127,7 @@ class Settings(BaseSettings):
 
     # ── Safety / dry-run ─────────────────────────────────────────────────────
     DRY_RUN: bool = Field(
-        False,
+        True,
         description="If True, evaluate risk but do NOT submit any orders. Log intended actions only.",
     )
     ABORT_ON_SHORT_BUYBACK_FAILURE: bool = Field(
