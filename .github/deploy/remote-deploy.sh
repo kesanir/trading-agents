@@ -64,6 +64,8 @@ test "$(git symbolic-ref --short HEAD)" = main
 origin_url=$(git remote get-url origin)
 case "$origin_url" in
   https://github.com/kesanir/trading-agents|https://github.com/kesanir/trading-agents.git) ;;
+  git@github.com:kesanir/trading-agents|git@github.com:kesanir/trading-agents.git) ;;
+  ssh://git@github.com/kesanir/trading-agents|ssh://git@github.com/kesanir/trading-agents.git) ;;
   *) echo 'Unexpected origin URL; deployment stopped.' >&2; exit 1 ;;
 esac
 git diff --quiet
