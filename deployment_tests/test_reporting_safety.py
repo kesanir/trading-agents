@@ -42,7 +42,9 @@ class SafetyTests(unittest.TestCase):
             ['apmem_state','prev_apmem_state','apmem_transition','apmem_signal','apmem_bias',
              'apmem_vol','apmem_trend','apmem_accel','apmem_size_mult']})
         signal = types.ModuleType('app.services.signal_file_service')
+        forbidden_calls = []
         def forbidden(*a, **kw):
+            forbidden_calls.append((a, kw))
             raise AssertionError('Execution/signal file reached')
         signal.write_signal_file = forbidden
         signal.build_signal_data = forbidden
@@ -54,6 +56,7 @@ class SafetyTests(unittest.TestCase):
             exec(compile(module, 'daily_runner.py', 'exec'), ns)
             ns['run_after_open'](nq_price=1)
             ns['run_after_open'](nq_price=1, auto_trade=True, auto_exit=True, write_signals=True, dry_run=False)
+        self.assertEqual(forbidden_calls, [], 'Dry run must not attempt signal writes or Telegram sends')
 
     def test_compile_changed_python(self):
         for path in ['daily_runner.py','state_change_runner.py','reporting_job.py','mnq_monitor.py']:
@@ -61,3 +64,4 @@ class SafetyTests(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
