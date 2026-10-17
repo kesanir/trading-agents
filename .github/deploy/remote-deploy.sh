@@ -59,8 +59,13 @@ export EXPECTED_SHA="$expected_sha" PREFLIGHT_ONLY="$preflight_only"
 timeout --kill-after=30s 1100s runuser -u ubuntu -- env EXPECTED_SHA="$expected_sha" PREFLIGHT_ONLY="$preflight_only" bash -s <<'TRADING_DEPLOY_USER'
 set -euo pipefail
 cd /opt/trading-agents
+trap 'echo "Preflight/deployment failed at line $LINENO: $BASH_COMMAND" >&2' ERR
 test "$(git symbolic-ref --short HEAD)" = main
-test "$(git remote get-url origin)" = https://github.com/kesanir/trading-agents.git
+origin_url=$(git remote get-url origin)
+case "$origin_url" in
+  https://github.com/kesanir/trading-agents|https://github.com/kesanir/trading-agents.git) ;;
+  *) echo 'Unexpected origin URL; deployment stopped.' >&2; exit 1 ;;
+esac
 git diff --quiet
 git diff --cached --quiet
 test -x .venv/bin/python
