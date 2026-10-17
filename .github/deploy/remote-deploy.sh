@@ -60,6 +60,9 @@ timeout --kill-after=30s 1100s runuser -u ubuntu -- env EXPECTED_SHA="$expected_
 set -euo pipefail
 cd /opt/trading-agents
 trap 'echo "Preflight/deployment failed at line $LINENO: $BASH_COMMAND" >&2' ERR
+# Reporting units use this lock as ubuntu; never create it as root.
+exec 8>app/state/reporting.lock
+flock -w 20 8 || { echo 'A reporting job holds the shared lock.' >&2; exit 1; }
 test "$(git symbolic-ref --short HEAD)" = main
 origin_url=$(git remote get-url origin)
 case "$origin_url" in
