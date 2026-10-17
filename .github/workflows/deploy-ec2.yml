@@ -1,9 +1,14 @@
-name: EC2 OIDC and SSM preflight
+name: Deploy EC2 via OIDC and SSM
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      preflight_only:
+        description: Verify instance safety without updating code or dependencies
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -58,10 +63,9 @@ jobs:
           role-session-name: trading-agents-${{ github.run_id }}
           action-timeout-s: 60
           retry-max-attempts: 2
-      # Activation requires a successful live safety check first. This initial
-      # workflow cannot update EC2 code or dependencies on any event.
-      - name: Send preflight and wait for its actual result
+      # Every deployment repeats the live timer and script safety checks.
+      - name: Send deployment and wait for its actual result
         env:
-          PREFLIGHT_ONLY: 'true'
+          PREFLIGHT_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.preflight_only && 'true' || 'false' }}
         shell: bash
         run: bash .github/deploy/send-ssm.sh
