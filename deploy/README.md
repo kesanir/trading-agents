@@ -1,9 +1,10 @@
 # Reporting safety deployment
 
-This PR prepares reporting code and inactive Linux units. Merging deploys code
-through the existing GitHub OIDC/SSM workflow, after the reporting tests pass.
-It does not install units, start services, enable timers, send Telegram messages,
-submit orders, close positions, or write NinjaTrader execution signals.
+The reporting code is deployed and the three reviewed paper/dry-run schedules
+were activated on October 17, 2026. Premarket and intraday APMEM schedules remain
+enabled. The legacy state-change timer and old MNQ monitor remain off to avoid
+overlap. Normal code deployments run through OIDC/SSM after the safety tests pass;
+they do not enable timers, restart services, submit orders or close positions.
 
 ## Reporting behavior
 
@@ -35,8 +36,10 @@ service idle; verifies the existing untracked scripts/deploy_ec2.sh; rejects
 tracked changes and untracked/ignored collisions; and updates by fast-forward to
 the exact tested commit. It preserves .env and reports and restarts no services.
 
-Keep `trading-after-open.timer` disabled throughout this preparation phase. The
-current deployment guard deliberately blocks deployments if it is enabled.
+The deployment guard accepts an enabled after-open timer only when all three
+installed reporting unit pairs match their reviewed source and have no systemd
+drop-in overrides. It verifies explicit paper/dry-run execution and shares the
+reporting lock before updating code. Disabled timers must be inactive.
 
 ## Stage units after code deployment
 
@@ -70,14 +73,27 @@ does not enable timers or run a reporting job. Review the existing sudo policy;
 it uses noninteractive sudo and does not grant new permissions. The existing
 premarket service/timer is not replaced.
 
-## Activation is a later phase
+## Verify active schedules
 
-Before enabling schedules, verify installed units and non-secret effective safety
-settings, evaluate legacy schedule overlap and stale feed behavior, and arrange
-a supervised report/Telegram delivery test. A live delivery test sends messages
-and requires authorization. Change the deployment guard only after it can verify
-the reviewed reporting units safely with an enabled timer. Do not simply remove
-the guard to bypass a failed check. This PR does not activate schedules.
+The manual `Verify reporting schedules` GitHub workflow checks installed unit
+identity, effective safety commands, timer enablement and current timer activity
+through SSM without running reports. Three new timers are enabled/active:
+
+- After-open: weekdays at 09:45 Eastern (06:45 Pacific).
+- State monitoring: every two minutes, with reporting gated to the NYSE session.
+- MNQ proxy monitoring: every two minutes, offset by one minute, with the same
+  session gate. Out-of-session timer ticks log a skip.
+
+Activation was verified in Actions run 39074752345. Earlier unit files are backed
+up under `/var/backups/trading-agents-reporting/20261017T222250Z`. The one-time
+activation trigger was removed after success. No reporting service was manually
+started and no live delivery test was performed. The next regular session is
+Monday, October 19, 2026.
+
+Before future unit upgrades, disable the three reporting timers, wait for their
+services to be idle, stage and verify the new units, then explicitly enable the
+three timers. Preserve the independent premarket and intraday schedules. Do not
+start app.services.trading_runner or bypass a unit-verification failure.
 
 Telegram delivery is at least once: a crash after sending but before saving state
 can duplicate an alert. MNQ coverage is RTH only, with an NQ proxy. Automated
