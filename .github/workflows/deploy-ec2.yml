@@ -42,6 +42,8 @@ jobs:
           aws-region: ${{ vars.AWS_REGION }}
           allowed-account-ids: '667437688715'
           role-session-name: trading-agents-${{ github.run_id }}
+          action-timeout-s: 60
+          retry-max-attempts: 2
       # Activation requires a successful live safety check first. This initial
       # workflow cannot update EC2 code or dependencies on any event.
       - name: Send preflight and wait for its actual result
