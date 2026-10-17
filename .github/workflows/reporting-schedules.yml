@@ -1,4 +1,4 @@
-name: Reporting schedule inspection
+name: Activate reporting schedules
 on:
   push:
     branches: [main]
@@ -25,7 +25,7 @@ jobs:
           allowed-account-ids: '667437688715'
           action-timeout-s: 60
           retry-max-attempts: 2
-      - name: Inspect current schedules without starting jobs
+      - name: Stage verified units and activate reporting timers
         shell: bash
         run: |
           set -euo pipefail
@@ -33,21 +33,57 @@ jobs:
           test "$AWS_REGION" = us-west-1
           python3 - <<'PY'
           import json, pathlib
-          command = '''set -eu
-          systemctl list-timers --all 'trading-*' --no-pager
-          systemctl list-unit-files 'trading-*' --no-pager
-          for unit in trading-premarket.service trading-intraday-apmem.service trading-after-open.service trading-state-change.service trading-state.service trading-mnq.service; do
-            echo "=== $unit ==="
-            systemctl show "$unit" -p LoadState -p ActiveState -p FragmentPath -p DropInPaths -p User -p ExecStart --no-pager
+          command = '''bash -s <<'TRADING_ACTIVATE'
+          #!/usr/bin/env bash
+          set -euo pipefail
+          exec 9>/run/lock/trading-agents-deploy.lock
+          flock -w 60 9
+          cd /opt/trading-agents
+          runuser -u ubuntu -- git merge-base --is-ancestor 71eb0a73df903747415773c17b4c16a5888a8f97 HEAD
+          runuser -u ubuntu -- git diff --quiet
+          runuser -u ubuntu -- git diff --cached --quiet
+          # Deprecated schedules remain off so each reporting task has a single owner.
+          for unit in trading-state-change.timer trading-state-change.service trading-mnq-monitor.service; do
+            state=$(systemctl is-active "$unit" 2>/dev/null || true)
+            case "$state" in inactive|unknown|failed) ;; *) echo "Legacy unit $unit is active; review overlap before activation." >&2; exit 1;; esac
           done
-          systemctl cat trading-after-open.timer trading-premarket.timer trading-intraday-apmem.timer trading-state-change.timer --no-pager
-          runuser -u ubuntu -- bash -c 'cd /opt/trading-agents && git rev-parse HEAD && .venv/bin/python -m pip check'
-          '''
-          pathlib.Path('params.json').write_text(json.dumps({'commands':[command], 'executionTimeout':['120']}))
+          legacy_enabled=$(systemctl is-enabled trading-state-change.timer 2>/dev/null || true)
+          case "$legacy_enabled" in disabled|masked|not-found) ;; *) echo 'Legacy state-change timer must stay disabled.' >&2; exit 1;; esac
+          cron_text=$(runuser -u ubuntu -- crontab -l 2>/dev/null || true)
+          if printf '%s\n' "$cron_text" | sed '/^[[:space:]]*#/d' | grep -Eq 'reporting_job\.py|state_change_runner\.py|mnq_monitor\.py|daily_runner\.py.*--open'; then
+            echo 'Potential overlapping user cron job found; activation stopped.' >&2
+            exit 1
+          fi
+          backup="/var/backups/trading-agents-reporting/$(date -u +%Y%m%dT%H%M%SZ)"
+          install -d -m 700 "$backup"
+          for job in after-open state mnq; do
+            for kind in service timer; do
+              unit="trading-$job.$kind"
+              if [[ -e "/etc/systemd/system/$unit" ]]; then cp -a "/etc/systemd/system/$unit" "$backup/"; fi
+            done
+          done
+          echo "Previous unit files backed up to $backup"
+          runuser -u ubuntu -- bash deploy/install.sh
+          python3 .github/deploy/verify-reporting-units.py
+          # Roll back timer activation on any failure. Never start a service directly.
+          rollback() { systemctl disable --now trading-after-open.timer trading-state.timer trading-mnq.timer; }
+          trap rollback ERR
+          systemctl enable --now trading-after-open.timer trading-state.timer trading-mnq.timer
+          for timer in trading-after-open.timer trading-state.timer trading-mnq.timer; do
+            systemctl is-enabled "$timer"
+            systemctl is-active "$timer"
+          done
+          python3 .github/deploy/verify-reporting-units.py
+          trap - ERR
+          systemctl list-timers --all 'trading-*' --no-pager
+          echo 'Three paper/dry-run reporting schedules activated. Premarket and intraday schedules preserved.'
+          
+          TRADING_ACTIVATE'''
+          pathlib.Path('params.json').write_text(json.dumps({'commands':[command], 'executionTimeout':['300']}))
           PY
           id=$(aws ssm send-command --instance-ids "$EC2_INSTANCE_ID" --document-name AWS-RunShellScript --parameters file://params.json --query Command.CommandId --output text)
           echo "SSM command: $id"
-          for attempt in $(seq 1 30); do
+          for attempt in $(seq 1 75); do
             if aws ssm get-command-invocation --command-id "$id" --instance-id "$EC2_INSTANCE_ID" > result.json 2> error.txt; then
               status=$(jq -r .Status result.json)
               case "$status" in Pending|InProgress|Delayed) ;; *) jq -r '.StandardOutputContent,.StandardErrorContent' result.json; test "$status" = Success; exit;; esac
