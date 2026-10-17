@@ -1,0 +1,90 @@
+name: Deploy EC2 via OIDC and SSM
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      preflight_only:
+        description: Verify instance safety without updating code or dependencies
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: trading-agents-ec2-production
+  cancel-in-progress: false
+
+jobs:
+  validate-reporting:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pip check
+      - name: Verify staging scripts and Linux units
+        run: |
+          for script in deploy/install.sh deploy/update.sh .github/deploy/*.sh; do bash -n "$script"; done
+          systemd-analyze verify deploy/systemd/*
+      - run: python -m unittest discover -s deployment_tests -v
+  deploy:
+    needs: validate-reporting
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      AWS_REGION: ${{ vars.AWS_REGION }}
+      EC2_INSTANCE_ID: ${{ vars.EC2_INSTANCE_ID }}
+      AWS_DEPLOY_ROLE_ARN: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+      AWS_PAGER: ''
+    steps:
+      - name: Validate destination
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$AWS_REGION" = us-west-1
+          test "$EC2_INSTANCE_ID" = i-03dd5367b7d6c8060
+          test "$AWS_DEPLOY_ROLE_ARN" = arn:aws:iam::667437688715:role/GitHubActions-TradingAgents-Deploy
+      - name: Check out deployment controls
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Report non-secret OIDC trust claims
+        shell: python
+        run: |
+          import base64, json, os, urllib.request
+          url = os.environ['ACTIONS_ID_TOKEN_REQUEST_URL'] + '&audience=sts.amazonaws.com'
+          req = urllib.request.Request(url, headers={
+              'Authorization': 'Bearer ' + os.environ['ACTIONS_ID_TOKEN_REQUEST_TOKEN']})
+          with urllib.request.urlopen(req) as response:
+              token = json.load(response)['value']
+          payload = token.split('.')[1]
+          claims = json.loads(base64.urlsafe_b64decode(payload + '=' * (-len(payload) % 4)))
+          # Never print the token or request credentials; only public trust claims.
+          for key in ('iss', 'aud', 'sub', 'repository', 'repository_id', 'repository_owner_id', 'ref'):
+              print(f'{key}: {claims.get(key)}')
+      - name: Assume deployment role
+        uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
+        with:
+          role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+          allowed-account-ids: '667437688715'
+          role-session-name: trading-agents-${{ github.run_id }}
+          action-timeout-s: 60
+          retry-max-attempts: 2
+      # Every deployment repeats the live timer and script safety checks.
+      - name: Send deployment and wait for its actual result
+        env:
+          PREFLIGHT_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.preflight_only && 'true' || 'false' }}
+        shell: bash
+        run: bash .github/deploy/send-ssm.sh
