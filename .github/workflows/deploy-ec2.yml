@@ -19,7 +19,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate-reporting:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m pip check
+      - name: Verify staging scripts and Linux units
+        run: |
+          for script in deploy/install.sh deploy/update.sh .github/deploy/*.sh; do bash -n "$script"; done
+          systemd-analyze verify deploy/systemd/*
+      - run: python -m unittest discover -s deployment_tests -v
   deploy:
+    needs: validate-reporting
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30

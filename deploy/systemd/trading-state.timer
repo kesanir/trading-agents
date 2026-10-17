@@ -1,0 +1,9 @@
+[Unit]
+Description=Schedule trading state in Eastern time
+[Timer]
+OnCalendar=Mon..Fri *-*-* 09..15:00/2:00 America/New_York
+Persistent=false
+AccuracySec=1s
+Unit=trading-state.service
+[Install]
+WantedBy=timers.target

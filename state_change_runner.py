@@ -5,6 +5,7 @@ from datetime import datetime, timedelta,timezone
 from typing import Any, Dict
 
 import logging
+import re
 
 from app.services.market_hours_service import is_trigger_window, is_market_open_window
 from app.data.alpaca_intraday import get_intraday_context
@@ -89,7 +90,9 @@ def cooldown_active(meta: Dict[str, Any]) -> bool:
         last_dt = datetime.fromisoformat(last_alert_ts)
     except Exception:
         return False
-    return datetime.now() < (last_dt + timedelta(minutes=COOLDOWN_MINUTES))
+    if last_dt.tzinfo is None:
+        last_dt = last_dt.replace(tzinfo=timezone.utc)
+    return datetime.now(timezone.utc) < (last_dt + timedelta(minutes=COOLDOWN_MINUTES))
 
 
 def _safe_contracts(value: Any, default: int = 1) -> int:
@@ -102,7 +105,14 @@ def _safe_contracts(value: Any, default: int = 1) -> int:
 
 def main():
     args = {a.lower() for a in sys.argv[1:]}
+    from app.services.deployment_safety import check_safety
+    check_safety()
+    from core.config import settings
+    write_signals = "--write-signals" in args and "--execute" in args and "--dry-run" not in args and not settings.DRY_RUN
     force = "--force" in args
+    if not is_market_open_window():
+        print("Skipped: market closed (including holidays/early closes).")
+        return
     send_telegram = "--telegram" in args
 
     # Resolve pending signal outcomes throughout the market session,
@@ -279,22 +289,28 @@ def main():
         trigger_obj=trigger_obj,
     )
 
+    previous_invalidation = load_state("deployment_invalidation.json")
+    invalidation_signature = [re.sub(r"\d+(?:\.\d+)?", "#", reason) for reason in invalidation_reasons]
     if invalidation_reasons:
         active = get_active_signal()
         inv_msg = format_invalidation_alert(invalidation_reasons, active or signal_row)
         print(inv_msg)
-        if send_telegram:
+        if send_telegram and previous_invalidation.get("signature") != invalidation_signature:
             try:
                 send_telegram_message(inv_msg, parse_mode=None)
             except Exception as e:
                 log.warning("Telegram send failed (invalidation alert): %s", e)
+                raise
+        save_state("deployment_invalidation.json", {"signature": invalidation_signature})
+    elif previous_invalidation:
+        save_state("deployment_invalidation.json", {})
 
     # Track active signal when live trigger fires
     if trigger_obj.get("trade_triggered"):
         set_active_signal({**signal_row, "signal_id": signal_id})
 
     # ── Format message blocks ────────────────────────────────────────────────
-    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
     full_trigger = format_futures_trigger(trigger_obj)
     spx_gex_msg = format_spx_0dte_gex(spx_0dte_ctx)
     risk_msg = format_risk_context(risk_ctx)
@@ -342,11 +358,6 @@ def main():
 
         print(status_msg)
 
-        if send_telegram:
-            try:
-                send_telegram_message(status_msg, parse_mode=None)
-            except Exception as e:
-                log.warning("Telegram send failed (status update): %s", e)
         return
 
     # ── Debounce ─────────────────────────────────────────────────────────────
@@ -384,18 +395,19 @@ def main():
 
     print(full_msg)
 
-    # Write NinjaTrader signal file (today's session)
-    try:
-        sig_data = build_signal_data(trigger_obj, intraday_apmem_obj, market)
-        contracts = _safe_contracts(risk_ctx.get("position_size_contracts"), 1)
-        sig_path = write_signal_file(
-            instrument="MNQ",
-            signal_data=sig_data,
-            contracts=contracts,
-        )
-        print(f"NT signal file written -> {sig_path}")
-    except Exception as e:
-        log.warning("NT signal file write failed: %s", e)
+    if write_signals:
+        # Write NinjaTrader signal file (today's session)
+        try:
+            sig_data = build_signal_data(trigger_obj, intraday_apmem_obj, market)
+            contracts = _safe_contracts(risk_ctx.get("position_size_contracts"), 1)
+            sig_path = write_signal_file(
+                instrument="MNQ",
+                signal_data=sig_data,
+                contracts=contracts,
+            )
+            print(f"NT signal file written -> {sig_path}")
+        except Exception as e:
+            log.warning("NT signal file write failed: %s", e)
 
     paths = save_report(
         report_type="state_change",
@@ -415,10 +427,11 @@ def main():
             send_telegram_message(full_msg, parse_mode=None)
         except Exception as e:
             log.warning("Telegram send failed (state change alert): %s", e)
+            raise
 
     save_state(STATE_FILE, new_state)
 
-    meta["last_alert_ts"] = datetime.now().isoformat()
+    meta["last_alert_ts"] = datetime.now(timezone.utc).isoformat()
     meta["pending_sig"] = None
     meta["pending_count"] = 0
     save_state(META_FILE, meta)

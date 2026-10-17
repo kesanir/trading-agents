@@ -5,3 +5,6 @@ numpy
 python-dotenv
 requests
 yfinance
+pydantic-settings
+pandas-market-calendars
+tzdata

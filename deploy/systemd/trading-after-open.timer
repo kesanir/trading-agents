@@ -1,0 +1,9 @@
+[Unit]
+Description=Schedule trading after-open in Eastern time
+[Timer]
+OnCalendar=Mon..Fri *-*-* 09:45:00 America/New_York
+Persistent=false
+AccuracySec=1s
+Unit=trading-after-open.service
+[Install]
+WantedBy=timers.target
