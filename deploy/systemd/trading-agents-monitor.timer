@@ -1,0 +1,10 @@
+[Unit]
+Description=Position-risk monitor every five minutes during Pacific market hours
+[Timer]
+OnCalendar=Mon..Fri *-*-* 06:30/5:00 America/Los_Angeles
+OnCalendar=Mon..Fri *-*-* 07..12:00/5:00 America/Los_Angeles
+Persistent=false
+AccuracySec=1s
+Unit=trading-agents-monitor.service
+[Install]
+WantedBy=timers.target
