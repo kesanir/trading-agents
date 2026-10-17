@@ -28,6 +28,11 @@ def run(telegram=False):
     old = json.loads(STATE.read_text()) if STATE.exists() else {}
     logging.info("MNQ analysis (NQ.c.0 proxy) price=%s state=%s bar=%s", price, state, last)
     if old.get("state") == state:
+        # A return to the confirmed state breaks a pending transition sequence.
+        if old.get("pending") is not None:
+            temp = STATE.with_suffix(".tmp")
+            temp.write_text(json.dumps({"state": state}), encoding="utf-8")
+            temp.replace(STATE)
         return
     count = old.get("count", 0) + 1 if old.get("pending") == state else 1
     if count >= 2:
