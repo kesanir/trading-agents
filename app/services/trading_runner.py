@@ -76,6 +76,9 @@ class RunnerReport:
 async def _cancel_pending_for_symbols(
     client: TradingClient, symbols: set[str], open_orders: list[dict],
 ) -> None:
+    if settings.DRY_RUN:
+        logger.info('Dry run: pending orders will not be cancelled.')
+        return
     for order in open_orders:
         if (
             order.get("symbol") in symbols
@@ -200,12 +203,20 @@ async def run_once() -> RunnerReport:
 
     # ── 7. Pre-close: cancel pending orders ───────────────────────────────────
     symbols_to_close = _symbols_for_close(assessments)
-    if symbols_to_close:
+    if symbols_to_close and not settings.DRY_RUN:
         await _cancel_pending_for_symbols(client, symbols_to_close, open_orders)
 
     # ── 8. Execute closes ─────────────────────────────────────────────────────
     for a in assessments:
         if not a.should_close:
+            continue
+        if settings.DRY_RUN:
+            report.actions_taken.append({
+                'symbol': a.symbol,
+                'action': 'would_close',
+                'dry_run': True,
+                'details': a.details,
+            })
             continue
         try:
             action = await execute_risk_assessment(client=client, assessment=a)
