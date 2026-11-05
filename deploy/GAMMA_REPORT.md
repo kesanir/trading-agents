@@ -38,6 +38,21 @@ named Pacific timezone and do not replay missed mornings after a reboot.
 - Three conditional scenarios, with no calibrated probabilities. Entries are
   prospective five-minute acceptance/retest conditions, not live confirmations.
   Actual stop, target ordering and 1.5R minimum must be checked at execution.
+- The reference-inspired second page adds a gamma asymmetry banner, a compact
+  NQ/MNQ trigger/stop/target table and a regime-dependent "What to avoid" panel.
+  It compares repriced GEX at -1%, current spot and +1%, now and 30 minutes
+  before cash close. The time projection holds OI, IV and scenario spot fixed.
+  Finite-move hedge adjustment is the negative signed change in option delta
+  times OI, 100 shares and destination spot. Positive means modeled buying;
+  negative means modeled selling. These are inventory-proxy sensitivities,
+  not observed flows, forced orders or predictions of actual dealer behavior.
+- Nearest-expiry and whole-board switches use independent spot sweeps. The
+  nearest expiry is explicitly named; "whole board" means the loaded 0-45 DTE
+  chain, not all listed options. Missing crossings remain unavailable.
+  The panel never assumes a nearest-expiry reclaim flips the whole board.
+  Selling-premium edge, option spread costs, realized volatility and max pain
+  are not inferred from gamma. Futures reference R/R uses tick-rounded levels;
+  rows below 1.5R are marked WAIT. Example prices are never copied from the image.
 - Globex VWAP anchors at 18:00 ET; RTH VWAP/opening range are unavailable at 06:00
   Pacific. The economic calendar is not integrated; the report says so.
 

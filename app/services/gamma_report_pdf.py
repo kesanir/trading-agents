@@ -9,13 +9,21 @@ def fmt(value, digits=2):
     return 'N/A' if value is None else f'{value:,.{digits}f}'
 
 
+def hedge_text(value):
+    if abs(value) < .0005:
+        return 'Near zero'
+    return f"{'BUY' if value > 0 else 'SELL'} ${abs(value):.3f}B"
+
+
 def summary(report):
     e, l, m = report['expected'], report['levels'], report['market']
     return (f"QQQ GAMMA MAP | {report['date']} | 06:00 Pacific\n"
             f"QQQ {fmt(m['qqq']['price'])} | Yahoo NQ=F {fmt(m['nq']['price'])}\n"
             f"Gamma: {l['regime']} | Net GEX ${l['net_gex_b']:.3f}B\n"
-            f"Put wall {fmt(l['put_wall'])} | Switch {fmt(report['sweep']['nearest'])} | "
+            f"Put wall {fmt(l['put_wall'])} | Whole-board switch {fmt(report['sweep']['nearest'])} | "
             f"Call wall {fmt(l['call_wall'])}\n"
+            f"Nearest expiry {report['nearest_expiry']}: switch {fmt(report['expiry_sweep']['nearest'])}\n"
+            f"{report['asymmetry']['headline']}\n"
             f"Remaining-session implied range: {fmt(e['lower'])} - {fmt(e['upper'])}\n"
             f"Bull: {report['scenarios'][1]['trigger']}\nBear: {report['scenarios'][2]['trigger']}\n"
             f"QQQ quote {m['qqq']['timestamp']}\nNQ quote {m['nq']['timestamp']}\n"
@@ -37,7 +45,10 @@ def render_report(report, output):
         'heading': ParagraphStyle('heading', fontName='Helvetica-Bold', fontSize=11, leading=14, textColor=navy, spaceBefore=9, spaceAfter=5),
         'body': ParagraphStyle('body', fontName='Helvetica', fontSize=8.5, leading=11, textColor=navy, spaceAfter=4),
         'small': ParagraphStyle('small', fontName='Helvetica', fontSize=7, leading=9, textColor=navy, spaceAfter=3),
-        'thead': ParagraphStyle('thead', fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=colors.white)}
+        'thead': ParagraphStyle('thead', fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=colors.white),
+        'banner': ParagraphStyle('banner', fontName='Helvetica', fontSize=9, leading=12, textColor=colors.white),
+        'banner_label': ParagraphStyle('banner_label', fontName='Helvetica-Bold', fontSize=8, leading=12,
+                                      textColor=colors.HexColor('#A3D4CB'))}
     def p(text, style='body'):
         return Paragraph(escape(str(text)), styles[style])
     def table(rows, widths):
@@ -81,6 +92,10 @@ def render_report(report, output):
               p('Decision levels and approximate futures equivalents', 'heading')]
     rows = [['Reference', 'QQQ', 'NQ / MNQ points']]
     rows += [[r['name'],fmt(r['qqq']),fmt(r['nq_mnq'])] for r in report['references'][:6]]
+    from app.services.gamma_report_service import nq_level
+    near_switch = report['expiry_sweep']['nearest']
+    rows.insert(4,[f"Expiry switch ({report['nearest_expiry']})",fmt(near_switch),
+                   fmt(nq_level(near_switch,spot,m['nq']['price']))])
     story += [table(rows,[228,130,154]), p('Expected range and option-delta references', 'heading'),
               p(f"QQQ ATM IV {e['iv']:.2%} | Expiry {e['expiry']} | Remaining to cash close: "
                 f"+/-{fmt(e['move'])} ({fmt(e['lower'])} - {fmt(e['upper'])})."),
@@ -91,24 +106,51 @@ def render_report(report, output):
         pr,cr = report['references'][6+idx*2:8+idx*2]
         rows.append([f"{d['delta']:.0%} | expiry {e['expiry']}",
                      f"{fmt(pr['qqq'])} / {fmt(pr['nq_mnq'])}", f"{fmt(cr['qqq'])} / {fmt(cr['nq_mnq'])}"])
-    story += [table(rows,[228,142,142]), PageBreak(), p('SCENARIOS & FUTURES LEVELS','title'),
-              p('Wait for completed 5-minute bars. No scenario percentages are assigned.')]
-    from app.services.gamma_report_service import nq_level
+    story += [table(rows,[228,142,142]),
+              p(f"Nearest-expiry net GEX: ${report['expiry_net_gex_b']:+.3f}B ({report['nearest_expiry']}). "
+                'Whole board means the loaded 0-45 DTE set; a switch can be unavailable within the scan.','small'),
+              PageBreak(), p('HOW TO PLAY THE STRUCTURE','title')]
+    a = report['asymmetry']
+    down,current,up = a['points']
+    thesis = (f"{a['headline']} Whole-board GEX is ${current['gex_b']:+.3f}B per 1% move. "
+              f"A +1% repricing implies {hedge_text(up['hedge_adjustment_b'])}; "
+              f"a -1% repricing implies {hedge_text(down['hedge_adjustment_b'])}. "
+              f"Nearest-expiry switch: {fmt(near_switch)} ({report['nearest_expiry']}); "
+              f"whole-board switch: {fmt(report['sweep']['nearest'])}. "
+              'These are fixed-IV/OI inventory proxies, not observed or forced orders.')
+    banner = Table([[p('THE ASYMMETRY THAT MATTERS','banner_label'),p(thesis,'banner')]],colWidths=[100,412])
+    banner.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,-1),navy),('VALIGN',(0,0),(-1,-1),'TOP'),
+                               ('LEFTPADDING',(0,0),(-1,-1),10),('RIGHTPADDING',(0,0),(-1,-1),10),
+                               ('TOPPADDING',(0,0),(-1,-1),10),('BOTTOMPADDING',(0,0),(-1,-1),10)]))
+    story += [banner,Spacer(1,6),table([
+        ['Whole board / hypothetical spot','QQQ -1%','Reference','QQQ +1%'],
+        ['Net GEX now ($B / 1%)',f"{down['gex_b']:+.3f}",f"{current['gex_b']:+.3f}",f"{up['gex_b']:+.3f}"],
+        ['30m before cash close ($B / 1%)',f"{down['later_gex_b']:+.3f}",
+         f"{current['later_gex_b']:+.3f}",f"{up['later_gex_b']:+.3f}"]],[212,100,100,100]),
+        p('Time projection holds OI, IV and each hypothetical spot fixed; it is not a forecast of closing flow.','small')]
+    trigger_rows = [['Confirmed trigger / QQQ','NQ / MNQ','Stop / targets (NQ)']]
+    for row in report['playbook']['rows']:
+        target_text = ' / '.join(fmt(v) for v in row['nq_targets']) or 'N/A'
+        rr = 'N/A' if row['reference_rr'] is None else f"{row['reference_rr']:.2f}R"
+        trigger_rows.append([f"{row['label']} {fmt(row['qqq_trigger'])}",fmt(row['nq_trigger']),
+                             f"Stop {fmt(row['nq_stop'])}; targets {target_text}. {rr}. {row['status']}"])
+    left = [p('04  How to play it','heading'),table(trigger_rows,[104,70,146]),
+            p(report['playbook']['confirmation'],'small'),p(report['playbook']['sizing'],'small'),
+            p('Three conditional scenarios','heading')]
     for s in report['scenarios']:
-        def pair(value):
-            return f"QQQ {fmt(value)} / NQ {fmt(nq_level(value,spot,m['nq']['price']))}"
-        targets = '; '.join(pair(v) for v in s['targets']) or 'No next structural target; stand aside.'
-        block = [p(s['name'],'heading'),p(s['trigger']),p(s['confirmation']),
-                 p(f"Entry reference: {pair(s['entry'])} | Structural stop: {pair(s['stop'])}") if s['entry'] else
-                 p('Entry and stop: wait for edge rejection; use the observed rejection-bar extreme.'),
-                 p(f'Target references: {targets}'),p(f"Invalidation: {s['invalidation']}",'small')]
-        story.append(KeepTogether(block))
-    story += [p('Session context & no-trade rules','heading'),
+        left += [p(s['name'],'body'),p(f"{s['trigger']} Invalidation: {s['invalidation']}",'small')]
+    right = [p('05  What to avoid','heading')]
+    for i,avoid in enumerate(report['playbook']['avoid'],1):
+        right += [p(f'{i}. {avoid}','small'),Spacer(1,5)]
+    right += [table([['CALL WALL','EXPIRY SWITCH','PUT WALL'],
+                     [fmt(l['call_wall']),fmt(near_switch),fmt(l['put_wall'])]],[56,56,56])]
+    columns = Table([[left,right]],colWidths=[336,176])
+    columns.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(0,0),0),
+                                ('RIGHTPADDING',(0,0),(0,0),16),('LEFTPADDING',(1,0),(1,0),4),
+                                ('RIGHTPADDING',(1,0),(1,0),4),('BACKGROUND',(1,0),(1,0),colors.HexColor('#F3F1EB'))]))
+    story += [columns,p('Session context & data','heading'),
               p(f"NQ overnight high / low: {fmt(m['nq_overnight_high'])} / {fmt(m['nq_overnight_low'])} | "
-                f"Globex VWAP (18:00 ET anchor): {fmt(m['nq_globex_vwap'])}."),
-              p('Skip stale inputs, failed retests, invalid stop ordering, or targets offering less than 1.5R from the actual entry. '
-                'A counter-VWAP rejection has lower confirmation. Recalculate risk from the traded contract and actual fill.'),
-              p('Data & methodology','heading'),
+                f"Globex VWAP (18:00 ET anchor): {fmt(m['nq_globex_vwap'])}. RTH VWAP/range: not yet available.",'small'),
               p(f"QQQ quote: {m['qqq']['timestamp']} | NQ quote: {m['nq']['timestamp']}",'small'),
               p(f"Options: Alpaca {report['quality']['feed']} | Usable {report['quality']['usable']}/"
                 f"{report['quality']['loaded']} | OI coverage {report['quality']['oi_coverage']:.0%}. "
@@ -116,11 +158,12 @@ def render_report(report, output):
               p(f"Options quote window: {report['quality'].get('oldest_quote', 'N/A')} to "
                 f"{report['quality'].get('newest_quote', 'N/A')} | Oldest OI date: "
                 f"{report['quality'].get('oldest_oi_date', 'N/A')}",'small'),
-              p(f"Gamma switch: fixed-IV spot sweep +/-15%, r=q=0; {len(report['sweep']['crossings'])} crossing(s). "
-                f"Legacy cumulative-strike crossing: {fmt(l['cumulative_strike_crossing'])}. "
-                f"Mapping ratio {report['mapping_ratio']:.5f}; NQ/MNQ rounded to 0.25 points.",'small')]
-    for warning in report['warnings']:
-        story.append(p(warning,'small'))
+              p(f"Fixed-IV spot sweeps +/-15%, r=q=0. Board / expiry crossings: "
+                f"{len(report['sweep']['crossings'])} / {len(report['expiry_sweep']['crossings'])}. "
+                f"Mapping ratio {report['mapping_ratio']:.5f}; ticks 0.25. Calls + / puts - is an inventory assumption.",'small'),
+              p('Options may reflect the prior session. Yahoo may be delayed; verify broker basis. '
+                'No calibrated scenario probabilities, option spread prices, realized-volatility comparison or max pain. '
+                'Economic events are not integrated; check the calendar before trading.','small')]
     def footer(canvas, doc):
         canvas.setStrokeColor(colors.HexColor('#C5D0D8'))
         canvas.line(50,42,562,42)

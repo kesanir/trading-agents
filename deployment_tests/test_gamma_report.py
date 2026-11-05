@@ -12,6 +12,7 @@ from unittest.mock import patch, Mock
 from zoneinfo import ZoneInfo
 
 from app.services.gamma_report_service import gamma, delta, spot_sweep, nq_level
+from app.services.gamma_report_service import gamma_asymmetry, build_report, build_playbook
 from app.data.yahoo_futures import validate_reference
 from gamma_report_demo import demo_report
 
@@ -83,6 +84,47 @@ class GammaSourceTests(unittest.TestCase):
 
 
 class GammaMathTests(unittest.TestCase):
+    def test_hedge_proxy_signs_and_time_projection_are_calculated(self):
+        put = {'strike':100,'years':.001,'iv':.2,'oi':1000,'side':'put'}
+        negative = gamma_asymmetry([put],100,6*3600)
+        down,current,up = negative['points']
+        self.assertLess(down['hedge_adjustment_b'],0)
+        self.assertGreater(up['hedge_adjustment_b'],0)
+        self.assertEqual(current['hedge_adjustment_b'],0)
+        self.assertLess(current['later_gex_b'],current['gex_b'])
+        self.assertIn('amplify',negative['headline'])
+        positive = gamma_asymmetry([{**put,'side':'call'}],100,6*3600)
+        self.assertGreater(positive['points'][0]['hedge_adjustment_b'],0)
+        self.assertLess(positive['points'][2]['hedge_adjustment_b'],0)
+        self.assertIn('absorbing',positive['headline'])
+        self.assertIn('no directional',gamma_asymmetry([],100,3600)['headline'])
+
+    def test_nearest_expiry_switch_is_independent_of_later_expiries(self):
+        original = demo_report()
+        contracts = copy.deepcopy(original['contracts'])
+        for c in contracts:
+            if c['expiry'] != original['nearest_expiry'] and c['side'] == 'put':
+                c['oi'] *= 4
+        changed = build_report(original['market'],contracts,original['quality'],
+                               datetime.fromisoformat(original['as_of']))
+        self.assertEqual(original['expiry_sweep']['nearest'],changed['expiry_sweep']['nearest'])
+        self.assertNotEqual(original['sweep']['nearest'],changed['sweep']['nearest'])
+        self.assertEqual(original['expiry_net_gex_b'],changed['expiry_net_gex_b'])
+        self.assertLess(changed['levels']['net_gex_b'],original['levels']['net_gex_b'])
+
+    def test_avoid_panel_changes_with_mixed_expiry_regimes(self):
+        report = demo_report()
+        args = (report['scenarios'],report['levels'],[690,685,680],695,28450)
+        negative = build_playbook(*args,-1,.1)
+        positive = build_playbook(*args,1,-.1)
+        self.assertIn('whole-board flip',' '.join(negative['avoid']))
+        self.assertIn('Ignoring the nearest expiry',' '.join(positive['avoid']))
+        self.assertNotEqual(negative['avoid'],positive['avoid'])
+        for row in negative['rows']:
+            if row['reference_rr'] is not None:
+                risk = abs(row['nq_trigger']-row['nq_stop'])
+                self.assertAlmostEqual(row['reference_rr'],abs(row['nq_targets'][0]-row['nq_trigger'])/risk)
+
     def test_same_day_early_close_and_dst(self):
         from app.features.option_time import expiry_years
         from app.services.session_calendar import in_session
@@ -122,6 +164,7 @@ class GammaMathTests(unittest.TestCase):
     def test_report_uses_qqq_iv_and_strict_today_expiry(self):
         r = demo_report()
         self.assertAlmostEqual(r['expected']['iv'],.22)
+        self.assertAlmostEqual(r['levels']['net_gex_b'],r['asymmetry']['points'][1]['gex_b'],places=12)
         seconds = (datetime.fromisoformat(r['expected']['horizon_end'])-
                    datetime.fromisoformat(r['as_of'])).total_seconds()
         self.assertAlmostEqual(r['expected']['move'],695*.22*math.sqrt(seconds/(365*86400)))
@@ -200,9 +243,42 @@ class GammaDeliveryTests(unittest.TestCase):
             reader = PdfReader(path)
             self.assertEqual(len(reader.pages),2)
             text = '\n'.join(page.extract_text() for page in reader.pages)
-            for label in ('SYNTHETIC','NQ=F','Globex VWAP','Bullish acceptance','Bearish acceptance','06:'):
-                if label != '06:':
-                    self.assertIn(label,text)
+            text = ' '.join(text.split())
+            for label in ('SYNTHETIC','NQ=F','Globex VWAP','Bullish acceptance','Bearish acceptance',
+                          'What to avoid','How to play it','Nearest-expiry','THE ASYMMETRY',
+                          '30m before cash close','EXPIRY SWITCH'):
+                self.assertIn(label,text)
+
+    def test_negative_board_with_no_switch_still_renders_two_pages(self):
+        from app.services.gamma_report_pdf import render_report
+        from pypdf import PdfReader
+        r = demo_report()
+        contracts = copy.deepcopy(r['contracts'])
+        for c in contracts:
+            if c['side'] == 'call':
+                c['oi'] = 0
+        negative = build_report(r['market'],contracts,r['quality'],datetime.fromisoformat(r['as_of']))
+        self.assertIsNone(negative['sweep']['nearest'])
+        self.assertIsNone(negative['expiry_sweep']['nearest'])
+        self.assertIsNone(negative['levels']['call_wall'])
+        with tempfile.TemporaryDirectory() as directory:
+            reader = PdfReader(render_report(negative,Path(directory)/'no-switch.pdf'))
+            self.assertEqual(len(reader.pages),2)
+            text = ' '.join(' '.join(page.extract_text() for page in reader.pages).split())
+            self.assertIn('N/A',text)
+            self.assertIn('Fading a confirmed break',text)
+
+    def test_previous_schema_is_rejected_before_delivery(self):
+        from app.services.gamma_report_job import publish
+        now = datetime(2026,11,4,14,tzinfo=timezone.utc)
+        with tempfile.TemporaryDirectory() as directory:
+            folder = Path(directory)/'2026-11-04'
+            folder.mkdir()
+            r = self.prepared(folder)
+            r['schema_version'] = 1
+            (folder/'snapshot.json').write_text(json.dumps(r))
+            with self.assertRaisesRegex(RuntimeError,'schema is outdated'):
+                publish(True,now,directory)
 
     def test_premarket_wrapper_uses_premarket_gate(self):
         import reporting_job

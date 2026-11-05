@@ -57,6 +57,8 @@ def publish(send_telegram=False, now=None, root=None):
     report = json.loads((folder / 'snapshot.json').read_text(encoding='utf-8'))
     if report.get('demo'):
         raise RuntimeError('Synthetic examples cannot be published')
+    if report.get('schema_version') != 2:
+        raise RuntimeError('Gamma report schema is outdated; prepare again before publishing')
     prepared = datetime.fromisoformat(report['as_of'])
     if report['date'] != local.date().isoformat() or not timedelta(0) <= now - prepared <= timedelta(minutes=15):
         raise RuntimeError('Gamma report is from the wrong session or preparation is stale')
