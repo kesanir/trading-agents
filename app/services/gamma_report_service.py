@@ -316,6 +316,12 @@ def build_report(market, contracts, quality, now=None):
     playbook = build_playbook(scenarios,levels,downside,spot,nq,levels['net_gex_b'],expiry_net)
     from app.services.gamma_option_suggestions import build_option_suggestions
     option_suggestions = build_option_suggestions(playbook['rows'],contracts,now,quality['feed'])
+    if quality.get('model_only'):
+        for row in playbook['rows']:
+            row['status']='WATCH ONLY: source timing unverified'
+        for idea in option_suggestions['rows']:
+            idea['status']='WATCH ONLY: source timing unverified'
+        warnings.insert(0,quality['notice'])
     return {'schema_version': 3, 'date': today.isoformat(), 'as_of': now.isoformat(),
             'market': market, 'quality': quality, 'levels': levels, 'sweep': sweep,
             'expiry_sweep':expiry_sweep,'nearest_expiry':nearest_expiry,
@@ -340,5 +346,13 @@ def collect_report(now=None):
     from app.data.yahoo_futures import get_gamma_market_snapshot
     now = now or datetime.now(timezone.utc)
     market = get_gamma_market_snapshot(now)
-    contracts, quality = collect_options(market['qqq']['price'], now)
+    try:
+        contracts, quality = collect_options(market['qqq']['price'], now)
+    except (RuntimeError,ValueError) as error:
+        import os
+        if not os.getenv('POLYGON_API_KEY'):
+            raise
+        from app.services.gamma_polygon_source import collect_polygon_options
+        contracts,quality=collect_polygon_options(now)
+        quality['fallback_reason']=str(error)
     return build_report(market, contracts, quality, now)
