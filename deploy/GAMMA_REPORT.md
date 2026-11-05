@@ -10,6 +10,10 @@ named Pacific timezone and do not replay missed mornings after a reboot.
 - Current futures reference: Yahoo Finance `NQ=F` one-minute close, with its bar
   timestamp. QQQ uses Yahoo as well. Both must be no older than 30 minutes at
   publication and within five minutes of one another. These may be delayed.
+  When futures lag equities, both references select actual bars at the common
+  slower-feed cutoff. A newer QQQ price is never paired with an older timestamp.
+  Original latest-available timestamps are retained for audit. Freshness and
+  skew limits apply again after alignment; a missing or stale common bar fails.
 - NQ=F is a continuous reference. Its broker-deliverable contract/basis is not
   verified. NQ and MNQ share point levels; rounded to 0.25 points. Dollar exposure
   and order size are not calculated.
