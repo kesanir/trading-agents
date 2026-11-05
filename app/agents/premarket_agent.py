@@ -215,9 +215,8 @@ def build_premarket_plan(index_symbol: str = "QQQ") -> Dict[str, Any]:
     confidence = futures.get("confidence", "LOW")
     day_type = futures.get("day_type", "watch")
 
-    proxy_iv = None
-    if mag7_rank_source:
-        proxy_iv = _infer_atm_iv_from_candidate(mag7_rank_source[0])
+    # QQQ ranges must use QQQ volatility, never the top-ranked Mag7 stock's IV.
+    proxy_iv = _infer_atm_iv_from_candidate(qqq)
 
     expected = _compute_expected_move(qqq_spot, proxy_iv, days=1)
 

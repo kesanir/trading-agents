@@ -8,13 +8,18 @@ from app.services.session_calendar import in_session
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("job", choices=["after-open", "state", "mnq"])
+    parser.add_argument("job", choices=["after-open", "state", "mnq", "gamma-prepare", "gamma-publish"])
     parser.add_argument("--telegram", action="store_true")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     check_safety()
-    if not in_session():
+    gamma_job = args.job.startswith('gamma-')
+    if not (in_session(premarket=True) if gamma_job else in_session()):
         logging.info("Skipped: outside US equity session, holiday, or early close")
+        return
+    if gamma_job:
+        from app.services.gamma_report_job import run
+        run(args.job, args.telegram)
         return
     if args.job == "mnq":
         from mnq_monitor import run

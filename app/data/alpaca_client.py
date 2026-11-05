@@ -323,7 +323,15 @@ def _parse_option_symbol(sym: str) -> Optional[dict]:
 # Options chain — normalized to gex_core schema
 # ---------------------------------------------------------------------------
 
-def fetch_oi_map(ticker: str, min_dte: int = 0, max_dte: int = 45) -> Dict[str, int]:
+class OIMap(dict):
+    """Backward-compatible OI mapping with settlement dates for reporting QA."""
+    def __init__(self):
+        super().__init__()
+        self.dates = {}
+
+
+def fetch_oi_map(ticker: str, min_dte: int = 0, max_dte: int = 45,
+                 strict: bool = False) -> Dict[str, int]:
     """
     Fetch open interest for all option contracts of a ticker via the
     Alpaca Trading API (GET /v2/options/contracts).
@@ -339,7 +347,7 @@ def fetch_oi_map(ticker: str, min_dte: int = 0, max_dte: int = 45) -> Dict[str, 
     today   = date.today()
     exp_gte = (today + timedelta(days=min_dte)).isoformat()
     exp_lte = (today + timedelta(days=max_dte)).isoformat()
-    oi_map: Dict[str, int] = {}
+    oi_map = OIMap()
     url    = "/v2/options/contracts"
     params = {
         "underlying_symbols":   ticker,
@@ -352,6 +360,8 @@ def fetch_oi_map(ticker: str, min_dte: int = 0, max_dte: int = 45) -> Dict[str, 
     while url:
         d = _get(url, params, base=TRADING_URL, log_errors=True)
         if not d:
+            if strict:
+                raise RuntimeError(f'Alpaca OI page failed for {ticker}; partial chain rejected')
             log.warning("[alpaca] OI fetch failed for %s", ticker)
             break
 
@@ -362,6 +372,7 @@ def fetch_oi_map(ticker: str, min_dte: int = 0, max_dte: int = 45) -> Dict[str, 
             # (underlying_symbols filter is not always exact on the trading API)
             if sym and oi is not None and sym.startswith(ticker):
                 oi_map[sym] = int(float(oi))
+                oi_map.dates[sym] = c.get('open_interest_date')
 
         next_token = d.get("next_page_token")
         if next_token:
@@ -389,6 +400,7 @@ def iter_options_chain(
     max_dte: int = 45,
     limit:   int = 1000,
     oi_map:  Optional[Dict[str, int]] = None,
+    strict: bool = False,
 ) -> Iterator[dict]:
     """
     Paginate Alpaca /v1beta1/options/chain for one underlying.
@@ -442,6 +454,8 @@ def iter_options_chain(
     while url:
         d = _get(url, params, log_errors=True)
         if d is None:
+            if strict:
+                raise RuntimeError(f'Alpaca options page {page + 1} failed; partial chain rejected')
             log.error("[alpaca] options chain page %d failed for %s", page + 1, ticker)
             return
 
@@ -475,6 +489,9 @@ def iter_options_chain(
                 },
                 "greeks":             greeks,
                 "implied_volatility": float(snap.get("impliedVolatility") or 0) or None,
+                "quote_timestamp": lq.get('t') or lq.get('timestamp'),
+                "trade_timestamp": lt.get('t') or lt.get('timestamp'),
+                "oi_date": getattr(oi_map, 'dates', {}).get(sym),
                 "open_interest":      (oi_map or {}).get(sym) if oi_map is not None
                                       else int(snap.get("openInterest") or 0),
                 "last_quote": {
@@ -521,7 +538,9 @@ def compute_iv_from_quote(item: dict, S: float, r: float = 0.0) -> float:
     det   = item.get("details") or {}
     try:
         exp = date.fromisoformat(det.get("expiration_date", ""))
-        T   = max((exp - date.today()).days, 0) / 365.0
+        from app.features.option_time import expiry_years
+        parsed = _parse_option_symbol(det.get('ticker', '')) or {}
+        T   = expiry_years(exp, symbol=parsed.get('underlying', ''))
     except Exception:
         return 0.0
     if T <= 0:

@@ -5,7 +5,7 @@ mkdir -p app/state
 exec 9>app/state/reporting.lock
 flock -w 20 9 || { echo 'A reporting job or deployment holds the shared lock.' >&2; exit 1; }
 # Stage reviewed units only. Installing must never start reporting or trading.
-for job in after-open state mnq; do
+for job in after-open state mnq gamma-prepare gamma-publish; do
   timer="trading-$job.timer"
   enabled=$(systemctl is-enabled "$timer" 2>/dev/null || true)
   active=$(systemctl is-active "$timer" 2>/dev/null || true)

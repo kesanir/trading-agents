@@ -39,6 +39,10 @@ jobs:
             systemctl is-enabled "$unit"
             systemctl is-active "$unit"
           done
+          for unit in trading-gamma-prepare.timer trading-gamma-publish.timer; do
+            echo "=== $unit ==="
+            systemctl show "$unit" --property=LoadState,UnitFileState,ActiveState,NextElapseUSecRealtime
+          done
           systemctl list-timers --all 'trading-*' --no-pager
           '''
           pathlib.Path('params.json').write_text(json.dumps({'commands':[command], 'executionTimeout':['120']}))

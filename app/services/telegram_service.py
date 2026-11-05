@@ -136,3 +136,26 @@ def send_alert(message: str) -> None:
     """
     prefix = "🚨 *ALERT*\n\n"
     send_telegram_message(prefix + message)
+
+
+def send_telegram_document(path, caption: str = '', retries: int = 2) -> dict:
+    """Upload the report PDF. Reopen the file for each bounded retry."""
+    from pathlib import Path
+    if not TELEGRAM_BOT_TOKEN or not TELEGRAM_CHAT_ID:
+        raise ValueError('Missing Telegram bot token or chat ID')
+    path = Path(path)
+    url = f'https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendDocument'
+    for attempt in range(retries + 1):
+        try:
+            with path.open('rb') as stream:
+                response = requests.post(url, data={'chat_id': TELEGRAM_CHAT_ID, 'caption': caption[:1024]},
+                                         files={'document': (path.name, stream, 'application/pdf')}, timeout=45)
+            response.raise_for_status()
+            result = response.json()
+            if not result.get('ok'):
+                raise RuntimeError('Telegram document upload was not accepted')
+            return result
+        except (requests.RequestException, RuntimeError):
+            if attempt == retries:
+                raise RuntimeError('Telegram document delivery failed after retries') from None
+            time.sleep(1.5 * (attempt + 1))
