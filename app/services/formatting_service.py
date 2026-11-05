@@ -144,7 +144,7 @@ def format_premarket_plan(plan: Dict[str, Any]) -> str:
     lines.append(f"Bias: {vol_bias}")
     lines.append("")
     lines.append("=== QQQ EXPECTED MOVE ===")
-    lines.append(f"Proxy ATM IV: {proxy_atm_iv}")
+    lines.append(f"QQQ ATM IV: {proxy_atm_iv}")
     lines.append(f"Expected Move: {expected_move}")
     lines.append(f"Expected Range: {expected_lower} - {expected_upper}")
     lines.append("")

@@ -1,5 +1,9 @@
 # Reporting safety deployment
 
+For the new Yahoo-based 06:00 Pacific two-page gamma report, see
+[GAMMA_REPORT.md](GAMMA_REPORT.md). Its two timers require separate staging and
+activation; code deployment alone does not enable them.
+
 The reporting code is deployed and the three reviewed paper/dry-run schedules
 were activated on October 17, 2026. Premarket and intraday APMEM schedules remain
 enabled. The legacy state-change timer and old MNQ monitor remain off to avoid

@@ -14,6 +14,12 @@ def value(unit, key):
 
 def verify():
     jobs = [(job, 'reporting_job.py ' + job + ' --telegram', '') for job in JOBS]
+    # Existing hosts can deploy code before staging new units. Once either gamma
+    # pair is installed, both pairs must match the reviewed source.
+    if any(value(f'trading-gamma-{job}.{kind}', 'LoadState') == 'loaded'
+           for job in ('prepare', 'publish') for kind in ('service', 'timer')):
+        jobs.extend((f'gamma-{job}', f'reporting_job.py gamma-{job} --telegram', '')
+                    for job in ('prepare', 'publish'))
     if any(value('trading-agents-monitor.' + kind, 'LoadState') == 'loaded'
            for kind in ('service', 'timer')):
         jobs.append(('agents-monitor', 'position_monitor_job.py', 'SCAN_OUTSIDE_MARKET_HOURS=False '))

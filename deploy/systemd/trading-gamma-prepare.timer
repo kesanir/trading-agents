@@ -1,0 +1,9 @@
+[Unit]
+Description=Prepare the Pacific morning gamma map
+[Timer]
+OnCalendar=Mon..Fri *-*-* 05:55:00 America/Los_Angeles
+Persistent=false
+AccuracySec=1s
+Unit=trading-gamma-prepare.service
+[Install]
+WantedBy=timers.target

@@ -8,3 +8,5 @@ yfinance
 pydantic-settings
 pandas-market-calendars
 tzdata
+reportlab>=4.2,<5
+pypdf>=5,<7

@@ -24,17 +24,8 @@ from typing import Any, Dict, List, Optional, Set, Tuple
 import numpy as np
 import pandas as pd
 
-from app.data.alpaca_client import (
-    CONTRACT_SIZE,
-    _et_now,
-    _is_market_open,
-    _last_trading_day,
-    compute_iv_from_quote,
-    fetch_oi_map,
-    get_spot,
-    get_ohlc,
-    iter_options_chain,
-)
+# Keep pure computations usable offline; API credentials are needed at fetch time.
+CONTRACT_SIZE = 100
 
 log = logging.getLogger("gex")
 if not log.handlers:
@@ -170,6 +161,7 @@ def _resolve_iv(ticker: str, item: dict, spot: float = 0.0) -> float:
       7. _DEFAULT_IV table                       — hardcoded estimate per ticker
       8. _DEFAULT_IV_STOCK catch-all
     """
+    from app.data.alpaca_client import compute_iv_from_quote
     # 1–4: Polygon-provided IV fields
     # Cap at 3.0 (300%) — rejects garbage values Polygon occasionally returns
     # (e.g. 6.694 for illiquid deep-OTM strikes) while allowing extreme but
@@ -1072,6 +1064,8 @@ def fast_bootstrap(engine: GEXEngine, underlying_ticker: str,
     No underlying_asset.price field in Alpaca chain — spot is REST-only.
     """
     log.info("[%s] Fast bootstrap DTE %d-%d ...", underlying_ticker, min_dte, max_dte)
+    from app.data.alpaca_client import fetch_oi_map, get_spot, iter_options_chain
+    from app.features.option_time import expiry_years
     today = date.today()
 
     # Seed spot before loop — Alpaca latest trade is reliable for all equities/ETFs
@@ -1084,7 +1078,7 @@ def fast_bootstrap(engine: GEXEngine, underlying_ticker: str,
     # so each contract gets real OI without a second paginated loop.
     oi_map = fetch_oi_map(underlying_ticker, min_dte=min_dte, max_dte=max_dte)
     if not oi_map:
-        log.warning("[%s] OI map empty — GEX walls will be gamma-only (no OI weighting)",
+        log.warning("[%s] OI map empty — missing OI contributes zero; GEX levels are unavailable",
                     underlying_ticker)
 
     updated = skipped = 0
@@ -1123,7 +1117,7 @@ def fast_bootstrap(engine: GEXEngine, underlying_ticker: str,
         if gamma != 0.0:
             n_alpaca += 1
         elif S > 0 and iv > 0:
-            T     = max((exp_date - today).days, 0) / 365.0
+            T     = expiry_years(exp_date, symbol=underlying_ticker)
             gamma = _bs_gamma(S, strike, T, iv)
 
             if not _diag_logged and gamma != 0.0:
@@ -1174,7 +1168,7 @@ def fast_bootstrap(engine: GEXEngine, underlying_ticker: str,
                 if c["gamma"] == 0.0 and c["iv"] == 0.0:
                     try:
                         exp = datetime.strptime(c["expiry"], "%Y-%m-%d").date()
-                        T   = max((exp - today).days, 0) / 365.0
+                        T   = expiry_years(exp, symbol=underlying_ticker)
                         iv  = _DEFAULT_IV.get(underlying_ticker.upper(), _DEFAULT_IV_STOCK)
                         g   = _bs_gamma(S, c["strike"], T, iv)
                         if g != 0.0:

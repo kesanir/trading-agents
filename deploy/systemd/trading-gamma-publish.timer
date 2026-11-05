@@ -1,0 +1,9 @@
+[Unit]
+Description=Publish the gamma map at 06:00 Pacific
+[Timer]
+OnCalendar=Mon..Fri *-*-* 06:00:00 America/Los_Angeles
+Persistent=false
+AccuracySec=1s
+Unit=trading-gamma-publish.service
+[Install]
+WantedBy=timers.target
