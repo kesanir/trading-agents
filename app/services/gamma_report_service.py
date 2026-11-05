@@ -193,10 +193,14 @@ def collect_options(spot, now):
         except (TypeError, ValueError, KeyError, AttributeError):
             continue
         quotes.append(stamp)
+        bid,ask = [v if isinstance(v,(int,float)) and isfinite(v) else None
+                   for v in ((item.get('last_quote') or {}).get('bid'),
+                             (item.get('last_quote') or {}).get('ask'))]
         contracts.append({'symbol': det['ticker'], 'strike': det['strike_price'],
                           'expiry': det['expiration_date'], 'side': det['contract_type'],
                           'oi': interest, 'iv': iv, 'years': years,
                           'iv_source': 'Alpaca snapshot impliedVolatility',
+                          'bid':bid,'ask':ask,
                           'quote_timestamp': stamp, 'oi_date': item.get('oi_date')})
     if total < 20 or covered / total < .8 or len(contracts) / total < .8:
         raise RuntimeError(f'QQQ options coverage inadequate: {len(contracts)}/{total} usable, '
@@ -310,10 +314,13 @@ def build_report(market, contracts, quality, now=None):
     if not flip:
         warnings.append('No gamma switch found inside the +/-15% spot sweep.')
     playbook = build_playbook(scenarios,levels,downside,spot,nq,levels['net_gex_b'],expiry_net)
-    return {'schema_version': 2, 'date': today.isoformat(), 'as_of': now.isoformat(),
+    from app.services.gamma_option_suggestions import build_option_suggestions
+    option_suggestions = build_option_suggestions(playbook['rows'],contracts,now,quality['feed'])
+    return {'schema_version': 3, 'date': today.isoformat(), 'as_of': now.isoformat(),
             'market': market, 'quality': quality, 'levels': levels, 'sweep': sweep,
             'expiry_sweep':expiry_sweep,'nearest_expiry':nearest_expiry,
             'expiry_net_gex_b':expiry_net,'asymmetry':asymmetry,'playbook':playbook,
+            'option_suggestions':option_suggestions,
             'gex_by_strike': strike_map, 'gex_by_expiry': engine.compute_gex_by_expiry_strike(),
             'buckets': engine.compute_gex_bucketed(),
             'zero_dte_net_gex_b': sum(gamma(spot,c['strike'],c['years'],c['iv']) * c['oi'] *

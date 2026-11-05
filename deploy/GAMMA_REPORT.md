@@ -50,9 +50,32 @@ named Pacific timezone and do not replay missed mornings after a reboot.
   nearest expiry is explicitly named; "whole board" means the loaded 0-45 DTE
   chain, not all listed options. Missing crossings remain unavailable.
   The panel never assumes a nearest-expiry reclaim flips the whole board.
-  Selling-premium edge, option spread costs, realized volatility and max pain
-  are not inferred from gamma. Futures reference R/R uses tick-rounded levels;
+  Selling-premium edge, realized volatility and max pain are not inferred from
+  gamma. Futures reference R/R uses tick-rounded levels;
   rows below 1.5R are marked WAIT. Example prices are never copied from the image.
+- QQQ option suggestions accompany the same directional triggers. Bullish
+  candidates are bull-call debit verticals; bearish candidates are bear-put
+  debit verticals. Both legs must exist in the collected chain, have positive
+  OI, share an expiry and type, and form a 1-10 point spread. The long strike
+  must be within one point of the trigger; the short strike must be reachable
+  by the farther listed scenario target. Width near five points is preferred.
+  The expiry policy uses the nearest suitable 1-7 calendar DTE and never silently
+  substitutes 0DTE. If contracts are unavailable, the row says unavailable.
+- Option debit ceilings are width / 2.5 rounded down to the cent, giving at least
+  1.5 maximum expiration reward/risk before fees. They are payoff conditions,
+  not estimated fair values or live offers. Maximum loss at the ceiling is
+  ceiling * 100; maximum expiration gain is (width - ceiling) * 100; breakeven
+  is long strike + debit for calls or long strike - debit for puts. All values
+  assume one intact standard QQQ spread, held to expiry, before fees.
+- Valid quote snapshots use long ask minus short bid, require both legs to be
+  two-sided and not crossed, less than 60 seconds apart, and a debit strictly
+  between zero and width. Quotes older than 15 minutes are marked prior/stale;
+  non-OPRA feeds are marked indicative. Missing/invalid quotes remain N/A.
+  Snapshot cost above the debit ceiling is WAIT, never a suggested fill. Both
+  legs must be repriced on trigger confirmation. Intraday target arrival does
+  not guarantee maximum spread profit; exit the intact spread before expiry
+  to manage exercise/assignment exposure. Futures reference R/R is separate
+  from option expiration payoff R/R. No options orders or broker writes occur.
 - Globex VWAP anchors at 18:00 ET; RTH VWAP/opening range are unavailable at 06:00
   Pacific. The economic calendar is not integrated; the report says so.
 

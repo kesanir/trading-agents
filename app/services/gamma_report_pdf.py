@@ -15,6 +15,10 @@ def hedge_text(value):
     return f"{'BUY' if value > 0 else 'SELL'} ${abs(value):.3f}B"
 
 
+def strike_text(value):
+    return f'{value:,.3f}'.rstrip('0').rstrip('.')
+
+
 def summary(report):
     e, l, m = report['expected'], report['levels'], report['market']
     return (f"QQQ GAMMA MAP | {report['date']} | 06:00 Pacific\n"
@@ -136,14 +140,40 @@ def render_report(report, output):
                              f"Stop {fmt(row['nq_stop'])}; targets {target_text}. {rr}. {row['status']}"])
     left = [p('04  How to play it','heading'),table(trigger_rows,[104,70,146]),
             p(report['playbook']['confirmation'],'small'),p(report['playbook']['sizing'],'small'),
-            p('Three conditional scenarios','heading')]
-    for s in report['scenarios']:
-        left += [p(s['name'],'body'),p(f"{s['trigger']} Invalidation: {s['invalidation']}",'small')]
+            p('QQQ option suggestions - conditional','heading')]
+    option_rows = [['QQQ trigger / expiry','Buy / sell; cap per share','At debit cap: expiry payoff']]
+    for idea in report['option_suggestions']['rows']:
+        label = f"{'Reclaim' if idea['direction']=='long' else 'Loss'} {fmt(idea['trigger'])}"
+        if not idea['available']:
+            option_rows.append([label,'No suitable listed spread','N/A - refresh the chain'])
+            continue
+        side = 'C' if idea['side']=='call' else 'P'
+        quote = idea['quote']
+        quote_label = 'Quote N/A' if quote['debit'] is None else f"Snap {fmt(quote['debit'])} ({quote['status']})"
+        if idea['status'].startswith('WAIT'):
+            quote_label += '; WAIT over cap'
+        option_rows.append([f"{label}; exp {idea['expiry']}",
+                            f"BUY {strike_text(idea['buy_strike'])}{side} / SELL {strike_text(idea['sell_strike'])}{side}. "
+                            f"Width {fmt(idea['width'])}; debit cap {fmt(idea['max_debit'])}.",
+                            f"Loss ${fmt(idea['max_loss_at_cap'],0)} / gain ${fmt(idea['max_profit_at_cap'],0)}; "
+                            f"BE {fmt(idea['breakeven_at_cap'])}; {idea['expiry_rr_at_cap']:.2f}R. {quote_label}."])
+    left += [table(option_rows,[80,116,124]),
+             p('Nearest listed 1-7 DTE; no 0DTE fallback. Debit cap is not a quote. At-cap payoffs are for one 100-share '
+               'intact spread at expiration, before fees; not intraday target returns. Reprice on confirmation; '
+               'invalidate on a 5-minute close back across that row\'s trigger. Verify liquidity and close both '
+               'legs before expiry. Futures R/R is separate.','small')]
     right = [p('05  What to avoid','heading')]
     for i,avoid in enumerate(report['playbook']['avoid'],1):
         right += [p(f'{i}. {avoid}','small'),Spacer(1,5)]
     right += [table([['CALL WALL','EXPIRY SWITCH','PUT WALL'],
                      [fmt(l['call_wall']),fmt(near_switch),fmt(l['put_wall'])]],[56,56,56])]
+    right += [p('Three conditional scenarios','heading'),
+              p(f"Range / rotation: {fmt(report['scenarios'][2]['entry'])}-{fmt(report['scenarios'][1]['entry'])}; "
+                'invalidate on acceptance outside.','small'),
+              p(f"Bullish acceptance: above {fmt(report['scenarios'][1]['entry'])}, retest holds; "
+                'invalidate on close back below.','small'),
+              p(f"Bearish acceptance: below {fmt(report['scenarios'][2]['entry'])}, failed reclaim; "
+                'invalidate on close back above.','small')]
     columns = Table([[left,right]],colWidths=[336,176])
     columns.setStyle(TableStyle([('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(0,0),0),
                                 ('RIGHTPADDING',(0,0),(0,0),16),('LEFTPADDING',(1,0),(1,0),4),
@@ -162,7 +192,8 @@ def render_report(report, output):
                 f"{len(report['sweep']['crossings'])} / {len(report['expiry_sweep']['crossings'])}. "
                 f"Mapping ratio {report['mapping_ratio']:.5f}; ticks 0.25. Calls + / puts - is an inventory assumption.",'small'),
               p('Options may reflect the prior session. Yahoo may be delayed; verify broker basis. '
-                'No calibrated scenario probabilities, option spread prices, realized-volatility comparison or max pain. '
+                'Option debit ceilings are payoff conditions, not price forecasts. '
+                'No calibrated scenario probabilities, realized-volatility comparison or max pain. '
                 'Economic events are not integrated; check the calendar before trading.','small')]
     def footer(canvas, doc):
         canvas.setStrokeColor(colors.HexColor('#C5D0D8'))

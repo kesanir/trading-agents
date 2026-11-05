@@ -45,8 +45,11 @@ class GammaSourceTests(unittest.TestCase):
                           'open_interest':100,'implied_volatility':.2,
                           'quote_timestamp':'2026-11-03T20:59:00Z','oi_date':'2026-11-03'})
         feed.iter_options_chain = Mock(side_effect=lambda *a,**kw: iter(items))
+        items[0]['last_quote'] = {'bid':float('nan'),'ask':2.0}
         with patch.dict(sys.modules,{feed.__name__:feed}):
             contracts,quality = collect_options(695,now)
+            json.dumps(contracts,allow_nan=False)
+            self.assertIsNone(contracts[0]['bid'])
             self.assertEqual(len(contracts),20)
             self.assertEqual(quality['oi_coverage'],1)
             self.assertTrue(feed.iter_options_chain.call_args.kwargs['strict'])
@@ -246,7 +249,8 @@ class GammaDeliveryTests(unittest.TestCase):
             text = ' '.join(text.split())
             for label in ('SYNTHETIC','NQ=F','Globex VWAP','Bullish acceptance','Bearish acceptance',
                           'What to avoid','How to play it','Nearest-expiry','THE ASYMMETRY',
-                          '30m before cash close','EXPIRY SWITCH'):
+                          '30m before cash close','EXPIRY SWITCH','QQQ option suggestions',
+                          'debit cap','Quote N/A','expiry payoff'):
                 self.assertIn(label,text)
 
     def test_negative_board_with_no_switch_still_renders_two_pages(self):
