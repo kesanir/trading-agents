@@ -39,7 +39,8 @@ def _reference(symbol, now):
 def get_gamma_market_snapshot(now=None):
     now = now or datetime.now(timezone.utc)
     nq, bars = _reference('NQ=F', now)
-    qqq, _ = _reference('QQQ', now)
+    qqq, qqq_bars = _reference('QQQ', now)
+    nq,bars,qqq=align_references(nq,bars,qqq,qqq_bars,now)
     if abs((datetime.fromisoformat(nq['timestamp']) -
             datetime.fromisoformat(qqq['timestamp'])).total_seconds()) > 300:
         raise RuntimeError('Yahoo QQQ and NQ references are more than five minutes apart')
@@ -59,3 +60,29 @@ def get_gamma_market_snapshot(now=None):
             'overnight_start': start.isoformat(),
             'contract_notice': 'Yahoo NQ=F continuous reference; verify broker contract/basis. '
                                'NQ and MNQ share index-point references.'}
+
+
+def align_references(nq,nq_bars,qqq,qqq_bars,now):
+    """Use actual bars at a common cutoff when Yahoo futures lag equities.
+
+    Never relabel a newer price with an older timestamp. Both selected prices
+    still pass the 30-minute freshness policy and the five-minute skew limit.
+    """
+    cutoff=min(nq_bars.index[-1],qqq_bars.index[-1])
+    aligned=[]
+    frames=[]
+    for reference,frame in ((nq,nq_bars),(qqq,qqq_bars)):
+        frame=frame[frame.index<=cutoff]
+        if frame.empty:
+            raise RuntimeError('Yahoo has no bars at the common reference cutoff')
+        selected={**reference,'latest_available_timestamp':reference['timestamp'],
+                  'price':float(frame.Close.iloc[-1]),
+                  'timestamp':frame.index[-1].to_pydatetime().isoformat(),
+                  'alignment_notice':'Actual historical minute bars aligned to the slower Yahoo feed'}
+        validate_reference(selected,now)
+        aligned.append(selected)
+        frames.append(frame)
+    if abs((datetime.fromisoformat(aligned[0]['timestamp'])-
+            datetime.fromisoformat(aligned[1]['timestamp'])).total_seconds())>300:
+        raise RuntimeError('Yahoo QQQ and NQ references remain more than five minutes apart after alignment')
+    return aligned[0],frames[0],aligned[1]

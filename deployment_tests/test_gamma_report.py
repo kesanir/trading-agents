@@ -80,10 +80,24 @@ class GammaSourceTests(unittest.TestCase):
             self.assertEqual(snapshot['nq_overnight_high'],106)
             self.assertEqual(snapshot['nq_overnight_low'],98)
             self.assertEqual(snapshot['nq_globex_vwap'],103)
-        qqq['timestamp'] = '2026-11-04T13:40:00+00:00'
-        with patch('app.data.yahoo_futures._reference',side_effect=[(nq,frame),(qqq,frame)]), \
-             self.assertRaisesRegex(RuntimeError,'five minutes'):
+        qqq['timestamp'] = '2026-11-03T23:00:00+00:00'
+        with patch('app.data.yahoo_futures._reference',side_effect=[(nq,frame),(qqq,frame.iloc[:-1])]), \
+             self.assertRaisesRegex(ValueError,'stale'):
             get_gamma_market_snapshot(now)
+
+    def test_yahoo_aligns_to_actual_delayed_futures_bar_without_relabeling_prices(self):
+        import pandas as pd
+        from app.data.yahoo_futures import align_references
+        now=datetime(2026,11,4,13,55,tzinfo=timezone.utc)
+        nq_bars=pd.DataFrame({'Close':[20000]},index=pd.to_datetime(['2026-11-04T13:40Z']))
+        qqq_bars=pd.DataFrame({'Close':[100,110]},index=pd.to_datetime(['2026-11-04T13:40Z','2026-11-04T13:54Z']))
+        nq={'symbol':'NQ=F','price':20000,'timestamp':'2026-11-04T13:40:00+00:00'}
+        qqq={'symbol':'QQQ','price':110,'timestamp':'2026-11-04T13:54:00+00:00'}
+        a,_,b=align_references(nq,nq_bars,qqq,qqq_bars,now)
+        self.assertEqual(a['timestamp'],b['timestamp'])
+        self.assertEqual(b['price'],100)
+        self.assertEqual(b['latest_available_timestamp'],qqq['timestamp'])
+        self.assertEqual(qqq['price'],110)
 
 
 class GammaMathTests(unittest.TestCase):
