@@ -21,7 +21,8 @@ def strike_text(value):
 
 def summary(report):
     e, l, m = report['expected'], report['levels'], report['market']
-    return (f"QQQ GAMMA MAP | {report['date']} | 06:00 Pacific\n"
+    notice=report['quality'].get('notice','')
+    return (f"QQQ GAMMA MAP | {report['date']} | 06:00 Pacific\n{notice}\n"
             f"QQQ {fmt(m['qqq']['price'])} | Yahoo NQ=F {fmt(m['nq']['price'])}\n"
             f"Gamma: {l['regime']} | Net GEX ${l['net_gex_b']:.3f}B\n"
             f"Put wall {fmt(l['put_wall'])} | Whole-board switch {fmt(report['sweep']['nearest'])} | "
@@ -70,6 +71,7 @@ def render_report(report, output):
              p('SYNTHETIC EXAMPLE - NOT CURRENT MARKET DATA' if report.get('demo') else
                'Yahoo references may be delayed. Model estimates; verify broker contract.', 'small'),
              p(f"{report['date']} | Prepared {stamp:%H:%M %Z} | Conditional morning plan"),
+             p(report['quality'].get('notice','Verified-input policy: stale or incomplete Alpaca inputs are rejected.'),'small'),
              table([['QQQ / Yahoo', 'NQ=F / Yahoo', 'Gamma regime / net GEX', 'Strict 0DTE net GEX'],
                     [fmt(m['qqq']['price']), fmt(m['nq']['price']),
                      f"{l['regime'].upper()} / ${l['net_gex_b']:.3f}B",
@@ -131,7 +133,8 @@ def render_report(report, output):
         ['Net GEX now ($B / 1%)',f"{down['gex_b']:+.3f}",f"{current['gex_b']:+.3f}",f"{up['gex_b']:+.3f}"],
         ['30m before cash close ($B / 1%)',f"{down['later_gex_b']:+.3f}",
          f"{current['later_gex_b']:+.3f}",f"{up['later_gex_b']:+.3f}"]],[212,100,100,100]),
-        p('Time projection holds OI, IV and each hypothetical spot fixed; it is not a forecast of closing flow.','small')]
+        p(report['quality'].get('notice','')+' Time projection holds OI, IV and each hypothetical spot fixed; '
+          'it is not a forecast of closing flow.','small')]
     trigger_rows = [['Confirmed trigger / QQQ','NQ / MNQ','Stop / targets (NQ)']]
     for row in report['playbook']['rows']:
         target_text = ' / '.join(fmt(v) for v in row['nq_targets']) or 'N/A'
@@ -152,6 +155,8 @@ def render_report(report, output):
         quote_label = 'Quote N/A' if quote['debit'] is None else f"Snap {fmt(quote['debit'])} ({quote['status']})"
         if idea['status'].startswith('WAIT'):
             quote_label += '; WAIT over cap'
+        elif idea['status'].startswith('WATCH ONLY'):
+            quote_label += '; WATCH ONLY'
         option_rows.append([f"{label}; exp {idea['expiry']}",
                             f"BUY {strike_text(idea['buy_strike'])}{side} / SELL {strike_text(idea['sell_strike'])}{side}. "
                             f"Width {fmt(idea['width'])}; debit cap {fmt(idea['max_debit'])}.",
@@ -182,7 +187,7 @@ def render_report(report, output):
               p(f"NQ overnight high / low: {fmt(m['nq_overnight_high'])} / {fmt(m['nq_overnight_low'])} | "
                 f"Globex VWAP (18:00 ET anchor): {fmt(m['nq_globex_vwap'])}. RTH VWAP/range: not yet available.",'small'),
               p(f"QQQ quote: {m['qqq']['timestamp']} | NQ quote: {m['nq']['timestamp']}",'small'),
-              p(f"Options: Alpaca {report['quality']['feed']} | Usable {report['quality']['usable']}/"
+              p(f"Options: {report['quality'].get('provider','Alpaca')} {report['quality']['feed']} | Usable {report['quality']['usable']}/"
                 f"{report['quality']['loaded']} | OI coverage {report['quality']['oi_coverage']:.0%}. "
                 'Options timestamps and OI dates are retained in the JSON audit snapshot.','small'),
               p(f"Options quote window: {report['quality'].get('oldest_quote', 'N/A')} to "

@@ -19,6 +19,16 @@ named Pacific timezone and do not replay missed mornings after a reboot.
   Quotes must be from the preceding equity session or newer; OI settlement date
   must be the preceding trading date or newer. Defaults/estimated IV tables are
   excluded. A premarket report explicitly labels prior-session options inputs.
+- If that strict Alpaca check fails and POLYGON_API_KEY is already configured,
+  the report can use the existing Polygon snapshot account. Every page fetch
+  must succeed. At least 98% of supplied contracts must have valid standard
+  contract/OI metadata; usable IV must cover at least 80% of contracts and 98%
+  of reported OI. Missing or invalid IV may use observed opposite-side IV at
+  the identical strike/expiry, explicitly labeled as a paired-IV approximation.
+  No default volatility table is used. This account does not supply OI dates
+  or full option quote timestamps: no such dates are invented. The PDF and
+  Telegram prominently mark MODEL ONLY, and all futures/options rows are
+  WATCH ONLY pending independently verified current OI and executable quotes.
 - GEX: existing engine for signed strike exposures, expiry matrices and buckets.
   Report gamma is repriced at the Yahoo QQQ reference using fixed IV and actual
   time to expiry. Call-positive/put-negative OI is a proxy assumption.
